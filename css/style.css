@@ -1,0 +1,195 @@
+efe3d3/*
+Free Html5 Responsive Templates : http://www.html5xcss3.com/
+*/
+@import url('https://fonts.googleapis.com/css?family=Sriracha');
+/* ---------------------------------------------------------------------------- */
+/* ------------------------------------Reset----------------------------------- */
+/* ---------------------------------------------------------------------------- */
+a,abbr,acronym,address,applet,article,aside,audio,b,blockquote,big,body,center,canvas,caption,cite,code,command,datalist,dd,del,details,dfn,dl,div,dt,em,embed,fieldset,figcaption,figure,font,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,keygen,label,legend,li,meter,nav,object,ol,output,p,pre,progress,q,s,samp,section,small,span,source,strike,strong,sub,sup,table,tbody,tfoot,thead,th,tr,tdvideo,tt,u,ul,var{background:transparent;border:0 none;font-size:100%;margin:0;padding:0;border:0;outline:0;vertical-align:top;}ol, ul {list-style:none;}blockquote, q {quotes:none;}table, table td {padding:0;border:none;border-collapse:collapse;}img {vertical-align:top;}embed {vertical-align:top;}
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {display:block;}
+mark, rp, rt, ruby, summary, time {display:inline;}
+input, textarea {border:0; padding:0; margin:0; outline: 0;}
+iframe {border:0; margin:0; padding:0;}
+input, textarea, select {margin:0; padding:0px;}
+
+
+/* ---------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------- */
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------- */
+
+html { -webkit-text-size-adjust: none;}
+.video embed,.video object,.video iframe { width: 100%;  height: auto;}
+img{max-width:100%;	height: auto;width: auto\9; /* ie8 */}
+
+a{color: #61b4cf;text-decoration: none;-webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+	transition-duration: 0.3s;}
+a:hover {opacity: 0.9; text-decoration: underline;}
+
+h1, h2 	{font-size: 25px;line-height: 30px;}
+h3, h4	{font-size: 20px;line-height: 20px;}
+h5, h6	{font-size: 16px;line-height: 16px;}
+
+h1, h2, h3, h4, h5, h6{clear: both;hyphens: auto; color: #333;}
+
+p, address{margin: 15px 0;}
+
+.t-center{text-align: center;}
+.t-left{text-align: left;}
+.t-right{text-align: right;}
+.f-right{float: right;}
+.f-left{float: left;}
+
+.post{}
+.post:after, .post:before, article:after, article:before, section:after, section:before{clear: both; content: '\0020'; display: block; visibility: hidden; width: 0; height: 0;}
+
+.clear{content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix:after, .clearfix:before{clear: both; content: '\0020'; display: block; visibility: hidden; width: 0; height: 0;}
+
+hr.line{border-color: #e9e9e9;padding: 0;margin: 0;}
+.uppercase{text-transform: uppercase;}
+.widget-title{font-weight: 500;text-transform: uppercase;line-height: 1.38;margin-bottom: 20px;font-size: 14px;color: #8a8c8e;}
+/* ---------------------------------------------------------------------------- */
+/* ------------------------------------Html-Body------------------------------- */
+/* ---------------------------------------------------------------------------- */
+html, body {width:100%; padding:0; margin:0;}
+body {font: 15px/25px Arial;font-family: "Sriracha","Helvetica Neue",Helvetica,Arial,sans-serif;background:#e8ecdb;padding:0 50px;color: #8a8c8e;}
+body .wrap-body{}
+
+@media all and (max-width: 800px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px){
+	body{padding: 0;}
+}
+
+/* ---------------------------------------------------------------------------- */
+/* -------------------------------------Header--------------------------------- */
+/* ---------------------------------------------------------------------------- */
+header{text-align: center;}
+.custom-banner {
+    position: relative;
+    z-index: 0;
+}
+.custom-banner::before{
+    background: rgba(0, 0, 0, 0) linear-gradient(transparent, #ffffff) repeat scroll 0 0; /*สีข้างล่างภาพ*/
+	bottom: 0;
+    content: "";
+    display: block;
+    height: 40%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+/* ---------------------------------------------------------------------------- */
+/* -------------------------------------Container------------------------------ */
+/* ---------------------------------------------------------------------------- */
+
+/* ---content-box--- */
+.content-box {}
+.content-box .wrap-box {padding: 70px 60px; position: relative;}
+.content-box .header {text-align: center; margin-bottom: 30px;color: #212121;letter-spacing: 2px;}
+.content-box .header h2{font-size: 30px; line-height: 30px;font-weight: 500;}
+.content-box .header .wrapper{padding: 5px; display: inline-block;}
+
+.content-box.boxstyle-1{background:#1A1C1E; color: #8a8c8e;}
+.content-box.boxstyle-2{background:#F1F3F5;}
+
+.content-box.box-1 {font-size: 14px;}
+.content-box.box-1 .widget-title{}
+
+.content-box.box-2 {}
+.portfolio-box {display: block;position: relative;margin: 0 auto 20px;}
+.portfolio-box .portfolio-box-caption {display: block;position: absolute;bottom: 0;width: 100%;height: 100%;max-height:370px;max-width:370px;text-align: center;color: #fff;opacity: 0;background: rgba(0, 0, 0,.6);-webkit-transition: all .35s;-moz-transition: all .35s;transition: all .35s;}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content {position: absolute;top: 50%;width: 100%;text-align: center;transform: translateY(-50%);}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {padding: 0 15px;font-family: 'Sriracha','Helvetica Neue',Arial,sans-serif;}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {text-transform: uppercase;font-size: 14px;font-weight: 600;}
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {font-size: 18px;}
+.portfolio-box:hover .portfolio-box-caption {opacity: 1;}
+
+.content-box.box-3 {}
+
+
+@media (max-width: 1200px) and (min-width: 768px){
+	article .art-content{padding: 40px 50px 0;}
+}
+@media (max-width: 1200px){
+	article{margin-bottom: 30px;}
+	article .art-content{padding: 30px 30px 0;}
+	.archive-page .zerogrid .col-1-2{width:100% !important;}
+}
+
+
+/* ---------------------------------------------------------------------------- */
+/* -------------------------------------Button--------------------------------- */
+/* ---------------------------------------------------------------------------- */
+a.button{background-color: #333;border-radius: 4px; padding: 10px 15px;color: #fff;}
+a.button:hover{background-color: #eee;color: #333;}
+
+<style>
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,.signupbtn {
+    float: left;
+    width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+
+.w3-myfont {
+  font-family: "Sriracha", cursive, sans-serif;
+}
+</style>
