@@ -1,39 +1,28 @@
+
+<html>
+<head>
+<title><?php echo $Firsname; ?></title>
+</head>
+<body>
 <?php
-require_once('connection.php');
-$ID=['ID'];
-$result3 = mysqli_query("SELECT * FROM user where ID ='$ID'");
-while($row3 = mysqli_fetch_array($result3))
-{
-$Firstname=$row3['Firstname'];
-$Lastname=$row3['LastName'];
-$Address=$row3['Address'];
-$Email=$row3['Email'];
-$Telephone=$row3['Telephone'];
-$Username=$row3['Username'];
-}
+//check for a form submission
+if (isset ($_GET['Firstname'])) {
+ $Firstname = $_GET['Firstname'];
+ $conn = mysqli_connect("localhost", "root", "") or die("cannot connect");
+ mysqli_select_db($conn, "mydb") or die("cannot select DB");
+ $userquery = mysqli_query ($conn,"SELECT * FROM user WHERE Firstname='$Firstname'" ) or die ("The query was not  found");
+ if (mysqli_num_rows($userquery) !=1 ) {
+  die ("That username could not be found!");
+ }
+ while ($row = mysqli_fetch_array($userquery, MYSQLI_ASSOC)) {
+ $Firstname = $row['Firstname'];
+ $Lastname = $row['Lastname'];
+ }
+
 ?>
-<table width="398" border="0" align="center" cellpadding="0">
-  <tr>
-    <td height="26" colspan="2">Your Profile Information </td>  </tr>
-  <tr>
-    <td width="129" rowspan="5"></td>
-    <td width="82" valign="top"><div align="left">FirstName:</div></td>
-    <td width="165" valign="top"><?php echo $Firstname ?></td>
-  </tr>
-  <tr>
-    <td valign="top"><div align="left">LastName:</div></td>
-    <td valign="top"><?php echo $Lastname ?></td>
-  </tr>
-  <tr>
-    <td valign="top"><div align="left">Address:</div></td>
-    <td valign="top"><?php echo $Address ?></td>
-  </tr>
-  <tr>
-    <td valign="top"><div align="left">Telephone:</div></td>
-    <td valign="top"><?php echo $Telephone ?></td>
-  </tr>
-  <tr>
-    <td valign="top"><div align="left">Email </div></td>
-    <td valign="top"><?php echo $Email ?></td>
-  </tr>
+<h2><?php echo $first_name; ?> s profile</h2><br>
+<table>
+ <tr><td>Firstname:</td><td><?php echo $Firstname; ?></td></tr>
+ <tr><td>Lastname:</td><td><?php echo $Lastname; ?></td></tr>
+
 </table>
