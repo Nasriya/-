@@ -1,9 +1,11 @@
 <?php session_start();?>
+
 <?php
+include_once 'connection.php';
 
 if (!$_SESSION["UserID"]){  //check session
 
-	  Header("Location: form.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
+	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
 
 }else{?>
 <!DOCTYPE html>
@@ -34,25 +36,37 @@ if (!$_SESSION["UserID"]){  //check session
 				     <li><a href='index.html'><span>หน้าแรก</span></a></li>
 						<li><a href='service.html'><span>บริการของเรา</span></a></li>
 				   <li><a href='contact.html'><span>ติดต่อเรา</span></a></li>
+					 <li><a href='upload.php'><span>อัพโหลดไฟล์</span></a></li>
+					 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+ <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+ <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+ <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+ <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+ <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+ 					<button class="w3-button w3-round-xlarge w3-white" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>
 				</ul>
 			</div>
 		</div>
 
 <br></br>
-		<h2 class="w3-myfont w3-center">แก้ไขข้อมูลส่วนตัว</h2>
+		<h2 class="w3-myfont w3-center">ข้อมูลส่วนตัว</h2>
 		<br></br>
 		<div class="w3-row">
 		<div class="w3-col m3 "><p></p></div>
 		<div class="w3-col m6 w3-round-xxlarge w3-light-blue w3-center w3-myfont">
 
-		<br>ชื่อ XXX &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i></br>
-		<br>นามสกุล XXX &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i></br>
-		<br>ที่อยู่ XXX &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i></br>
-		<br>E-mail XXX &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i></br>
-	<br>เเต้มสะสม XXX &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-pencil-square-o" aria-hidden="true"></i></br>
+		<br>ชื่อ : <?php
+             echo " $Username ";
+?></br>
+		<br>นามสกุล :  </br>
+		<br>ที่อยู่ :</br>
+		<br>เบอร์โทรศัพท์ :</br>
+		<br>E-mail : </br>
+		<br>Password: </br>
+	<br>เเต้มสะสม  :</br>
 	<br></br>
 
+<center><a href='edit_profile.php'><button class="w3-button w3-round-xxlarge w3-red w3-center" style="width:200px">แก้ไขข้อมูลส่วนตัว</a></button>
 
-		<div class="w3-col m3 "><p></p></div>
-	</div>
+		<br></br>
 <?php }?>

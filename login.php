@@ -24,7 +24,7 @@ session_start();
 
 
                         echo "<script>";
-                            echo "alert(\"ยินดีต้อนรับ คุณ $Username\");";
+                            echo "alert(\"ยินดีต้อนรับ ADMIN: $Username\");";
                             echo "window.location = 'employee.php';";
                         echo "</script>";
                       }

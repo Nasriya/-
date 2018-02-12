@@ -37,7 +37,7 @@ if (!$_SESSION["UserID"]){  //check session
 				     <li><a href='index.html'><span>หน้าแรก</span></a></li>
 						<li><a href='service.html'><span>บริการของเรา</span></a></li>
 				   <li><a href='contact.html'><span>ติดต่อเรา</span></a></li>
-					<li><a href='profile.html'><span>ข้อมูลส่วนตัว</span></a></li>
+					<li><a href='profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
 					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
