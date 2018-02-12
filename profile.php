@@ -1,8 +1,7 @@
 <?php session_start();?>
 
 <?php
-include_once 'connection.php';
-
+include('connection.php');
 if (!$_SESSION["UserID"]){  //check session
 
 	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
@@ -49,15 +48,16 @@ if (!$_SESSION["UserID"]){  //check session
 		</div>
 
 <br></br>
-		<h2 class="w3-myfont w3-center">ข้อมูลส่วนตัว</h2>
+		<h2 class="w3-myfont w3-center">แก้ไขข้อมูลส่วนตัว</h2>
 		<br></br>
 		<div class="w3-row">
 		<div class="w3-col m3 "><p></p></div>
 		<div class="w3-col m6 w3-round-xxlarge w3-light-blue w3-center w3-myfont">
 
-		<br>ชื่อ : <?php
-             echo " $Username ";
-?></br>
+
+
+		<tr><td><br>ชื่อ :</td>
+		<td></td></tr>
 		<br>นามสกุล :  </br>
 		<br>ที่อยู่ :</br>
 		<br>เบอร์โทรศัพท์ :</br>
@@ -66,7 +66,7 @@ if (!$_SESSION["UserID"]){  //check session
 	<br>เเต้มสะสม  :</br>
 	<br></br>
 
-<center><a href='edit_profile.php'><button class="w3-button w3-round-xxlarge w3-red w3-center" style="width:200px">แก้ไขข้อมูลส่วนตัว</a></button>
+<center><a href='save_profile.php'><button class="w3-button w3-round-xxlarge w3-red w3-center" style="width:200px">บันทึก</a></button>
 
 		<br></br>
 <?php }?>

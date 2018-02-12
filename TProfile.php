@@ -1,15 +1,33 @@
-<?
-$host = "localhost";
-$Username = "root";
-$Password = "";
-$db_name = "mydb";// กำหนดชื่อฐานข้อมูล
-$Conn = mysql_connect( $host,$Username,$Password) or die ("ติดต่อฐานข้อมูลไม่ได้");// ติดต่อฐานข้อมูล
-mysql_query("SET NAMES utf8",$Conn); // set กำหนดมาตราฐาน
-mysql_select_db($db) or die("เลือกฐานข้อมูลไม่ได้"); // เลือกฐานข้อมูล
-$sql = "select * from user"; // คำสั่ง select * คือเีรียกข้อมูลของ field ทั้งหมด , คำสั่ง form customer คือ เีรียกข้อมูลจากตาราง customer
-$result = mysql_query($sql) or die(mysql_error());
-while($row = mysql_fetch_array($result))
-{
-echo "รหัส $row[ID] ชื่อ $row[Username] นามสกุล $row[Lastname] ที่อยู่ $row[Address] โทร $row[Telephone] <br />";
+
+<meta charset="UTF-8">
+<?php
+//1. เชื่อมต่อ database:
+include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
+
+//2. query ข้อมูลจากตาราง tb_member:
+$query = "SELECT * FROM user" or die("Error:" . mysqli_error());
+//3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
+$result = mysqli_query($con, $query);
+//4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
+
+echo "<table border='1' align='center' width='500'>";
+//หัวข้อตาราง
+echo "<tr align='center' bgcolor='#CCCCCC'><td>รหัส</td><td>Uername</td><td>ชื่อ</td><td>นามสกุล</td><td>อีเมล์</td><td>แก้ไข</td><td>ลบ</td></tr>";
+while($row = mysqli_fetch_array($result)) {
+  echo "<tr>";
+  echo "<td>" .$row["ID"] .  "</td> ";
+  echo "<td>" .$row["Username"] .  "</td> ";
+  echo "<td>" .$row["Lastname"] .  "</td> ";
+  echo "<td>" .$row["Email"] .  "</td> ";
+  echo "<td>" .$row["Address"] .  "</td> ";
+  //แก้ไขข้อมูล
+  echo "<td><a href='UserUpdateForm.php?ID=$row[0]'>edit</a></td> ";
+
+  //ลบข้อมูล
+  echo "<td><a href='UserDelete.php?ID=$row[0]' onclick=\"return confirm('Do you want to delete this record? !!!')\">del</a></td> ";
+  echo "</tr>";
 }
+echo "</table>";
+//5. close connection
+mysqli_close($con);
 ?>
