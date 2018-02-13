@@ -7,6 +7,26 @@ if (!$_SESSION["UserID"]){  //check session
 	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
 
 }else{?>
+	<?php
+	//if(isset($_GET['ID']))
+	//{
+		//$ID = intval($_GET['ID']);
+		$query = "SELECT * FROM user ORDER BY ID asc" or die("Error:" . mysqli_error());
+		//$query = mysql_query('SELECT * from user where ID="'.$ID.'"');
+		//$query="SELECT * FROM user Where Username='".$Username."' and Address='".$Address."' ";
+		$result = mysqli_query($con,$query);
+		//if(mysqli_num_rows($result)==0)
+		//{
+		//}
+		while ($row = mysqli_fetch_array($result));{
+			echo "<tr>";
+  echo "<td>" .$row["ID"] .  "</td> ";
+  echo "<td>" .$row["Username"] .  "</td> ";
+  echo "<td>" .$row["Lastname"] .  "</td> ";
+  echo "<td>" .$row["Address"] .  "</td> ";
+  echo "<td>" .$row["Email"] .  "</td> ";
+		}
+	?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,13 +56,8 @@ if (!$_SESSION["UserID"]){  //check session
 						<li><a href='service.html'><span>บริการของเรา</span></a></li>
 				   <li><a href='contact.html'><span>ติดต่อเรา</span></a></li>
 					 <li><a href='upload.php'><span>อัพโหลดไฟล์</span></a></li>
-					 <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
- <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
- <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
- <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
- <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
- <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
- 					<button class="w3-button w3-round-xlarge w3-white" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>
+
+ 					<button class="w3-button w3-round-xlarge w3-white w3-display-topright" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>
 				</ul>
 			</div>
 		</div>
@@ -57,16 +72,17 @@ if (!$_SESSION["UserID"]){  //check session
 
 
 		<tr><td><br>ชื่อ :</td>
-		<td></td></tr>
-		<br>นามสกุล :  </br>
-		<br>ที่อยู่ :</br>
-		<br>เบอร์โทรศัพท์ :</br>
-		<br>E-mail : </br>
-		<br>Password: </br>
-	<br>เเต้มสะสม  :</br>
+		<td><?php echo $Username; ?></td></tr>
+		<br>นามสกุล :  <?php echo $Username; ?></br>
+		<br>ที่อยู่ : <?php echo $Lastname; ?></br>
+		<br>เบอร์โทรศัพท์ : <?php echo $Telephone; ?></br>
+		<br>E-mail : <?php echo $Email; ?></br>
+		<br>Password: <?php echo $Password; ?></br>
+	<br>เเต้มสะสม  :<?php echo $Username; ?></br>
 	<br></br>
 
 <center><a href='save_profile.php'><button class="w3-button w3-round-xxlarge w3-red w3-center" style="width:200px">บันทึก</a></button>
 
 		<br></br>
+
 <?php }?>
