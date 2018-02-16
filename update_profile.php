@@ -25,7 +25,7 @@ echo 'error';
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>ข้อมูลส่วนตัว</title>
+	<title>แก้ไขข้อมูลส่วนตัว</title>
 	<meta name="description" content="Free Responsive Html5 Css3 Templates | html5xcss3.com">
 	<meta name="author" content="www.html5xcss3.com">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -41,7 +41,7 @@ echo 'error';
 </head>
 
 <body class="home-page">
-	<div class="wrap-body">
+
 		<div class="header">
 			<div id='cssmenu' >
 				<ul>
@@ -57,26 +57,42 @@ echo 'error';
 		</div>
 
 <br></br>
-		<h2 class="w3-myfont w3-center">ข้อมูลส่วนตัว</h2>
+		<h2 class="w3-myfont w3-center">แก้ไขข้อมูลส่วนตัว</h2>
 		<br></br>
 		<div class="w3-row">
 		<div class="w3-col m3 "><p></p></div>
 		<div class="w3-col m6 w3-round-xxlarge w3-light-blue w3-center w3-myfont">
 
 
-			<form name="update_profile-action"  method="POST">
-		<br><b>Username  :  </b><?php echo $meResult['Username']; ?></br>
-		<br><b>ชื่อ  :  </b><?php echo $meResult['Firstname']; ?> </br>
-		<br><b>นามสกุล  : </b><?php echo $meResult['Lastname']; ?> </br>
-		<br><b>ที่อยู่  : </b><?php echo $meResult['Address']; ?></br>
-		<br><b>เบอร์โทรศัพท์  : </b><?php echo $meResult['Telephone']; ?> </br>
-		<br><b>E-mail  : </b><?php echo $meResult['Email']; ?></br>
-		<br><b>Password : </b><?php echo $meResult['Password']; ?></br>
-	<br><b>เเต้มสะสม   :</b><?php echo"ยังไม่ตั้งค่า" ?></br>
-	<br></br>
+      		<form name="update_profile-action"  method="POST">
+            <br><b>Username  :</b>
+            <center><input type="text" name="Username" value="<?php echo $meResult['Username']; ?>" size="20" /></br></center>
+      		<br><b>ชื่อ  :</b>
+      		<center><input type="text" name="Firstname" value="<?php echo $meResult['Firstname']; ?>" size="20" /></br></center>
+      		<br><b>นามสกุล  : </b>
+          <center><input type="text" name="Lastname" value="<?php echo $meResult['Lastname']; ?>" size="20"  /> </br></center>
+      		<br><b>ที่อยู่  : </b>
+          <center><input type="text" name="$Address" value="<?php echo $meResult['Address']; ?>" size="20" /></br></center>
+      		<br><b>เบอร์โทรศัพท์  : </b>
+          <center><input type="text" name="Telephone" value="<?php echo $meResult['Telephone']; ?>" size="20" /></br></center>
+      		<br><b>E-mail  : </b>
+          <center><input type="text" name="Email" value="<?php echo $meResult['Email']; ?>" size="20" /></br></center>
+      		<br><b>Password : </b>
+          <center><input type="text" name="Password" value="<?php echo $meResult['Password']; ?>" size="20" /></br></center>
+      	<br><b>เเต้มสะสม   :</b><?php echo"ยังไม่ตั้งค่า" ?></br>
+      	<br></br>
 
-<center><a href='update_profile.php'><button class="w3-button w3-round-xxlarge w3-red w3-center" style="width:200px">แก้ไขข้อมูล</a></button>
+</form>
+
+
+
+<center><a href='update_profile-action.php'><button class="w3-button w3-round-xxlarge w3-red w3-center" style="width:200px">บันทึก</a></button>
 
 		<br></br>
 
 <?php }?>
+
+</div>
+</div>
+</body>
+</html>

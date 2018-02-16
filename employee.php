@@ -32,7 +32,7 @@ if (!$_SESSION["UserID"]){  //check session
 				   <li><img src="images/f.png" width="150" height="150"></li>
 				     <li><a href='index.html'><span>หน้าแรก</span></a></li>
 				   <li><a href='check.html'><span>ตรวจสอบ</span></a></li>
-<li><a href='profile.html'><span>ข้อมูลส่วนตัว</span></a></li>
+<li><a href='profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
 
 
 
