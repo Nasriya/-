@@ -23,7 +23,7 @@
              <li><a href='index.html'><span>หน้าแรก</span></a></li>
             <li><a href='service.html'><span>บริการของเรา</span></a></li>
            <li><a href='contact.html'><span>ติดต่อเรา</span></a></li>
-           <li><a href='register.html'><span>ลงทะเบียน</span></a></li>
+           <li><a href='register.php'><span>ลงทะเบียน</span></a></li>
         </ul>
       </div>
     </div>

@@ -6,7 +6,7 @@ if (!$_SESSION["UserID"]){  //check session
 	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
 
 }else{
-	//$_SESSION['frmAction'] = md5('itoffside.com' . rand(1, 9999));
+	$_SESSION['frmAction'] = md5('itoffside.com' . rand(1, 9999));
 ?>
 
 <?php
@@ -64,21 +64,19 @@ echo 'error';
 		<div class="w3-col m6 w3-round-xxlarge w3-light-blue w3-center w3-myfont">
 
 
-      		<form name="update_profile-action"  method="POST">
+      		<form class="w3-container" name="update_profile-action"  method="POST">
             <br><b>Username  :</b>
-            <center><input type="text" name="Username" value="<?php echo $meResult['Username']; ?>" size="20" /></br></center>
+            <center><input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="Username" value="<?php echo $meResult['Username']; ?>"  /></br></center>
       		<br><b>ชื่อ  :</b>
-      		<center><input type="text" name="Firstname" value="<?php echo $meResult['Firstname']; ?>" size="20" /></br></center>
+      		<center><input  class="w3-input w3-hover-pale-red"type="text"  style="width:50%"name="Firstname" value="<?php echo $meResult['Firstname']; ?>"  /></br></center>
       		<br><b>นามสกุล  : </b>
-          <center><input type="text" name="Lastname" value="<?php echo $meResult['Lastname']; ?>" size="20"  /> </br></center>
+          <center><input  class="w3-input w3-hover-pale-red"type="text"  style="width:50%"name="Lastname" value="<?php echo $meResult['Lastname']; ?>"   /> </br></center>
       		<br><b>ที่อยู่  : </b>
-          <center><input type="text" name="$Address" value="<?php echo $meResult['Address']; ?>" size="20" /></br></center>
+          <center><input class="w3-input w3-hover-pale-red" type="text"   style="width:70%" name="$Address" value="<?php echo $meResult['Address']; ?>"  /></br></center>
       		<br><b>เบอร์โทรศัพท์  : </b>
-          <center><input type="text" name="Telephone" value="<?php echo $meResult['Telephone']; ?>" size="20" /></br></center>
+          <center><input class="w3-input w3-hover-pale-red" type="text" name="Telephone"   style="width:50%" value="<?php echo $meResult['Telephone']; ?>"  /></br></center>
       		<br><b>E-mail  : </b>
-          <center><input type="text" name="Email" value="<?php echo $meResult['Email']; ?>" size="20" /></br></center>
-      		<br><b>Password : </b>
-          <center><input type="text" name="Password" value="<?php echo $meResult['Password']; ?>" size="20" /></br></center>
+          <center><input  class="w3-input w3-hover-pale-red"type="text" name="Email"  style="width:50%" value="<?php echo $meResult['Email']; ?>"  /></br></center>
       	<br><b>เเต้มสะสม   :</b><?php echo"ยังไม่ตั้งค่า" ?></br>
       	<br></br>
 
@@ -86,8 +84,10 @@ echo 'error';
 
 
 
-<center><a href='update_profile-action.php'><button class="w3-button w3-round-xxlarge w3-red w3-center" style="width:200px">บันทึก</a></button>
 
+
+	<a href="sss.php" class="w3-btn w3-green" name ="Edit">บันทึก</a>
+	<a href="profile.php" class="w3-btn w3-red">ยกเลิก</a>
 		<br></br>
 
 <?php }?>

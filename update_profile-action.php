@@ -36,7 +36,7 @@ $meSQL .= "Lastname='{$Lastname}', ";
 
 $meSQL .= "Telephone='{$Telephone}', ";
 $meSQL .= "Email='{$Email}', ";
-$meSQL .= "WHERE Member_ID='{$_SESSION['Member_ID']}' ";
+$meSQL .= "WHERE Member_ID='{$_SESSION['UserID']}' ";
 $meQuery = mysqli_query($meSQL);
 if ($meQuery == TRUE) {
 echo "<meta charset=\"UTF-8\">";

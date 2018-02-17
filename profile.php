@@ -1,12 +1,13 @@
 <?php session_start();?>
 <?php
+
 include('connection.php');
 if (!$_SESSION["UserID"]){  //check session
 
 	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
 
 }else{
-	//$_SESSION['frmAction'] = md5('itoffside.com' . rand(1, 9999));
+	$_SESSION['frmAction'] = md5('itoffside.com' . rand(1, 9999));
 ?>
 
 <?php
@@ -64,18 +65,16 @@ echo 'error';
 		<div class="w3-col m6 w3-round-xxlarge w3-light-blue w3-center w3-myfont">
 
 
-			<form name="update_profile-action"  method="POST">
+			<form name=""  method="POST">
 		<br><b>Username  :  </b><?php echo $meResult['Username']; ?></br>
 		<br><b>ชื่อ  :  </b><?php echo $meResult['Firstname']; ?> </br>
 		<br><b>นามสกุล  : </b><?php echo $meResult['Lastname']; ?> </br>
 		<br><b>ที่อยู่  : </b><?php echo $meResult['Address']; ?></br>
 		<br><b>เบอร์โทรศัพท์  : </b><?php echo $meResult['Telephone']; ?> </br>
 		<br><b>E-mail  : </b><?php echo $meResult['Email']; ?></br>
-		<br><b>Password : </b><?php echo $meResult['Password']; ?></br>
 	<br><b>เเต้มสะสม   :</b><?php echo"ยังไม่ตั้งค่า" ?></br>
 	<br></br>
-
-<center><a href='update_profile.php'><button class="w3-button w3-round-xxlarge w3-red w3-center" style="width:200px">แก้ไขข้อมูล</a></button>
+<a href="update_profile.php" class="w3-btn  w3-round-xxlarge w3-red" style="width:200px">แก้ไขข้อมูล</a>
 
 		<br></br>
 
