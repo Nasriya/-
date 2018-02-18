@@ -22,8 +22,7 @@
            <li><img src="images/f.png" width="150" height="40"></li>
              <li><a href='index.html'><span>หน้าแรก</span></a></li>
             <li><a href='service.html'><span>บริการของเรา</span></a></li>
-           <li><a href='contact.html'><span>ติดต่อเรา</span></a></li>
-           <li><a href='register.php'><span>ลงทะเบียน</span></a></li>
+           <li><a href='contact.html'><span>ติดต่อเรา</span></a></li>  
         </ul>
       </div>
     </div>

@@ -49,7 +49,7 @@ echo 'error';
 				     <li><a href='index.html'><span>หน้าแรก</span></a></li>
 						<li><a href='service.html'><span>บริการของเรา</span></a></li>
 				   <li><a href='contact.html'><span>ติดต่อเรา</span></a></li>
-					 <li><a href='upload.php'><span>อัพโหลดไฟล์</span></a></li>
+					
 
  					<button class="w3-button w3-round-xlarge w3-white w3-display-topright" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>
 				</ul>
@@ -86,7 +86,7 @@ echo 'error';
 
 
 
-	<a href="update_profile-action.php" class="w3-btn w3-green" name ="Edit">บันทึก</a>
+	<a href="sss.php" class="w3-btn w3-green" name ="Edit">บันทึก</a>
 	<a href="profile.php" class="w3-btn w3-red">ยกเลิก</a>
 		<br></br>
 

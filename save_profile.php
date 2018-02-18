@@ -1,51 +1,19 @@
-
+<?php session_start();?>
 <?php
-session_start();
-if (isset($_SESSION['checkSign']) == 'itoffside') {
-if (isset($_SESSION['frmAction']) == isset($_POST['frmAction'])) {
 
-/*
-* include file
-*/
-include 'connection.php';
+if (!$_SESSION["UserID"]){  //check session
 
-/*
-* set var
-*/
+	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
 
-/*
-* unset var
-*/
-unset($_SESSION['frmAction']);
+}else{
 
-/*
-* logical programming&Database
-*/
-$meSQL = "UPDATE user ";
-$meSQL .= "SET Firstname='{$Firstname}', ";
-$meSQL .= "Lastname='{$Lastname}', ";
-$meSQL .= "Telephone='{$Telephone}', ";
-$meSQL .= "Email='{$Email}', ";
-$meSQL .= "WHERE Member_ID ='{$_SESSION['UserID']}' ";
-$meQuery = mysqli_query($con,$meSQL);
-if ($meQuery == TRUE) {
-echo "<meta charset=\"UTF-8\">";
-echo "บันทึกข้อมูลสำเร็จ";
-echo "<br/>";
-echo "<a href='profile.php'>ไปหน้าหลัก</a>";
-} else {
-echo "<meta charset=\"UTF-8\">";
-echo "มีปัญหาการบันทึกข้อมูล กรุณากลับไปบันทึกใหม่";
-echo "<br/>";
-echo "<a href='update_profile.php'>กลับไปหน้าเดิม</a>";
-}
-mysqli_close();
-} else {
-echo "<meta charset=\"UTF-8\">";
-echo "มีข้อผิดพลาดระหว่าง Session!";
-echo "<br/>";
-echo "<a href='update_profile.php'>กลับไปหน้าเดิม</a>";
-}
 
-}
+	$strSQL = "UPDATE user SET Password = '".trim($_POST['Password'])."'
+	,Firstname = '".trim($_POST['Firstname'])."' WHERE Member_ID = '".$_SESSION["UserID"]."' ";
+	$objQuery = mysql_query($strSQL);
+
+	echo "Save Completed!<br>";
+
+
 ?>
+<?php }?>
