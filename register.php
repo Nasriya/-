@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$_SESSION['message'] = '';
+$_SESSION['message'] = ''; /*เเสดงข้อความ Error*/
 $arrors = array();
 $mysqli = new mysqli('localhost', 'root', '', 'mydb');
 $mysqli->query("set names utf8");

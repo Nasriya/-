@@ -1,30 +1,36 @@
-<?php
-	session_start();
-	if($_SESSION['UserID'] == "")
-	{
-		Header("Location: form_login.php");
-	}
-	include('connection.php');
+<?
+session_start();
+if (isset($_POST['Edit'])) {
+	$Username = $_POST['Username'];
+	$Firstname = $_POST['Firstname'];
+	$Lastname = $_POST['Lastname'];
+	$Telephone = $_POST['Telephone'];
+	$Address = $_POST['Address'];
+	$Password = ($_POST['Password']);
 
-	/*if($_POST["txtPassword"] != $_POST["txtConPassword"])
-	{
-		echo "Password not Match!";
-		exit();
-	}*/
-	$strSQL = "UPDATE user SET Username = '".trim($_POST['Username'])."'
-	,Firstname = '".trim($_POST['Firstname'])."' WHERE Member_ID = '".$_SESSION["UserID"]."' ";
-	$objQuery = mysqli_query($strSQL);
-
-	echo "Save Completed!<br>";
-
-	/*if($_SESSION["Status"] == "ADMIN")
-	{
-		echo "<br> Go to <a href='admin_page.php'>Admin page</a>";
-	}
-	else
-	{
-		echo "<br> Go to <a href='user_page.php'>User page</a>";
-	}*/
+	mysqli_query("UPDATE user SET Firstname='$Firstname', Address='$Address' WHERE Member_ID='{$_SESSION['UserID']}'");
+	$_SESSION['message'] = "Address updated!";
+	header('location: index.php');
+}
 
 
-?>
+
+
+
+
+}
+
+				//query
+
+                $query="UPDATE user SET Firstname='{$Firstname}', Lastname='{$Lastname}, Username='{$Username}', Address='{$Address}' WHERE Member_ID='{$_SESSION['UserID']}' ";
+                 $result = mysqli_query($con,$query);
+
+                  if(mysqli_num_rows($result)==1){
+
+                      $row = mysqli_fetch_array($result);
+
+                      $_SESSION["UserID"] = $row["Member_ID"];
+                      $_SESSION["User"] = $row["Firstname"]." ".$row["Lastname"];
+                      $_SESSION["Userlevel"] = $row["Userlevel"];
+										}
+									}

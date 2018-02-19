@@ -7,7 +7,7 @@ if (!$_SESSION["UserID"]){  //check session
 	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
 
 }else{
-	$_SESSION['frmAction'] = md5('itoffside.com' . rand(1, 9999));
+	//$_SESSION['frmAction'] = md5('itoffside.com' . rand(1, 9999));
 ?>
 
 <?php

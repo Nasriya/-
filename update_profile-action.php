@@ -12,12 +12,11 @@ include 'connection.php';
 /*
 * set var
 */
-$firstname = mysql_real_escape_string(trim($_POST['firstname']));
-$lastname = mysql_real_escape_string(trim($_POST['lastname']));
-$sex = mysql_real_escape_string(trim($_POST['sex']));
-$phone = mysql_real_escape_string(trim($_POST['phone']));
-$email = mysql_real_escape_string(trim($_POST['email']));
-$modified_date = date('Y-m-d H:i:s');
+$Firstname = mysqli_real_escape_string(trim($_POST['Firstname']));
+$Lastname = mysqli_real_escape_string(trim($_POST['Lastname']));
+$Username = mysqli_real_escape_string(trim($_POST['Username']));
+$Telephone = mysqli_real_escape_string(trim($_POST['Telephone']));
+$Email = mysqli_real_escape_string(trim($_POST['Email']));
 
 /*
 * unset var
@@ -27,15 +26,13 @@ unset($_SESSION['frmAction']);
 /*
 * logical programming&Database
 */
-$meSQL = "UPDATE member ";
-$meSQL .= "SET firstname='{$firstname}', ";
-$meSQL .= "lastname='{$lastname}', ";
-$meSQL .= "sex='{$sex}', ";
-$meSQL .= "phone='{$phone}', ";
-$meSQL .= "email='{$email}', ";
-$meSQL .= "modified_date='{$modified_date}' ";
-$meSQL .= "WHERE id='{$_SESSION['id']}' ";
-$meQuery = mysql_query($meSQL);
+$meSQL = "UPDATE user ";
+$meSQL .= "SET Firstname='{$Firstname}', ";
+$meSQL .= "Lastname='{$Lastname}', ";
+$meSQL .= "Telephone='{$Telephone}', ";
+$meSQL .= "Email='{$Email}', ";
+$meSQL .= "WHERE Member_ID='{$_SESSION['UserID']}' ";
+$meQuery = mysqli_query($meSQL);
 if ($meQuery == TRUE) {
 echo "<meta charset=\"UTF-8\">";
 echo "บันทึกข้อมูลสำเร็จ";

@@ -1,6 +1,6 @@
 <?php session_start();?>
 <!doctype html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="utf-8">
 
@@ -22,7 +22,7 @@
            <li><img src="images/f.png" width="150" height="40"></li>
              <li><a href='index.html'><span>หน้าแรก</span></a></li>
             <li><a href='service.html'><span>บริการของเรา</span></a></li>
-           <li><a href='contact.html'><span>ติดต่อเรา</span></a></li>  
+           <li><a href='contact.html'><span>ติดต่อเรา</span></a></li>
         </ul>
       </div>
     </div>

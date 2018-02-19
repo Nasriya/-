@@ -86,7 +86,7 @@ echo 'error';
 
 
 
-	<a href="update_profile-action.php" class="w3-btn w3-green" name ="Edit">บันทึก</a>
+	<a href="save.php" class="w3-btn w3-green" name ="Edit">บันทึก</a>
 	<a href="profile.php" class="w3-btn w3-red">ยกเลิก</a>
 		<br></br>
 

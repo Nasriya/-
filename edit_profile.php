@@ -1,7 +1,7 @@
 <?php session_start();?>
 <?php
 
-if (!$_SESSION["ID"]){  //check session
+if (!$_SESSION["UserID"]){  //check session
 
 	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
 
@@ -9,7 +9,7 @@ if (!$_SESSION["ID"]){  //check session
 
 	<?
   include("connection.php");
-	$query = "SELECT * FROM user WHERE ID = '".$_SESSION['ID']."' ";
+	$query = "SELECT * FROM user WHERE Member_ID = '".$_SESSION['UserID']."' ";
 	$result = mysqli_query($con,$query);
 	$row = mysql_fetch_array($result);
 
@@ -40,17 +40,13 @@ if (!$_SESSION["ID"]){  //check session
       </tr>
       <tr>
         <td> &nbsp;Password</td>
-        <td><input name="txtPassword" type="password" id="txtPassword" value="<?php echo $row["Password"];?>">
+        <td><input name="Password" type="Password" id="Password" value="<?php echo $row["Password"];?>">
         </td>
       </tr>
-      <tr>
-        <td> &nbsp;Confirm Password</td>
-        <td><input name="txtConPassword" type="password" id="txtConPassword" value="<?php echo $row["Password"];?>">
-        </td>
-      </tr>
+
       <tr>
         <td>&nbsp;Name</td>
-        <td><input name="txtName" type="text" id="txtName" value="<?php echo $row["Firstname"];?>"></td>
+        <td><input name="Firstname" type="text" id="Firstname" value="<?php echo $row["Firstname"];?>"></td>
       </tr>
       <tr>
         <td> &nbsp;Status</td>
@@ -62,8 +58,8 @@ if (!$_SESSION["ID"]){  //check session
   </table>
   <br>
   <?$Firstname = $_POST['Firstname'];
-  echo $Firstname; ?> 
-  <input type="submit" name="Submit" value="Save">
+  echo $Firstname; ?>
+  <input type="submit" name="Edit" value="Edit">
 </form>
 </body>
 </html>
