@@ -162,13 +162,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			      <button type="submit" name="register_btn" class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding "style="width:200px">ลงทะเบียน</button></center>
 			    </div>
 			</div>
-
-
-
 		</div>
 	<div class = "alert alert-error"><?= $_SESSION['message']?>
 
-			<center>
+		
 </div>
 </div>
 

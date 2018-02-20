@@ -35,7 +35,7 @@ echo 'error';
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/menu.css">
 	<script src="js/jquery1111.min.js" type="text/javascript"></script>
-	<script src="js/script.js"></script>
+<link rel="stylesheet" href="css/register.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -61,35 +61,88 @@ echo 'error';
 		<br></br>
 		<div class="w3-row">
 		<div class="w3-col m3 "><p></p></div>
-		<div class="w3-col m6 w3-round-xxlarge w3-light-blue w3-center w3-myfont">
 
 
       		<form class="w3-container" name="update_profile-action"  method="POST">
-            <br><b>Username  :</b>
-            <center><input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="Username" value="<?php echo $meResult['Username']; ?>"  /></br></center>
-      		<br><b>ชื่อ  :</b>
-      		<center><input  class="w3-input w3-hover-pale-red"type="text"  style="width:50%"name="Firstname" value="<?php echo $meResult['Firstname']; ?>"  /></br></center>
-      		<br><b>นามสกุล  : </b>
-          <center><input  class="w3-input w3-hover-pale-red"type="text"  style="width:50%"name="Lastname" value="<?php echo $meResult['Lastname']; ?>"   /> </br></center>
-      		<br><b>ที่อยู่  : </b>
-          <center><input class="w3-input w3-hover-pale-red" type="text"   style="width:70%" name="$Address" value="<?php echo $meResult['Address']; ?>"  /></br></center>
-      		<br><b>เบอร์โทรศัพท์  : </b>
-          <center><input class="w3-input w3-hover-pale-red" type="text" name="Telephone"   style="width:50%" value="<?php echo $meResult['Telephone']; ?>"  /></br></center>
-      		<br><b>E-mail  : </b>
-          <center><input  class="w3-input w3-hover-pale-red"type="text" name="Email"  style="width:50%" value="<?php echo $meResult['Email']; ?>"  /></br></center>
-      	<br><b>เเต้มสะสม   :</b><?php echo"ยังไม่ตั้งค่า" ?></br>
-      	<br></br>
+						<div class="container">
+						<div class="row">
+			      <div class="col-25 w3-center">
+			        <label >Username</label>
+			      </div>
+			      <div class="col-75" >
+							<input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="Username" value="<?php echo $meResult['Username']; ?>"  /></br></center>
+			      </div>
+			    </div>
+					<div class="row">
+					<div class="col-25 w3-center">
+						<label >First Name</label>
+					</div>
+					<div class="col-75" >
+						<input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="Firstname" value="<?php echo $meResult['Firstname']; ?>"  /></br></center>
+					</div>
+				</div>
+				<div class="row">
+				<div class="col-25 w3-center">
+					<label >Last Name</label>
+				</div>
+				<div class="col-75" >
+					<input class="w3-input w3-hover-pale-red" type="text" style="width:50%"  name="Lastname" value="<?php echo $meResult['Lastname']; ?>"  /></br></center>
+				</div>
+			</div>
+			<div class="row">
+			<div class="col-25 w3-center">
+				<label >Address</label>
+			</div>
+			<div class="col-75" >
+				<input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="Address" value="<?php echo $meResult['Address']; ?>"  /></br></center>
+			</div>
+		</div>
+		<div class="row" >
+		<div class="col-25 w3-center">
+			<label >E-mail</label>
+		</div>
+		<div class="col-75">
+			<input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="Email" value="<?php echo $meResult['Email']; ?>"  /></br></center>
+		</div>
+	</div>
+	<div class="row">
+	<div class="col-25 w3-center">
+		<label >Telephone</label>
+	</div>
+	<div class="col-75">
+		<input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="Telephone" value="<?php echo $meResult['Telephone']; ?>"  /></br></center>
+	</div>
+</div>
+<div class="row">
+<div class="col-25 w3-center">
+	<label >Password</label>
+</div>
+<div class="col-75" >
+	<input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="password" value="<?php echo $meResult['Password']; ?>"  /></br></center>
+</div>
+</div>
+<div class="row">
+<div class="col-25 w3-center">
+	<label >เเต้มสะสม</label>
+</div>
+<div class="col-75">
+	<?php echo "pop"; ?>
+</div>
+</div>
+
+
 
 </form>
 
 
 
-
-
-	<a href="save.php" class="w3-btn w3-green" name ="Edit">บันทึก</a>
-	<a href="profile.php" class="w3-btn w3-red">ยกเลิก</a>
+<br></br>
+<center>
+	<a href="save.php" class="w3-btn w3-green " style="width:10%"  name ="Edit">บันทึก</a>
+	<a href="profile.php" class="w3-btn w3-red" style="width:10%" >ยกเลิก</a>
 		<br></br>
-
+	</center>
+</div>
 <?php }?>
 
 </div>
