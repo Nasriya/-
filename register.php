@@ -43,7 +43,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 ?>
-<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -56,16 +55,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<link rel="stylesheet" href="css/lightbox.css">
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/menu.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/register.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
-
-<body class="home-page" id="fontlag">
-
-
+<body class="home-page">
+	<div class="wrap-body">
 		<div class="header">
 			<div id='cssmenu' >
 				<ul>
@@ -73,98 +69,110 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 				     <li><a href='index.html'><span>หน้าแรก</span></a></li>
 						<li><a href='service.html'><span>บริการของเรา</span></a></li>
 				   <li><a href='contact.html'><span>ติดต่อเรา</span></a></li>
-					 <li><a href='login.html'><span>เข้าสู่ระบบ</span></a></li>
+					 <li><a href='form_login.php'><span>เข้าสู่ระบบ</span></a></li>
 				</ul>
 			</div>
 		</div>
 
 
-		 <body>
-
-			<center>
+		<center>
 
 
-<div class="w3-card-4">
-<form method="post" action="register.php" class="w3-container w3-text-blue">
-
-
+	<div class="w3-card-4">
+	<form method="post" action="register.php">
 </div>
-		<h2 class="w3-myfont w3-center">ลงทะเบียน</h2>
 
-
-		<div class="w3-row w3-section w3-col">
-		  <div class="w3-col" style="width:50px"></div>
-		    <div class="w3-rest" style="width:300px">
-
-		     <input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="text"  name="Firstname" required type="text" placeholder="First Name" >
-
-				</div>
+<h2 class="w3-myfont w3-center">ลงทะเบียน</h2>
+<div class="container">
+			<div class="row">
+      <div class="col-25 w3-center">
+        <label >First Name</label>
+      </div>
+      <div class="col-75" style="width:40%" >
+				<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="text"  name="Firstname" required type="text" placeholder="First Name" >
+      </div>
+    </div>
+		<div class="row">
+		<div class="col-25 w3-center">
+			<label >Last Name</label>
 		</div>
-
-		<div class="w3-row w3-section">
-		  <div class="w3-col" style="width:50px"></div>
-		    <div class="w3-rest" style="width:300px">
-		      <input class="w3-input w3-border w3-center" name="Lastname" required type="text" placeholder="LastName">
-		    </div>
-		</div>
-
-		<div class="w3-row w3-section">
-		  <div class="w3-col" style="width:50px"></div>
-		    <div class="w3-rest" style="width:300px">
-		      <input class="w3-input w3-border w3-center" name="Address" required type="text" placeholder="Address">
-		    </div>
-		</div>
-
-		<div class="w3-row w3-section">
-		  <div class="w3-col" style="width:50px"></div>
-		    <div class="w3-rest" style="width:300px">
-		      <input class="w3-input w3-border w3-center" name="Email" required type="text" placeholder="E-mail">
-		    </div>
-		</div>
-
-		<div class="w3-row w3-section">
-		  <div class="w3-col" style="width:50px"></div>
-		    <div class="w3-rest" style="width:300px">
-		      <input class="w3-input w3-border w3-center" name="Telephone" required type="text" placeholder="Phone">
-		    </div>
-		</div>
-		<div class="w3-row w3-section">
-		  <div class="w3-col" style="width:50px"></div>
-		    <div class="w3-rest" style="width:300px">
-		      <input class="w3-input w3-border w3-center" name="Username" required type="text" placeholder="ตั้งIDเพื่อใช้ในการเข้าสู่ระบบ">
-		    </div>
-		</div>
-
-		<div class="w3-row w3-section">
-		  <div class="w3-col" style="width:50px"></div>
-		    <div class="w3-rest" style="width:300px">
-		      <input class="w3-input w3-border w3-center" name="Password" required type="password" placeholder="Password">
-		    </div>
-		</div>
-
-		<div class="w3-row w3-section">
-		  <div class="w3-col" style="width:50px"></div>
-		    <div class="w3-rest" style="width:300px">
-		      <input class="w3-input w3-border w3-center" name="Password2" required type="password" placeholder="comfirm Password">
-		    </div>
+		<div class="col-75" style="width:40%" >
+			<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="text"  name="Lastname" required type="text" placeholder="Last Name" >
 		</div>
 	</div>
-<div class = "alert alert-error"><?= $_SESSION['message']?>
+	<div class="row">
+	<div class="col-25 w3-center">
+		<label >Address</label>
+	</div>
+	<div class="col-75" style="width:40%" >
+		<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="text"  name="Address" required type="text" placeholder="Address" >
+	</div>
+</div>
+<div class="row">
+<div class="col-25 w3-center">
+	<label >E-mail</label>
+</div>
+<div class="col-75" style="width:40%" >
+	<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="text"  name="Email" required type="text" placeholder="E-mail" >
+</div>
+</div>
+<div class="row">
+<div class="col-25 w3-center">
+	<label >Telephone</label>
+</div>
+<div class="col-75" style="width:40%" >
+	<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="text"  name="Telephone" required type="text" placeholder="Telephone" >
+</div>
+</div>
+<div class="row">
+<div class="col-25 w3-center">
+	<label >Username</label>
+</div>
+<div class="col-75" style="width:40%" >
+	<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="text"  name="Username" required type="text" placeholder="ตั้ง Username เพื่อใช้ในการเข้าสู่ระบบ" >
+</div>
+</div>
+<div class="row">
+<div class="col-25 w3-center">
+	<label >Password</label>
+</div>
+<div class="col-75" style="width:40%" >
+	<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="password"  name="Password" required type="text" placeholder="Password" >
+</div>
+</div>
+<div class="row">
+<div class="col-25 w3-center">
+	<label >Comfirm Password</label>
+</div>
+<div class="col-75" style="width:40%" >
+	<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="password"  name="Password2" required type="text" placeholder="Comfirm Password" >
+</div>
+</div>
+			<div class="w3-row w3-section w3-col">
+			  <div class="w3-col" style="width:50px"></div>
+			    <div class="w3-rest" style="width:300px">
 
-		<center><button type="submit" name="register_btn" class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding "style="width:100px">ลงทะเบียน</button></center>
-		<ul class="bg-bubbles">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
-		</form>
 
-		</body>
-		</html>
+					</div>
+			</div>
+
+			<div class="w3-row w3-section">
+			  <div class="w3-col" style="width:50px"></div>
+			    <div class="w3-rest" style="width:300px">
+			      <button type="submit" name="register_btn" class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding "style="width:200px">ลงทะเบียน</button></center>
+			    </div>
+			</div>
+
+
+
+		</div>
+	<div class = "alert alert-error"><?= $_SESSION['message']?>
+
+			<center>
+</div>
+</div>
+
+
+			</form>
+</body>
+</html>
