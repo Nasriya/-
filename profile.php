@@ -60,12 +60,19 @@ echo 'error';
 <br></br>
 		<h2 class="w3-myfont w3-center">ข้อมูลส่วนตัว</h2>
 		<br></br>
-		<div class="w3-row">
-		<div class="w3-col m3 "><p></p></div>
-		<div class="w3-col m6 w3-round-xxlarge w3-light-blue w3-center w3-myfont">
 
 
-			<form name=""  method="POST">
+<div class="container">
+			<div class="col-75" >
+				<div class="col-25 w3-center">
+				 <label >Last Name</label>
+			 </div>
+			 <div class="w3-border w3-pale-yellow" style="width:40%">
+				 <p><?php echo $meResult['Username']; ?></p>
+			 </div>
+
+ </div>
+		</div>
 		<br><b>Username  :  </b><?php echo $meResult['Username']; ?></br>
 		<br><b>ชื่อ  :  </b><?php echo $meResult['Firstname']; ?> </br>
 		<br><b>นามสกุล  : </b><?php echo $meResult['Lastname']; ?> </br>
