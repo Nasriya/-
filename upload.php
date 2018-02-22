@@ -50,10 +50,10 @@ if (!$_SESSION["UserID"]){  //check session
 	<br></br>
 	<h2 class="w3-myfont w3-center">อัพโหลดไฟล์</h2>
 	<center>
-		<form action="upload.php" method="post" enctype="multipart/form-data">
+		<form action="Actionupload.php" method="post" enctype="multipart/form-data">
     กรุณาเลือกไฟล์:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-		<button class="w3-button w3-round-xlarge w3-green" style="width:100px">ยืนยัน</button>
+    <input type="file" name="file" required >
+		<button type="submit" class="w3-button w3-round-xlarge w3-green" style="width:100px" name="btn-Actionupload">ยืนยัน</button>
 
 </form>
 
