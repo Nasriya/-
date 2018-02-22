@@ -34,8 +34,7 @@ echo 'error';
 	<link rel="stylesheet" href="css/lightbox.css">
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/menu.css">
-	<script src="js/jquery1111.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="css/register.css">
+<link rel="stylesheet" href="css/form.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -56,15 +55,11 @@ echo 'error';
 			</div>
 		</div>
 
-<br></br>
-		<h2 class="w3-myfont w3-center">แก้ไขข้อมูลส่วนตัว</h2>
-		<br></br>
-		<div class="w3-row">
-		<div class="w3-col m3 "><p></p></div>
-
-
       		<form class="w3-container" name="update_profile-action"  method="POST">
 						<div class="container">
+							<h2 class="w3-myfont w3-center">แก้ไขข้อมูลส่วนตัว</h2>
+							<br></br>
+							<div class="w3-row">
 						<div class="row">
 			      <div class="col-25 w3-center">
 			        <label >Username</label>

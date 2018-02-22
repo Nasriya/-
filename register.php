@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<link rel="stylesheet" href="css/lightbox.css">
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/menu.css">
-	<link rel="stylesheet" href="css/register.css">
+	<link rel="stylesheet" href="css/form.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
@@ -78,18 +78,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<center>
 
 
-	<div class="w3-card-4">
-	<form method="post" action="register.php">
-</div>
 
+	<form method="post" action="register.php">
+		<div class="container">
 <h2 class="w3-myfont w3-center">ลงทะเบียน</h2>
-<div class="container">
+
 			<div class="row">
       <div class="col-25 w3-center">
         <label >First Name</label>
       </div>
       <div class="col-75" style="width:40%" >
-				<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="text"  name="Firstname" required type="text" placeholder="First Name" >
+				<input class="w3-input w3-border w3-center"  type="text"  name="Firstname" required type="text" placeholder="First Name" >
       </div>
     </div>
 		<div class="row">
@@ -97,7 +96,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			<label >Last Name</label>
 		</div>
 		<div class="col-75" style="width:40%" >
-			<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="text"  name="Lastname" required type="text" placeholder="Last Name" >
+			<input class="w3-input w3-border w3-center"  type="text"  name="Lastname" required type="text" placeholder="Last Name" >
 		</div>
 	</div>
 	<div class="row">
@@ -105,7 +104,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<label >Address</label>
 	</div>
 	<div class="col-75" style="width:40%" >
-		<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="text"  name="Address" required type="text" placeholder="Address" >
+		<input class="w3-input w3-border w3-center"  type="text"  name="Address" required type="text" placeholder="Address" >
 	</div>
 </div>
 <div class="row">
@@ -113,7 +112,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<label >E-mail</label>
 </div>
 <div class="col-75" style="width:40%" >
-	<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="text"  name="Email" required type="text" placeholder="E-mail" >
+	<input class="w3-input w3-border w3-center"  type="text"  name="Email" required type="text" placeholder="E-mail" >
 </div>
 </div>
 <div class="row">
@@ -121,7 +120,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<label >Telephone</label>
 </div>
 <div class="col-75" style="width:40%" >
-	<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="text"  name="Telephone" required type="text" placeholder="Telephone" >
+	<input class="w3-input w3-border w3-center"  type="text"  name="Telephone" required type="text" placeholder="Telephone" >
 </div>
 </div>
 <div class="row">
@@ -129,7 +128,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<label >Username</label>
 </div>
 <div class="col-75" style="width:40%" >
-	<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="text"  name="Username" required type="text" placeholder="ตั้ง Username เพื่อใช้ในการเข้าสู่ระบบ" >
+	<input class="w3-input w3-border w3-center"  type="text"  name="Username" required type="text" placeholder="ตั้ง Username เพื่อใช้ในการเข้าสู่ระบบ" >
 </div>
 </div>
 <div class="row">
@@ -137,7 +136,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<label >Password</label>
 </div>
 <div class="col-75" style="width:40%" >
-	<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="password"  name="Password" required type="text" placeholder="Password" >
+	<input class="w3-input w3-border w3-center"  type="password"  name="Password" required type="text" placeholder="Password" >
 </div>
 </div>
 <div class="row">
@@ -145,7 +144,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<label >Comfirm Password</label>
 </div>
 <div class="col-75" style="width:40%" >
-	<input class="w3-input w3-border w3-center" class="w3-xxlarge fa fa-user w3-center" type="password"  name="Password2" required type="text" placeholder="Comfirm Password" >
+	<input class="w3-input w3-border w3-center"  type="password"  name="Password2" required type="text" placeholder="Comfirm Password" >
 </div>
 </div>
 			<div class="w3-row w3-section w3-col">
@@ -170,6 +169,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 </div>
 
 
-			</form>
+</form>
 </body>
 </html>

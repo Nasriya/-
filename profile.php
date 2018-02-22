@@ -35,8 +35,7 @@ echo 'error';
 	<link rel="stylesheet" href="css/lightbox.css">
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/menu.css">
-	<script src="js/jquery1111.min.js" type="text/javascript"></script>
-	<script src="js/script.js"></script>
+<link rel="stylesheet" href="css/form.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -57,32 +56,77 @@ echo 'error';
 			</div>
 		</div>
 
-<br></br>
-		<h2 class="w3-myfont w3-center">ข้อมูลส่วนตัว</h2>
-		<br></br>
+<center>
 
-
-<div class="container">
-			<div class="col-75" >
-				<div class="col-25 w3-center">
-				 <label >Last Name</label>
-			 </div>
-			 <div class="w3-border w3-pale-yellow" style="width:40%">
-				 <p><?php echo $meResult['Username']; ?></p>
-			 </div>
-
- </div>
+		<div class="container">
+			<h2 class="w3-myfont w3-center">ข้อมูลส่วนตัว</h2>
+		<div class="col-75" >
+				 <div class="col-25 w3-center">
+					<label >Username</label>
+				</div>
+				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+					<p><?php echo $meResult['Username']; ?></p>
+				</div>
 		</div>
-		<br><b>Username  :  </b><?php echo $meResult['Username']; ?></br>
-		<br><b>ชื่อ  :  </b><?php echo $meResult['Firstname']; ?> </br>
-		<br><b>นามสกุล  : </b><?php echo $meResult['Lastname']; ?> </br>
-		<br><b>ที่อยู่  : </b><?php echo $meResult['Address']; ?></br>
-		<br><b>เบอร์โทรศัพท์  : </b><?php echo $meResult['Telephone']; ?> </br>
-		<br><b>E-mail  : </b><?php echo $meResult['Email']; ?></br>
-	<br><b>เเต้มสะสม   :</b><?php echo"ยังไม่ตั้งค่า" ?></br>
-	<br></br>
+		<div class="col-75" >
+				 <div class="col-25 w3-center">
+					<label >Firstname</label>
+				</div>
+				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+					<p><?php echo $meResult['Firstname']; ?></p>
+				</div>
+		</div>
+		<div class="col-75" >
+				 <div class="col-25 w3-center">
+					<label >Lastname</label>
+				</div>
+				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+					<p><?php echo $meResult['Lastname']; ?></p>
+				</div>
+		</div>
+		<div class="col-75" >
+				 <div class="col-25 w3-center">
+					<label >Address</label>
+				</div>
+				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+					<p><?php echo $meResult['Address']; ?></p>
+				</div>
+		</div>
+		<div class="col-75" >
+				 <div class="col-25 w3-center">
+					<label >Email</label>
+				</div>
+				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+					<p><?php echo $meResult['Email']; ?></p>
+				</div>
+		</div>
+		<div class="col-75" >
+				 <div class="col-25 w3-center">
+					<label >Telephone</label>
+				</div>
+				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+					<p><?php echo $meResult['Telephone']; ?></p>
+				</div>
+		</div>
+		<div class="col-75" >
+				 <div class="col-25 w3-center">
+					<label >Password</label>
+				</div>
+				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+					<p><?php echo $meResult['Password']; ?></p>
+				</div>
+		</div>
+		<div class="col-75" >
+				 <div class="col-25 w3-center">
+					<label >เเต้มสะสม</label>
+				</div>
+				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+					<p><?php echo"ยังไม่ได้ตั้งค่า"; ?></p>
+				</div>
+		</div>
+		<br></br>
 <a href="update_profile.php" class="w3-btn  w3-round-xxlarge w3-red" style="width:200px">แก้ไขข้อมูล</a>
 
-		<br></br>
 
+</center>
 <?php }?>
