@@ -50,15 +50,15 @@ if (!$_SESSION["UserID"]){  //check session
 	<br></br>
 	<h2 class="w3-myfont w3-center">อัพโหลดไฟล์</h2>
 	<center>
-		<form action="Actionupload.php" method="post" enctype="multipart/form-data">
+		<form action="add_file_db.php" method="post" enctype="multipart/form-data">
     กรุณาเลือกไฟล์:
-    <input type="file" name="file" required >
-		<button type="submit" class="w3-button w3-round-xlarge w3-green" style="width:100px" name="btn-Actionupload">ยืนยัน</button>
+    <input type="file" name="fileupload"  id ="fileupload" required >
+		<button type="submit" class="w3-button w3-round-xlarge w3-green" style="width:100px" name="button" id="button">ยืนยัน</button>
 
 </form>
 
 		<br></br>
-		<select name="type_print">
+		<select name="type_print" required>
       <option value="" selected>---Print---</option>
       <option value="color">สี</option>
       <option value="blackwhite">ขาว-ดำ </option>
@@ -66,9 +66,9 @@ if (!$_SESSION["UserID"]){  //check session
 
 		<br></br>
 		จำนวน:
-		<input type="number" min="1">
+		<input type="number" min="1" required>
 		<br></br>
-		<select name="type_print">
+		<select name="type_print" required>
       <option value="" selected>---ขนาดกระดาษ---</option>
       <option value="A2">A2</option>
       <option value="A3">A3 </option>
@@ -78,7 +78,7 @@ if (!$_SESSION["UserID"]){  //check session
 		<br></br>
 		<p>กรุณาเลือกวันเเละเวลาที่นัดรับเอกสาร</p>
 
-<form action="/action_page.php">
+<form action="/action_page.php" required>
   <input type="date" name="bdaytime">
 	<input type="time" name="bday">
   <!--Start Box-<input type="submit" value="ตกลง"-->
