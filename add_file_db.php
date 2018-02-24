@@ -44,4 +44,6 @@ move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);
 	echo "alert('อัพโหลดไฟล์ไม่สำเร็จ กรุณาลองใหม่อีกครั้ง !');";
 	echo "</script>";
 }
+
+
 ?>
