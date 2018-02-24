@@ -43,7 +43,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 ?>
-<html lang="en">
+<html>
 <head>
 	<meta charset="utf-8">
 	<title>ลงทะเบียน</title>
@@ -57,7 +57,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<link rel="stylesheet" href="css/menu.css">
 	<link rel="stylesheet" href="css/form.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+	<script src="js/jquery1111.min.js" type="text/javascript"></script>
+	<script src="js/script.js"></script>
 </head>
 
 <body class="home-page">

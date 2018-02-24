@@ -14,7 +14,7 @@
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/menu.css">
 	<script src="js/jquery1111.min.js" type="text/javascript"></script>
-<body class="home-page">
+	<script src="js/script.js"></script>
   <div class="wrap-body">
     <div class="header">
       <div id='cssmenu' >
