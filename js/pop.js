@@ -1,9 +1,9 @@
 
-<?include("connection.php");?>
-<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1" onsubmit="return chk();">
-  <input type="file" name="$fileupload" id="fileupload" />
-  <input type="Submit" name="button" id="button" value="Upload" />
-</form>
+// <?include("connection.php");?>
+// <form action="" method="post" enctype="multipart/form-data" name="form1" id="form1" onsubmit="return chk();">
+//   <input type="file" name="$fileupload" id="fileupload" />
+//   <input type="Submit" name="button" id="button" value="Upload" />
+// </form>
 <script type="text/javascript">
     function chk(){
         var fty=new Array(".pdf"); // ประเภทไฟล์ที่อนุญาตให้อัพโหลด
@@ -17,6 +17,7 @@
                     break;
                 }else{
                     continue;
+
 
                 }
             }

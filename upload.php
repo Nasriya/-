@@ -26,6 +26,7 @@ if (!$_SESSION["UserID"]){  //check session
 	<link rel="stylesheet" href="css/menu.css">
 	<script src="js/jquery1111.min.js" type="text/javascript"></script>
 	<script src="js/script.js"></script>
+	<script src="js/pop.js"></script>
 </head>
 
 <body class="home-page">
@@ -58,8 +59,8 @@ if (!$_SESSION["UserID"]){  //check session
 
 		<br></br>
 		<b>พิมพ์:</b>&nbsp;&nbsp;&nbsp;&nbsp;
-		<input type="radio" name="sp" value="1" checked>สี &nbsp;&nbsp;
-		<input type="radio" name="sp" value="2" checked>ขาว-ดำ
+		<input type="radio" name="sp" value="1" required >สี &nbsp;&nbsp;
+		<input type="radio" name="sp" value="2" required>ขาว-ดำ
 
 		<br></br>
 		<b>จำนวน:</b>

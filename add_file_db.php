@@ -1,5 +1,4 @@
 <meta charset="UTF-8">
-
 <?php
 //1. เชื่อมต่อ database:
 include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
@@ -35,15 +34,13 @@ move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);
 
 	if($result){
 	echo "<script type='text/javascript'>";
-	echo "alert('อัพโหลดไฟล์สำเร็จ');";
+	echo "alert('Upload File Succesfuly');";
 	echo "window.location = 'upload.php'; ";
 	echo "</script>";
 	}
 	else{
 	echo "<script type='text/javascript'>";
-	echo "alert('อัพโหลดไฟล์ไม่สำเร็จ กรุณาลองใหม่อีกครั้ง !');";
+	echo "alert('Error back to upload again');";
 	echo "</script>";
 }
-
-
 ?>
