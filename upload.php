@@ -59,26 +59,26 @@ if (!$_SESSION["UserID"]){  //check session
 
 		<br></br>
 		<b>พิมพ์:</b>&nbsp;&nbsp;&nbsp;&nbsp;
-		<input type="radio" name="sp" value="1" required >สี &nbsp;&nbsp;
-		<input type="radio" name="sp" value="2" required>ขาว-ดำ
+		<input type="radio" name="TP" value="สี" required >สี &nbsp;&nbsp;
+		<input type="radio" name="TP" value="ขาวดำ" required>ขาว-ดำ
 
 		<br></br>
 		<b>จำนวน:</b>
-		<input type="number" min="1" required>
+		<input type="number"  name="Quanitity" min="1" required>
 		<br></br>
-		<select name="type_print" required>
-      <option value="" selected>---ขนาดกระดาษ---</option>
-      <option value="A2">A2</option>
-      <option value="A3">A3 </option>
-			<option value="A4">A4</option>
-      <option value="A5">A5 </option>
+		<select name="PD" required>
+      <option selected>---ขนาดกระดาษ---</option>
+      <option name="PD" value="A2">A2</option>
+      <option name="PD" value="A3">A3 </option>
+			<option name="PD" value="A4">A4</option>
+      <option name="PD" value="A5">A5 </option>
      </select>
 		<br></br>
 		<b><p>กรุณาเลือกวันเเละเวลาที่นัดรับเอกสาร</p></b>
 
 
-  <input type="date" name="bdaytime" required>
-	<input type="time" name="bday" required>
+  <input type="date" name="DateReceip" value="YYY-MM-DD" required>
+	<input type="time" name="TimeReceip"  value="d-m-Y" required>
   <!--Start Box-<input type="submit" value="ตกลง"-->
 
 <br></br>
