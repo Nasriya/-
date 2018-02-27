@@ -77,7 +77,7 @@ if (!$_SESSION["UserID"]){  //check session
 		<b><p>กรุณาเลือกวันเเละเวลาที่นัดรับเอกสาร</p></b>
 
 
-  <input type="date" name="DateReceip" value="YYY-MM-DD" required>
+  <input type="date" name="DateReceip" value="d-m-y" required>
 	<input type="time" name="TimeReceip"  value="d-m-Y" required>
   <!--Start Box-<input type="submit" value="ตกลง"-->
 

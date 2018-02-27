@@ -8,6 +8,7 @@ $ProductDetail = $_POST['PD']; //เก็บค่าขนาดของส�
 $Quanitity = $_POST['Quanitity']; //เก็บค่าจำนวนของสินค้า
 $DateReceip =$_POST['DateReceip'];//เก็บค่าวันที่ที่ลูกค้านัดรับสินค้า
 $TimeReceip =$_POST['TimeReceip'];//เก็บค่าเวลาที่ลูกค้านัดรับสินค้า
+//$TimeReceip = date("Y-m-d H:i:s");
 $date = date("d-m-Y"); //กำหนดวันที่และเวลา
 //เพิ่มไฟล์
 $upload=$_FILES['fileupload'];
@@ -20,7 +21,7 @@ $path="fileupload/";
 	$newname = str_replace($remove_these, '', $_FILES['fileupload']['name']);
 
 	//ตั้งชื่อไฟล์ใหม่โดยเอาเวลาไว้หน้าชื่อไฟล์เดิม
-	$newname = time().'-'.$newname;
+$newname = time().'-'.$newname;
 $path_copy=$path.$newname;
 $path_link="fileupload/".$newname;
 
@@ -29,8 +30,8 @@ move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);
 	}
 	// เพิ่มไฟล์เข้าไปในตาราง uploadfile
 
-		$sql = "INSERT INTO uploadfile (fileupload,ProductType,ProductDetail,Quanitity,DateReceip,TimeReceip)
-		VALUES('$newname','$ProductType','$ProductDetail','$Quanitity','$DateReceip','$TimeReceip')";
+		$sql = "INSERT INTO uploadfile (fileupload,ProductType,ProductDetail,Quanitity,TimeReceip,DateReceip)
+		VALUES('$newname','$ProductType','$ProductDetail','$Quanitity','$TimeReceip','$DateReceip')";
 
 		$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
 
