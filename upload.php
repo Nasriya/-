@@ -49,6 +49,9 @@ if (!$_SESSION["UserID"]){  //check session
 		<center><img src="images/main.png" width="1500" height="100"></center>
 	</div>
 	<br></br>
+
+	    
+
 	<h2 class="w3-myfont w3-center">อัพโหลดไฟล์</h2>
 	<center>
 		<form action="add_file_db.php" method="post" enctype="multipart/form-data">
@@ -88,7 +91,9 @@ if (!$_SESSION["UserID"]){  //check session
 
 		<p>หมายเหตุ: เฉพาะไฟล์ PDF เท่านั้น </p>
 		</center>
+
 	</form>
+
 	<?php }?>
 </body>
 	</html>
