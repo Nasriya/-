@@ -35,9 +35,9 @@ if (!$_SESSION["UserID"]){  //check session
 			<div id='cssmenu' >
 				<ul>
 				   <li><img src="images/f.png" width="150" height="150"></li>
-				     <li><a href='index.html'><span>หน้าแรก</span></a></li>
-						<li><a href='service.html'><span>บริการของเรา</span></a></li>
-				   <li><a href='contact.html'><span>ติดต่อเรา</span></a></li>
+				     <li><a href='index.php'><span>หน้าแรก</span></a></li>
+						<li><a href='service.php'><span>บริการของเรา</span></a></li>
+				   <li><a href='contact.php'><span>ติดต่อเรา</span></a></li>
 					<li><a href='profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
 
 					<button class="w3-button w3-round-xlarge w3-white w3-display-topright" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>
@@ -50,7 +50,7 @@ if (!$_SESSION["UserID"]){  //check session
 	</div>
 	<br></br>
 
-	    
+
 
 	<h2 class="w3-myfont w3-center">อัพโหลดไฟล์</h2>
 	<center>
@@ -89,11 +89,12 @@ if (!$_SESSION["UserID"]){  //check session
 
 &nbsp;&nbsp;<button class="w3-button w3-round-xlarge w3-red"style="width:100px" >ยกเลิก</button>
 
-		<p>หมายเหตุ: เฉพาะไฟล์ PDF เท่านั้น </p>
+		<!--<p>หมายเหตุ: เฉพาะไฟล์ PDF เท่านั้น </p>-->
 		</center>
 
 	</form>
 
 	<?php }?>
+
 </body>
 	</html>

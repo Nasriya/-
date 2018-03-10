@@ -46,9 +46,9 @@ echo 'error';
 			<div id='cssmenu' >
 				<ul>
 				   <li><img src="images/f.png" width="150" height="150"></li>
-				     <li><a href='index.html'><span>หน้าแรก</span></a></li>
-						<li><a href='service.html'><span>บริการของเรา</span></a></li>
-				   <li><a href='contact.html'><span>ติดต่อเรา</span></a></li>
+				    <li><a href='index.php'><span>หน้าแรก</span></a></li>
+						<li><a href='service.php'><span>บริการของเรา</span></a></li>
+				   <li><a href='contact.php'><span>ติดต่อเรา</span></a></li>
 					 <li><a href='upload.php'><span>อัพโหลดไฟล์</span></a></li>
 
  					<button class="w3-button w3-round-xlarge w3-white w3-display-topright" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>
@@ -57,10 +57,22 @@ echo 'error';
 		</div>
 
 <center>
+<div class="w3-row w3-border">
 
-		<div class="container">
+
+
 			<h2 class="w3-myfont w3-center">ข้อมูลส่วนตัว</h2>
-		<div class="col-75" >
+			<div class="col-75">
+
+				 <div class="col-25 w3-center">
+					<label >Member_ID</label>
+				</div>
+				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+					<p><?php echo $meResult['Member_ID']; ?></p>
+				</div>
+		</div>
+			<div class="col-75">
+
 				 <div class="col-25 w3-center">
 					<label >Username</label>
 				</div>
@@ -68,6 +80,7 @@ echo 'error';
 					<p><?php echo $meResult['Username']; ?></p>
 				</div>
 		</div>
+
 		<div class="col-75" >
 				 <div class="col-25 w3-center">
 					<label >Firstname</label>
@@ -127,6 +140,6 @@ echo 'error';
 		<br></br>
 <a href="update_profile.php" class="w3-btn  w3-round-xxlarge w3-red" style="width:200px">แก้ไขข้อมูล</a>
 
-
+</div>
 </center>
 <?php }?>

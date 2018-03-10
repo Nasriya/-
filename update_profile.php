@@ -45,10 +45,7 @@ echo 'error';
 			<div id='cssmenu' >
 				<ul>
 				   <li><img src="images/f.png" width="150" height="150"></li>
-				     <li><a href='index.html'><span>หน้าแรก</span></a></li>
-						<li><a href='service.html'><span>บริการของเรา</span></a></li>
-				   <li><a href='contact.html'><span>ติดต่อเรา</span></a></li>
-					 <li><a href='upload.php'><span>อัพโหลดไฟล์</span></a></li>
+
 
  					<button class="w3-button w3-round-xlarge w3-white w3-display-topright" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>
 				</ul>
@@ -134,7 +131,11 @@ echo 'error';
 <br></br>
 <center>
 	<a href="save.php" class="w3-btn w3-green " style="width:10%"  name ="Edit">บันทึก</a>
-	<a href="profile.php" class="w3-btn w3-red" style="width:10%" >ยกเลิก</a>
+	<a class="w3-btn w3-red" style="width:10%" onClick='window.history.back()' >ยกเลิก</a>
+
+
+
+
 		<br></br>
 	</center>
 </div>

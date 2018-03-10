@@ -1,11 +1,22 @@
 <?php session_start();?>
 <?php
-
+include('connection.php');
 if (!$_SESSION["UserID"]){  //check session
 
 	  Header("Location: form.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
 
 }else{?>
+
+
+	<?php
+	$meSQL = "SELECT * FROM user WHERE Member_ID='{$_SESSION['UserID']}' ";
+	$meQuery = mysqli_query($con,$meSQL);
+	if ($meQuery == TRUE) {
+	$meResult = mysqli_fetch_assoc($meQuery);
+	} else {
+	echo 'error';
+	}
+	?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,9 +41,9 @@ if (!$_SESSION["UserID"]){  //check session
 			<div id='cssmenu' >
 				<ul>
 				   <li><img src="images/f.png" width="150" height="150"></li>
-				     <li><a href='index.html'><span>หน้าแรก</span></a></li>
-				   <li><a href='check.html'><span>ตรวจสอบ</span></a></li>
-<li><a href='profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
+
+				   <li><a href='check.php'><span>ตรวจสอบ</span></a></li>
+					 <li><a href='admin_profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
 
 
 
@@ -61,7 +72,7 @@ if (!$_SESSION["UserID"]){  //check session
 			    <tr>
 			      <td>xxx</td>
 			      <td>xxx</td>
-			      <td>xxx</td>
+			      <td><?php echo $meResult['Username']; ?></td> <!--ยังเป็นชื่อของผู้ใช้งานอยู่อีกghg-->
 						 <td><a href="#" >xxx</td>
 						 <td>xxx</td>
 						 <td><a href="#" ><img src="images/pp2.png" width="30" class="img-responsive" alt=""></td>

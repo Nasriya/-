@@ -60,6 +60,10 @@ if (!$_SESSION["UserID"]){  //check session
   <?$Firstname = $_POST['Firstname'];
   echo $Firstname; ?>
   <input type="submit" name="Edit" value="Edit">
+	<input type=button onClick='window.history.back()' value='No'>
+
+<input type="button" value=" BACK " onclick="goHist(-1)">
+
 </form>
 </body>
 </html>

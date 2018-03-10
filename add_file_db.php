@@ -1,14 +1,22 @@
-<meta charset="UTF-8">
+
+
 <?php
+session_start();
+
 //1. เชื่อมต่อ database:
-include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
-$fileupload = $_REQUEST['fileupload']; //รับค่าไฟล์จากฟอร์ม
+include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้านี้
+
+
+
+isset($fileupload);//รับค่าไฟล์จากฟอร์ม
 $ProductType = $_POST['TP']; //เก็บค่าประเภทของสินค้า
 $ProductDetail = $_POST['PD']; //เก็บค่าขนาดของสินค้า
 $Quanitity = $_POST['Quanitity']; //เก็บค่าจำนวนของสินค้า
 $DateReceip =$_POST['DateReceip'];//เก็บค่าวันที่ที่ลูกค้านัดรับสินค้า
 $TimeReceip =$_POST['TimeReceip'];//เก็บค่าเวลาที่ลูกค้านัดรับสินค้า
 $date = date("d-m-Y"); //กำหนดวันที่และเวลา
+
+
 //เพิ่มไฟล์
 $upload=$_FILES['fileupload'];
 if($upload <> '') {   //not select file
@@ -40,7 +48,7 @@ move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);
 	if($result){
 	echo "<script type='text/javascript'>";
 	echo "alert('อัพโหลดไฟล์สำเร็จ');";
-	echo "window.location = 'upload.php'; "; //ต้องเเก้ไขเป็นหน้าสรุปผลนะจ่ะ
+	//echo "window.location = 'summary.php'; ";
 	echo "</script>";
 	}
 	else{

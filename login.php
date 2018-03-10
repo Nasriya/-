@@ -14,10 +14,10 @@ session_start();
 
                   if(mysqli_num_rows($result)==1){
 
-                      $row = mysqli_fetch_array($result);
+                      $row = mysqli_fetch_array($result); //คืนค่าข้อมูลในฐานข้อมูลที่อยู่ในลักษณะเป็นแถว
 
-                      $_SESSION["UserID"] = $row["Member_ID"];
-                      $_SESSION["User"] = $row["Firstname"]." ".$row["Lastname"];
+                      $_SESSION["UserID"] = $row["Member_ID"];//สำคัญ
+                    //  $_SESSION["User"] = $row["Firstname"]." ".$row["Lastname"];
                       $_SESSION["Userlevel"] = $row["Userlevel"];
 
                       if($_SESSION["Userlevel"]=="A"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php

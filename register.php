@@ -33,10 +33,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			if($mysqli->query($sql) == true)
 			{
-				//$_SESSION['message'] = 'เข้าสู่ระบบไม่สำเร็จ';
+
 			}
 			else{
-				//$_SESSION['message'] ="เข้าสู่ระบบสำเร็จ";
+				
 			}
 		}
 
