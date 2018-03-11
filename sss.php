@@ -1,78 +1,17 @@
-<?php
-// including the database connection file
-include_once("connection.php");
+<?
+include('connection.php');
 
-if(isset($_POST['Edit']))
-{
-    //$id = $_POST['id'];
+$sql = "select ์ Form uploadfile ";
+$db_query=mysqli_query($sql);
+$result = mysqli_fetch_array($db_query);
+$image = $result['fileupload'];
 
-    $Firstname=$_POST['Firstname'];
-    $Email=$_POST['Email'];
+$path = 'fileupload/'; //---->เช่น 'images/';
 
-    // checking empty fields
-    if(empty($name) || empty($age) || empty($email)) {
-        if(empty($name)) {
-            echo "<font color='red'>Name field is empty.</font><br/>";
-        }
+//เวลาจะแสดงก็เอาชื่อ+พาธที่อยู่ไฟล์มาต่อกัน
 
-        if(empty($age)) {
-            echo "<font color='red'>Age field is empty.</font><br/>";
-        }
+//---------------------- ส่วนของHTML อาจอยู่ในเพจเดียวกัน//-----------------------------
 
-        if(empty($email)) {
-            echo "<font color='red'>Email field is empty.</font><br/>";
-        }
-    } else {
-        //updating the table
-        $result = mysqli_query($mysqli, "UPDATE users SET name='$name',age='$age',email='$email' WHERE id=$id");
-
-        //redirectig to the display page. In our case, it is index.php
-        header("Location: index.php");
-    }
-}
+<img src="<? echo $path.$image ; ?>" width="เท่าไรก็ว่าไป" height="เช่นเดียวกัน" border="0" />
+//---------- ถ้าไม่มี width height จะแสดงขนาดเท่าไฟล์จริง---------------//
 ?>
-<?php
-//getting id from url
-$id = $_GET['id'];
-
-//selecting data associated with this particular id
-$result = mysqli_query($mysqli, "SELECT * FROM users WHERE id=$id");
-
-while($res = mysqli_fetch_array($result))
-{
-    $name = $res['name'];
-    $age = $res['age'];
-    $email = $res['email'];
-}
-?>
-<html>
-<head>
-    <title>Edit Data</title>
-</head>
-
-<body>
-    <a href="index.php">Home</a>
-    <br/><br/>
-
-    <form name="form1" method="post" action="edit.php">
-        <table border="0">
-            <tr>
-                <td>Name</td>
-                <td><input type="text" name="name" value="<?php echo $name;?>"></td>
-            </tr>
-            <tr>
-                <td>Age</td>
-                <td><input type="text" name="age" value="<?php echo $age;?>"></td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td><input type="text" name="email" value="<?php echo $email;?>"></td>
-            </tr>
-            <tr>
-                <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
-                <td><input type="submit" name="update" value="Update"></td>
-            </tr>
-        </table>
-    </form>
-</body>
-</html>

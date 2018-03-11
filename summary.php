@@ -70,7 +70,7 @@ echo 'error';
 <br></br>
             <tr>
               <td>ไฟล์งาน :</td>
-              <td><?php echo $meResult['fileupload']; ?></td>
+              <td><a href="#" ><?php echo $meResult['fileupload']; ?></td>
             </tr>
             <tr>
               <td>ประเภทการสั่งพิมพ์ :</td>
@@ -106,7 +106,7 @@ echo 'error';
 
 <br></br>
 
-    <a href="#" class="w3-btn  w3-round-xxlarge w3-red" style="width:200px">close</a>
+    <a href="upload.php" class="w3-btn  w3-round-xxlarge w3-red" style="width:200px">close</a>
 
 
 </div>
