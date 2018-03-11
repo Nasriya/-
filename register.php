@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			}
 			else{
-				
+
 			}
 		}
 
@@ -49,7 +49,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	<title>ลงทะเบียน</title>
 	<meta name="description" content="Free Responsive Html5 Css3 Templates | html5xcss3.com">
 	<meta name="author" content="www.html5xcss3.com">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/zerogrid.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/lightbox.css">

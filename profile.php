@@ -62,21 +62,13 @@ echo 'error';
 
 
 			<h2 class="w3-myfont w3-center">ข้อมูลส่วนตัว</h2>
-			<div class="col-75">
 
-				 <div class="col-25 w3-center">
-					<label >Member_ID</label>
-				</div>
-				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
-					<p><?php echo $meResult['Member_ID']; ?></p>
-				</div>
-		</div>
 			<div class="col-75">
 
 				 <div class="col-25 w3-center">
 					<label >Username</label>
 				</div>
-				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40px" >
 					<p><?php echo $meResult['Username']; ?></p>
 				</div>
 		</div>

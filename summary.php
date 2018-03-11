@@ -12,6 +12,8 @@ if (!$_SESSION["UserID"]){  //check session
 ?>
 
 <?php
+
+
 $meSQL = "SELECT * FROM uploadfile WHERE Member_ID='{$_SESSION['UserID']}' ";
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {
@@ -59,43 +61,45 @@ echo 'error';
 
 		<div class="container" >
 
-
+<br></br>
 				<div class="w3-round-small w3-border w3-sand" style="width:40%" >
           <table class="w3-table w3-bordered">
             <center>
-              <p>สรุปการสั่งซื้อ</p>
 
+              <b>สรุปการสั่งซื้อ</b>
+<br></br>
             <tr>
               <td>ไฟล์งาน :</td>
               <td><?php echo $meResult['fileupload']; ?></td>
             </tr>
             <tr>
               <td>ประเภทการสั่งพิมพ์ :</td>
-              <td><?php echo $meResult['PD']; ?></td>
+              <td><?php echo $meResult['ProductType']; ?></td>
             </tr>
             <tr>
               <td>ขนาดกระดาษ :</td>
-              <td><?php echo $meResult['Username']; ?></td>
+              <td><?php echo $meResult['ProductDetail']; ?></td>
             </tr>
             <tr>
               <td>จำนวน :</td>
-              <td><?php echo $meResult['Username']; ?></td>
+              <td><?php echo $meResult['Quanitity']; ?></td>
             </tr>
             <tr>
               <td>วันที่นัดรับ :</td>
-              <td><?php echo $meResult['Username']; ?></td>
+              <td><?php echo $meResult['DateReceip']; ?></td>
+
             </tr>
             <tr>
               <td>เวลาที่นัดรับ :</td>
-              <td><?php echo $meResult['Username']; ?></td>
+              <td><?php echo $meResult['TimeReceip']; ?></td>
             </tr>
             <tr>
               <td>ราคารวม :</td>
-              <td><?php echo $meResult['Username']; ?></td>
+              <td></td>
             </tr>
             <tr>
               <td>เเต้มสะสม :</td>
-              <td>A4</td>
+              <td></td>
             </tr>
           </table>
         </div>

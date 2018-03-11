@@ -36,7 +36,7 @@
 include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 
 //2. query ข้อมูลจากตาราง tb_member:
-$query = "SELECT * FROM user ORDER BY Member_ID asc" or die("Error:" . mysqli_error());
+$query = "SELECT * FROM uploadfile";
 //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
 $result = mysqli_query($con, $query);
 //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
@@ -46,11 +46,11 @@ echo "<tr align='center' bgcolor='#ffffff'><td>รหัส</td><td>Uername</td>
 while($row = mysqli_fetch_array($result)) {
   echo "<tr>";
   echo "<td>" .$row["Member_ID"] .  "</td> ";
-  echo "<td>" .$row["Username"] .  "</td> ";
-  echo "<td>" .$row["Firstname"] .  "</td> ";
-  echo "<td>" .$row["Lastname"] .  "</td> ";
-  echo "<td>" .$row["Telephone"] .  "</td> ";
-  echo "<td>" .$row["Email"] .  "</td> ";
+  echo "<td>" .$row["fileupload"] .  "</td> ";
+  echo "<td>" .$row["TimeReceip"] .  "</td> ";
+  echo "<td>" .$row["Quanitity"] .  "</td> ";
+  echo "<td>" .$row["DateReceip"] .  "</td> ";
+  echo "<td>" .$row["TimeReceip"] .  "</td> ";
   //แก้ไขข้อมูล
   echo "<td><a href='UserUpdateForm.php?ID=$row[0]'>edit</a></td> ";
 
@@ -61,4 +61,8 @@ while($row = mysqli_fetch_array($result)) {
 echo "</table>";
 //5. close connection
 mysqli_close($con);
+
+
+
+
 ?>
