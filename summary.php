@@ -39,6 +39,9 @@ echo 'error';
 <link rel="stylesheet" href="css/form.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="js/jquery1111.min.js" type="text/javascript"></script>
+	<script src="js/script.js"></script>
+
 </head>
 
 <body class="home-page">
@@ -47,9 +50,9 @@ echo 'error';
 			<div id='cssmenu' >
 				<ul>
 				   <li><img src="images/f.png" width="150" height="150"></li>
-				     <li><a href='index.html'><span>หน้าแรก</span></a></li>
-						<li><a href='service.html'><span>บริการของเรา</span></a></li>
-				   <li><a href='contact.html'><span>ติดต่อเรา</span></a></li>
+				     <li><a href='index.php'><span>หน้าแรก</span></a></li>
+						<li><a href='service.php'><span>บริการของเรา</span></a></li>
+				   <li><a href='contact.php'><span>ติดต่อเรา</span></a></li>
 					 <li><a href='upload.php'><span>อัพโหลดไฟล์</span></a></li>
 
  					<button class="w3-button w3-round-xlarge w3-white w3-display-topright" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>

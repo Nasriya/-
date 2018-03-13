@@ -37,6 +37,8 @@ echo 'error';
 <link rel="stylesheet" href="css/form.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="js/jquery1111.min.js" type="text/javascript"></script>
+	<script src="js/script.js"></script>
 </head>
 
 <body class="home-page">
@@ -52,22 +54,21 @@ echo 'error';
 			</div>
 		</div>
 
-      		<form class="w3-container" name="update_profile-action"  method="POST">
+      		<form class="w3-container" name="update_profile-action"  method="POST" >
 						<div class="container">
 							<h2 class="w3-myfont w3-center">แก้ไขข้อมูลส่วนตัว</h2>
 							<br></br>
-							<div class="w3-row">
 						<div class="row">
 			      <div class="col-25 w3-center">
-			        <label >Username</label>
+			        <h4 >Username</h4>
 			      </div>
-			      <div class="col-75" >
+			      <div class="col-75">
 							<input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="Username" value="<?php echo $meResult['Username']; ?>"  /></br></center>
 			      </div>
 			    </div>
 					<div class="row">
 					<div class="col-25 w3-center">
-						<label >First Name</label>
+						<h4 >First Name</h4>
 					</div>
 					<div class="col-75" >
 						<input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="Firstname" value="<?php echo $meResult['Firstname']; ?>"  /></br></center>
@@ -75,7 +76,7 @@ echo 'error';
 				</div>
 				<div class="row">
 				<div class="col-25 w3-center">
-					<label >Last Name</label>
+					<h4 >Last Name</h4>
 				</div>
 				<div class="col-75" >
 					<input class="w3-input w3-hover-pale-red" type="text" style="width:50%"  name="Lastname" value="<?php echo $meResult['Lastname']; ?>"  /></br></center>
@@ -83,7 +84,7 @@ echo 'error';
 			</div>
 			<div class="row">
 			<div class="col-25 w3-center">
-				<label >Address</label>
+				<h4 >Address</h4>
 			</div>
 			<div class="col-75" >
 				<input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="Address" value="<?php echo $meResult['Address']; ?>"  /></br></center>
@@ -91,7 +92,7 @@ echo 'error';
 		</div>
 		<div class="row" >
 		<div class="col-25 w3-center">
-			<label >E-mail</label>
+			<h4 >E-mail</h4>
 		</div>
 		<div class="col-75">
 			<input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="Email" value="<?php echo $meResult['Email']; ?>"  /></br></center>
@@ -99,7 +100,7 @@ echo 'error';
 	</div>
 	<div class="row">
 	<div class="col-25 w3-center">
-		<label >Telephone</label>
+		<h4>Telephone</h4>
 	</div>
 	<div class="col-75">
 		<input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="Telephone" value="<?php echo $meResult['Telephone']; ?>"  /></br></center>
@@ -107,7 +108,7 @@ echo 'error';
 </div>
 <div class="row">
 <div class="col-25 w3-center">
-	<label >Password</label>
+	<h4>Password</h4>
 </div>
 <div class="col-75" >
 	<input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="password" value="<?php echo $meResult['Password']; ?>"  /></br></center>
@@ -115,7 +116,7 @@ echo 'error';
 </div>
 <div class="row">
 <div class="col-25 w3-center">
-	<label >เเต้มสะสม</label>
+	<h4 >เเต้มสะสม</h4>
 </div>
 <div class="col-75">
 	<?php echo "pop"; ?>

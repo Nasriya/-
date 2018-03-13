@@ -26,7 +26,7 @@ if (!$_SESSION["UserID"]){  //check session
 	<link rel="stylesheet" href="css/menu.css">
 	<script src="js/jquery1111.min.js" type="text/javascript"></script>
 	<script src="js/script.js"></script>
-	<script src="js/pop.js"></script>
+	
 </head>
 
 <body class="home-page">
@@ -54,7 +54,7 @@ if (!$_SESSION["UserID"]){  //check session
 
 	<h2 class="w3-myfont w3-center">อัพโหลดไฟล์</h2>
 	<center>
-		<form action="add_file_db.php" method="post" enctype="multipart/form-data">
+		<form action="add_file_db.php" method="post" enctype="multipart/form-data" >
     <b>กรุณาเลือกไฟล์:</b>
     <input type="file" name="fileupload"  id ="fileupload" required >
 

@@ -10,9 +10,10 @@
 	<link rel="stylesheet" href="css/lightbox.css">
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/menu.css">
-<link rel="stylesheet" href="css/form.css">
+
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body class="home-page">
@@ -29,28 +30,40 @@
 				</ul>
 			</div>
 		</div>
-
+<br><br>
 
 <?php
 //1. เชื่อมต่อ database:
 include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 
 //2. query ข้อมูลจากตาราง tb_member:
-$query = "SELECT * FROM uploadfile";
+$query = "SELECT user.*,uploadfile.* FROM user,uploadfile
+WHERE user.Member_ID = uploadfile.Member_ID
+ORDER BY dateup DESC ";
 //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
 $result = mysqli_query($con, $query);
 //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
-echo "<table border='1' align='center' width='1000'>";
+echo "<table align='center' width='900' >";
 //หัวข้อตาราง
-echo "<tr align='center' bgcolor='#ffffff'><td>รหัส</td><td>Uername</td><td>ชื่อ</td><td>นามสกุล</td><td>Telephone</td><td>Email</td><td>แก้ไข</td><td>ลบ</td></tr>";
+echo " <tr border='1' align='center'  bgcolor='#61b4cf' >
+
+<td><br>Member_ID</br></td>
+<td><br>เบอร์โทรศัพท์</br></td>
+<td><br>ชื่อสมาชิก</br></td>
+<td><br>ไฟล์งาน</br></td>
+<td><br>นามสกุล</br></td>
+<td><br>Note</br></td>
+<td><br>Email</br></td>
+<td></br>แก้ไข</br></td>
+<td><br>ลบ</br></td></tr>";
 while($row = mysqli_fetch_array($result)) {
-  echo "<tr>";
-  echo "<td>" .$row["Member_ID"] .  "</td> ";
-  echo "<td>" .$row["fileupload"] .  "</td> ";
-  echo "<td>" .$row["TimeReceip"] .  "</td> ";
-  echo "<td>" .$row["Quanitity"] .  "</td> ";
-  echo "<td>" .$row["DateReceip"] .  "</td> ";
-  echo "<td>" .$row["TimeReceip"] .  "</td> ";
+	echo "<tr>";
+  echo "<td align='center'  bgcolor='#ffffff' >" .$row["Member_ID"] .  "</td> ";
+	echo "<td align='right'  bgcolor='#61b4cf'>" .$row["Telephone"] .  "</td> ";
+  echo "<td align='right'  bgcolor='#61b4cf'>" .$row["Username"] .  "</td> ";
+  echo "<td align='right'  bgcolor='#61b4cf'>" .$row["fileupload"] .  "</td> ";
+  echo "<td align='right'  bgcolor='#61b4cf'>" .$row["DateReceip"] .  "</td> ";
+  echo "<td align='right'  bgcolor='#61b4cf'>" .$row["TimeReceip"] .  "</td> ";
   //แก้ไขข้อมูล
   echo "<td><a href='UserUpdateForm.php?ID=$row[0]'>edit</a></td> ";
 

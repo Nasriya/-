@@ -86,7 +86,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 			<div class="row">
       <div class="col-25 w3-center">
-        <label >First Name</label>
+
+      <h4>First Name</h4>
       </div>
       <div class="col-75" style="width:40%" >
 				<input class="w3-input w3-border w3-center"  type="text"  name="Firstname" required type="text" placeholder="First Name" >
@@ -94,7 +95,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 		<div class="row">
 		<div class="col-25 w3-center">
-			<label >Last Name</label>
+			<h4 >Last Name</h4>
 		</div>
 		<div class="col-75" style="width:40%" >
 			<input class="w3-input w3-border w3-center"  type="text"  name="Lastname" required type="text" placeholder="Last Name" >
@@ -102,7 +103,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	</div>
 	<div class="row">
 	<div class="col-25 w3-center">
-		<label >Address</label>
+		<h4 >Address</h4>
 	</div>
 	<div class="col-75" style="width:40%" >
 		<input class="w3-input w3-border w3-center"  type="text"  name="Address" required type="text" placeholder="Address" >
@@ -110,7 +111,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 </div>
 <div class="row">
 <div class="col-25 w3-center">
-	<label >E-mail</label>
+	<h4 >E-mail<h4>
 </div>
 <div class="col-75" style="width:40%" >
 	<input class="w3-input w3-border w3-center"  type="text"  name="Email" required type="text" placeholder="E-mail" >
@@ -118,7 +119,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 </div>
 <div class="row">
 <div class="col-25 w3-center">
-	<label >Telephone</label>
+	<h4 >Telephone</h4>
 </div>
 <div class="col-75" style="width:40%" >
 	<input class="w3-input w3-border w3-center"  type="text"  name="Telephone" required type="text" placeholder="Telephone" >
@@ -126,7 +127,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 </div>
 <div class="row">
 <div class="col-25 w3-center">
-	<label >Username</label>
+	<h4 >Username</h4>
 </div>
 <div class="col-75" style="width:40%" >
 	<input class="w3-input w3-border w3-center"  type="text"  name="Username" required type="text" placeholder="ตั้ง Username เพื่อใช้ในการเข้าสู่ระบบ" >
@@ -134,7 +135,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 </div>
 <div class="row">
 <div class="col-25 w3-center">
-	<label >Password</label>
+	<h4>Password</h4>
 </div>
 <div class="col-75" style="width:40%" >
 	<input class="w3-input w3-border w3-center"  type="password"  name="Password" required type="text" placeholder="Password" >
@@ -142,7 +143,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 </div>
 <div class="row">
 <div class="col-25 w3-center">
-	<label >Comfirm Password</label>
+	<h4 >Comfirm Password</h4>
 </div>
 <div class="col-75" style="width:40%" >
 	<input class="w3-input w3-border w3-center"  type="password"  name="Password2" required type="text" placeholder="Comfirm Password" >

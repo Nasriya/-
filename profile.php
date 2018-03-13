@@ -38,6 +38,8 @@ echo 'error';
 <link rel="stylesheet" href="css/form.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="js/jquery1111.min.js" type="text/javascript"></script>
+	<script src="js/script.js"></script>
 </head>
 
 <body class="home-page">
@@ -63,67 +65,72 @@ echo 'error';
 
 			<h2 class="w3-myfont w3-center">ข้อมูลส่วนตัว</h2>
 
-			<div class="col-75">
-
-				 <div class="col-25 w3-center">
-					<label >Username</label>
-				</div>
-				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40px" >
-					<p><?php echo $meResult['Username']; ?></p>
-				</div>
-		</div>
-
+			<div class="col-75" >
+					 <div class="col-25 w3-center">
+						<b>Username</b>
+					</div>
+					<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+						<p><?php echo $meResult['Username']; ?></p>
+					</div>
+			</div>
+<br></br>
 		<div class="col-75" >
 				 <div class="col-25 w3-center">
-					<label >Firstname</label>
+					<b >Firstname</b>
 				</div>
 				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
 					<p><?php echo $meResult['Firstname']; ?></p>
 				</div>
 		</div>
+		<br></br>
 		<div class="col-75" >
 				 <div class="col-25 w3-center">
-					<label >Lastname</label>
+					<b>Lastname</b>
 				</div>
 				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
 					<p><?php echo $meResult['Lastname']; ?></p>
 				</div>
 		</div>
+		<br></br>
 		<div class="col-75" >
 				 <div class="col-25 w3-center">
-					<label >Address</label>
+					<b >Address</b>
 				</div>
 				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
 					<p><?php echo $meResult['Address']; ?></p>
 				</div>
 		</div>
+		<br></br>
 		<div class="col-75" >
 				 <div class="col-25 w3-center">
-					<label >Email</label>
+					<b >Email</b>
 				</div>
 				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
 					<p><?php echo $meResult['Email']; ?></p>
 				</div>
 		</div>
+		<br></br>
 		<div class="col-75" >
 				 <div class="col-25 w3-center">
-					<label >Telephone</label>
+					<b>Telephone</b>
 				</div>
 				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
 					<p><?php echo $meResult['Telephone']; ?></p>
 				</div>
 		</div>
+		<br></br>
 		<div class="col-75" >
 				 <div class="col-25 w3-center">
-					<label >Password</label>
+					<b>Password</b>
 				</div>
 				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
 					<p><?php echo $meResult['Password']; ?></p>
 				</div>
 		</div>
+		<br></br>
 		<div class="col-75" >
 				 <div class="col-25 w3-center">
-					<label >เเต้มสะสม</label>
+					<b>เเต้มสะสม</b>
 				</div>
 				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
 					<p><?php echo"ยังไม่ได้ตั้งค่า"; ?></p>

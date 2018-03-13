@@ -41,22 +41,11 @@
         </p>
       </form>
 			<p>ยังไม่มีบัญชีผู้ใช้งาน <a href='register.php'>ลงทะเบียน</p>
-				</div>
 
-				<ul class="bg-bubbles">
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-				</ul>
+
+
 			</div>
-
+</div>
 
 
 
