@@ -73,8 +73,7 @@ if (!$_SESSION["UserID"]){  //check session
 			//4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
 			echo "<table align='center' width='900' >";
 			//หัวข้อตาราง
-			echo " <tr border='1' align='center'>
-
+			echo " <tr align='center'>
 			<td bgcolor='#61b4cf'><br>Member_ID</br></td>
 			<td bgcolor='#b8b4b0'><br>เบอร์โทรศัพท์</br></td>
 			<td bgcolor='#61b4cf'><br>ชื่อสมาชิก</br></td>
@@ -84,9 +83,6 @@ if (!$_SESSION["UserID"]){  //check session
 			<td bgcolor='#b8b4b0'><br>สถานะ</br></td>
 			<td bgcolor='#61b4cf'><br></br></td>
 			<td bgcolor='#61b4cf'><br>ลบ</br></td>
-
-
-
 			<td></br></br></td>
 			<td><br></br></td></tr>";
 
@@ -95,8 +91,8 @@ if (!$_SESSION["UserID"]){  //check session
 			  echo "<td align='center'  bgcolor='#def1f9'>" .$row["Member_ID"] .  "</td> ";
 				echo "<td align='center'  bgcolor='#e1dedc'>" .$row["Telephone"] .  "</td> ";
 			  echo "<td align='center'  bgcolor='#def1f9'>" .$row["Username"] .  "</td> ";
-			  echo "<td align='center'  bgcolor='#e1dedc'><a href='#.php?ID=$row[0]'>" .$row["fileupload"] .  "</td> ";
-			  echo "<td align='center'  bgcolor='#def1f9'><a href='#.php?ID=$row[0]'>รายละเอียด" .  "</td> ";
+			  echo "<td align='center'  bgcolor='#e1dedc'><a href='file.php?ID=$row[0]'>" .$row["fileupload"] .  "</td> ";
+			  echo "<td align='center'  bgcolor='#def1f9'><a href='note.php?ID=$row[0]'>รายละเอียด" .  "</td> ";
 				echo "<td align='center'  bgcolor='#def1f9'>" ."</td> ";//ลบ
 				echo "<td align='center' bgcolor='#e1dedc' <td><select name='P_Status'>
 				<option selected>--สถานะ--</option>
@@ -104,18 +100,16 @@ if (!$_SESSION["UserID"]){  //check session
 				<option>กำลังดำเนินงาน</option>
 			 <option>รอการชำระ</option>
 			 <option>ชำระเเล้ว</option>
-			 </select><td>";//สถานะ
+			 </select>&nbsp;&nbsp;&nbsp;&nbsp;<button class='w3-button w3-small w3-green' style='width:55px'>Save</button><td>";//สถานะ
 
 			//ลบข้อมูล
-			  echo "<td align='center' bgcolor='#def1f9'><a href='UserDelete.php?ID=$row[0]' onclick=\"return confirm('Do you want to delete this record? !!!')\">ลบคำสั่งซื้อ</a></td> ";
+			  echo "<td align='center' bgcolor='#def1f9'><a href='UserDelete.php?ID=$row[0]'><button class='w3-button w3-small w3-red' style='width:60px'>Delete</button></a></td> ";
 			  echo "</tr>";
 			}
 			echo "</table>";
 			//5. close connection
 			mysqli_close($con);
 }
-
-
-
-
 			?>
+			<br></br>
+			<center><button class="w3-button w3-round-xlarge w3-red" style="width:200px">ล้างข้อมูลทั้งหมด</button></center>
