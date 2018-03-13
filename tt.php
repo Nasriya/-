@@ -57,104 +57,65 @@ if (!$_SESSION["UserID"]){  //check session
 		</div>
 	</div>
 <br></br>
-	<h2 class="w3-myfont w3-center">จัดการคิว</h2>
+	<h1 class="w3-myfont w3-center">จัดการคิว</h1>
 
 			<br></br>
-			<div class="w3-container">
-			  <table class="w3-table w3-striped">
-			    <tr>
-			      <th>ลำดับ</th>
-			      <th>เบอร์โทรศัพท์</th>
-			      <th>ชื่อสมาชิก</th>
-						<th>ไฟล์งาน</th>
-						<th>Note</th>
-						<th></th>
-						<th>สถานะการดำเนินงาน<th>
-			    </tr>
-			    <tr>
-			      <td>xxx</td> <!--ลำดับ-->
-			      <td><?php echo $meResult['Telephone']; ?></td><!--เบอร์โทรศัพท์-->
-			      <td><?php echo $meResult['Username']; ?></td> <!--ผู้ใช้-->
-						 <td><a href="#" ><?php echo $meResult['fileupload']; ?></td> <!--ไฟล์งาน-->
-						 <td>xxx</td> <!--note-->
-						 <td><a href="#" ><img src="images/pp2.png" width="30" class="img-responsive" alt=""></td>
-						 <td>
-							 <select name="P_Status">
-				       <option value="" selected>--สถานะ--</option>
-				       <option value="P_submit">รอการยืนยัน</option>
-				       <option value="P_operate">กำลังดำเนินงาน</option>
-				 			<option value="P_Payment">รอการชำระ</option>
-							<option value="P_Money">ชำระเเล้ว</option>
-				      </select></td>
+			<?php
+			//1. เชื่อมต่อ database:
+			include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 
-			    </tr>
-			    <tr>
-						<td>xxx</td> <!--ลำดับ-->
-			      <td><?php echo $meResult['Telephone']; ?></td><!--เบอร์โทรศัพท์-->
-			      <td><?php echo $meResult['Username']; ?></td> <!--ผู้ใช้-->
-						 <td><a href="#" ><?php echo $meResult['fileupload']; ?></td> <!--ไฟล์งาน-->
-						 <td>xxx</td> <!--note-->
-						 <td><a href="#" ><img src="images/pp2.png" width="30" class="img-responsive" alt=""></td>
-							 <td>
-								 <select name="P_Status">
-					      <option value="" selected>--สถานะ--</option>
-					       <option value="P_submit">รอการยืนยัน</option>
-					       <option value="P_operate">กำลังดำเนินงาน</option>
-					 			<option value="P_Payment">รอการชำระ</option>
-								<option value="P_Money">ชำระเเล้ว</option>
-					      </select></td>
-			    </tr>
-					<tr>
-						<td>xxx</td> <!--ลำดับ-->
-			      <td><?php echo $meResult['Telephone']; ?></td><!--เบอร์โทรศัพท์-->
-			      <td><?php echo $meResult['Username']; ?></td> <!--ผู้ใช้-->
-						 <td><a href="#" ><?php echo $meResult['fileupload']; ?></td> <!--ไฟล์งาน-->
-						 <td>xxx</td> <!--note-->
-						 <td><a href="#" ><img src="images/pp2.png" width="30" class="img-responsive" alt=""></td>
-							 <td>
-								 <select name="P_Status">
-					       <option value="" selected>--สถานะ--</option>
-					       <option value="P_submit">รอการยืนยัน</option>
-					       <option value="P_operate">กำลังดำเนินงาน</option>
-					 			<option value="P_Payment">รอการชำระ</option>
-								<option value="P_Money">ชำระเเล้ว</option>
-					      </select></td>
-			    </tr><tr>
-						<td>xxx</td> <!--ลำดับ-->
-			      <td><?php echo $meResult['Telephone']; ?></td><!--เบอร์โทรศัพท์-->
-			      <td><?php echo $meResult['Username']; ?></td> <!--ผู้ใช้-->
-						 <td><a href="#" ><?php echo $meResult['fileupload']; ?></td> <!--ไฟล์งาน-->
-						 <td>xxx</td> <!--note-->
-						 <td><a href="#" ><img src="images/pp2.png" width="30" class="img-responsive" alt=""></td>
-							 <td>
-								 <select name="P_Status">
-					       <option value="" selected>--สถานะ--</option>
-					       <option value="P_submit">รอการยืนยัน</option>
-					       <option value="P_operate">กำลังดำเนินงาน</option>
-					 			<option value="P_Payment">รอการชำระ</option>
-								<option value="P_Money">ชำระเเล้ว</option>
-					      </select></td>
-			    </tr>
-			    <tr>
-						<td>xxx</td> <!--ลำดับ-->
-			      <td><?php echo $meResult['Telephone']; ?></td><!--เบอร์โทรศัพท์-->
-			      <td><?php echo $meResult['Username']; ?></td> <!--ผู้ใช้-->
-						 <td><a href="#" ><?php echo $meResult['fileupload']; ?></td> <!--ไฟล์งาน-->
-						 <td>xxx</td> <!--note-->
-						 <td><a href="#" ><img src="images/pp2.png" width="30" class="img-responsive" alt=""></td>
-							 <td>
-								 <select name="P_Status">
-					       <option value="" selected>--สถานะ--</option>
-					       <option value="P_submit">รอการยืนยัน</option>
-					       <option value="P_operate">กำลังดำเนินงาน</option>
-					 			<option value="P_Payment">รอการชำระ</option>
-								<option value="P_Money">ชำระเเล้ว</option>
-					      </select></td>
-			    </tr>
+			//2. query ข้อมูลจากตาราง tb_member:
+			$query = "SELECT user.*,uploadfile.* FROM user,uploadfile
+			WHERE user.Member_ID = uploadfile.Member_ID
+			ORDER BY dateup ASC ";
+			//3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
+			$result = mysqli_query($con, $query);
+			//4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
+			echo "<table align='center' width='900' >";
+			//หัวข้อตาราง
+			echo " <tr border='1' align='center'>
 
-			  </table>
-			</div>
-<center><button class="w3-button w3-round-xlarge w3-red" style="width:100px">ล้างข้อมูล</button></center>
-<?php }?>
-</body>
-</html>
+			<td bgcolor='#61b4cf'><br>Member_ID</br></td>
+			<td bgcolor='#b8b4b0'><br>เบอร์โทรศัพท์</br></td>
+			<td bgcolor='#61b4cf'><br>ชื่อสมาชิก</br></td>
+			<td bgcolor='#b8b4b0'><br>ไฟล์งาน</br></td>
+			<td bgcolor='#61b4cf'><br>Note</br></td>
+			<td bgcolor='#61b4cf'><br></br><br></br></td>
+			<td bgcolor='#b8b4b0'><br>สถานะ</br></td>
+			<td bgcolor='#61b4cf'><br></br></td>
+			<td bgcolor='#61b4cf'><br>ลบ</br></td>
+
+
+
+			<td></br></br></td>
+			<td><br></br></td></tr>";
+
+			while($row = mysqli_fetch_array($result)) {
+				echo "<tr>";
+			  echo "<td align='center'  bgcolor='#def1f9'>" .$row["Member_ID"] .  "</td> ";
+				echo "<td align='center'  bgcolor='#e1dedc'>" .$row["Telephone"] .  "</td> ";
+			  echo "<td align='center'  bgcolor='#def1f9'>" .$row["Username"] .  "</td> ";
+			  echo "<td align='center'  bgcolor='#e1dedc'><a href='#.php?ID=$row[0]'>" .$row["fileupload"] .  "</td> ";
+			  echo "<td align='center'  bgcolor='#def1f9'><a href='#.php?ID=$row[0]'>รายละเอียด" .  "</td> ";
+				echo "<td align='center'  bgcolor='#def1f9'>" ."</td> ";//ลบ
+				echo "<td align='center' bgcolor='#e1dedc' <td><select name='P_Status'>
+				<option selected>--สถานะ--</option>
+				<option>รอการยืนยัน</option>
+				<option>กำลังดำเนินงาน</option>
+			 <option>รอการชำระ</option>
+			 <option>ชำระเเล้ว</option>
+			 </select><td>";//สถานะ
+
+			//ลบข้อมูล
+			  echo "<td align='center' bgcolor='#def1f9'><a href='UserDelete.php?ID=$row[0]' onclick=\"return confirm('Do you want to delete this record? !!!')\">ลบคำสั่งซื้อ</a></td> ";
+			  echo "</tr>";
+			}
+			echo "</table>";
+			//5. close connection
+			mysqli_close($con);
+}
+
+
+
+
+			?>

@@ -39,36 +39,38 @@ include('connection.php');  //ไฟล์เชื่อมต่อกับ d
 //2. query ข้อมูลจากตาราง tb_member:
 $query = "SELECT user.*,uploadfile.* FROM user,uploadfile
 WHERE user.Member_ID = uploadfile.Member_ID
-ORDER BY dateup DESC ";
+ORDER BY dateup ASC ";
 //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
 $result = mysqli_query($con, $query);
 //4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
 echo "<table align='center' width='900' >";
 //หัวข้อตาราง
-echo " <tr border='1' align='center'  bgcolor='#61b4cf' >
+echo " <tr border='1' align='center'>
 
-<td><br>Member_ID</br></td>
-<td><br>เบอร์โทรศัพท์</br></td>
-<td><br>ชื่อสมาชิก</br></td>
-<td><br>ไฟล์งาน</br></td>
-<td><br>นามสกุล</br></td>
-<td><br>Note</br></td>
-<td><br>Email</br></td>
-<td></br>แก้ไข</br></td>
-<td><br>ลบ</br></td></tr>";
+<td bgcolor='#61b4cf'><br>Member_ID</br></td>
+<td bgcolor='#b8b4b0'><br>เบอร์โทรศัพท์</br></td>
+<td bgcolor='#61b4cf'><br>ชื่อสมาชิก</br></td>
+<td bgcolor='#b8b4b0'><br>ไฟล์งาน</br></td>
+<td bgcolor='#61b4cf'><br>Note</br><br></br></td>
+
+
+<td></br></br></td>
+<td><br></br></td></tr>";
+
 while($row = mysqli_fetch_array($result)) {
 	echo "<tr>";
-  echo "<td align='center'  bgcolor='#ffffff' >" .$row["Member_ID"] .  "</td> ";
-	echo "<td align='right'  bgcolor='#61b4cf'>" .$row["Telephone"] .  "</td> ";
-  echo "<td align='right'  bgcolor='#61b4cf'>" .$row["Username"] .  "</td> ";
-  echo "<td align='right'  bgcolor='#61b4cf'>" .$row["fileupload"] .  "</td> ";
-  echo "<td align='right'  bgcolor='#61b4cf'>" .$row["DateReceip"] .  "</td> ";
-  echo "<td align='right'  bgcolor='#61b4cf'>" .$row["TimeReceip"] .  "</td> ";
+  echo "<td align='center'  bgcolor='#def1f9' >" .$row["Member_ID"] .  "</td> ";
+	echo "<td align='right'  bgcolor='#e1dedc'>" .$row["Telephone"] .  "</td> ";
+  echo "<td align='right'  bgcolor='#def1f9'>" .$row["Username"] .  "</td> ";
+  echo "<td align='right'  bgcolor='#e1dedc'><a href='#.php?ID=$row[0]'>" .$row["fileupload"] .  "</td> ";
+  echo "<td align='right'  bgcolor='#def1f9'><a href='#.php?ID=$row[0]'>รายละเอียด" .  "</td> ";
+	echo "<td align='right'>" ."</td> ";
   //แก้ไขข้อมูล
-  echo "<td><a href='UserUpdateForm.php?ID=$row[0]'>edit</a></td> ";
+
+  echo "<td><a href='print.php?ID=$row[0]'>พิมพ์</a></td> ";
 
   //ลบข้อมูล
-  echo "<td><a href='UserDelete.php?ID=$row[0]' onclick=\"return confirm('Do you want to delete this record? !!!')\">del</a></td> ";
+  echo "<td><a href='UserDelete.php?ID=$row[0]' onclick=\"return confirm('Do you want to delete this record? !!!')\">ลบคำสั่งซื้อ</a></td> ";
   echo "</tr>";
 }
 echo "</table>";

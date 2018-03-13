@@ -28,7 +28,10 @@ $path="fileupload/";
 	$remove_these = array(' ','`','"','\'','\\','/','_');
 	$newname = str_replace($remove_these, '', $_FILES['fileupload']['name']);
 
-
+	//ตั้งชื่อไฟล์ใหม่โดยเอาเวลาไว้หน้าชื่อไฟล์เดิม
+		
+	$path_copy=$path.$newname;
+	$path_link="fileupload/".$newname;
 
 //คัดลอกไฟล์ไปเก็บที่เว็บเซริ์ฟเวอร์
 move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);
@@ -46,7 +49,7 @@ move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);
 	if($result){
 	echo "<script type='text/javascript'>";
 	echo "alert('อัพโหลดไฟล์สำเร็จ');";
-	//echo "window.location = 'summary.php'; ";
+	echo "window.location = 'summary.php'; ";
 	echo "</script>";
 	}
 	else{
