@@ -18,21 +18,21 @@ session_start();
 
                       $_SESSION["UserID"] = $row["Member_ID"];//สำคัญ
                     //  $_SESSION["User"] = $row["Firstname"]." ".$row["Lastname"];
-                      $_SESSION["Userlevel"] = $row["Userlevel"];
+                      $_SESSION["Userlevel"] = $row["Userlevel"]; //กำหนดว่าเป็น Aหรือ M
 
                       if($_SESSION["Userlevel"]=="A"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
 
 
                         echo "<script>";
                             echo "alert(\"ยินดีต้อนรับ ADMIN: $Username\");";
-                            echo "window.location = 'employee.php';";
+                            echo "window.location = 'employee.php';"; //ไปหน้าเเรกของพนักงาน
                         echo "</script>";
                       }
 
                       if ($_SESSION["Userlevel"]=="M"){  //ถ้าเป็น member ให้กระโดดไปหน้า user_page.php
                         echo "<script>";
                             echo "alert(\"ยินดีต้อนรับ คุณ $Username\");";
-                            echo "window.location = 'upload.php';";
+                            echo "window.location = 'upload.php';"; //ไปหน้าเเรกของสมาชิก
                         echo "</script>";
 
 
@@ -47,7 +47,6 @@ session_start();
                   }
 
         }else{
-
 
              Header("Location: form_login.php"); //user & password incorrect back to login again
 

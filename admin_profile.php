@@ -57,90 +57,83 @@ echo 'error';
 			</div>
 		</div>
 
-<center>
-<div class="w3-row w3-border">
+		<center>
+		<div class="w3-row w3-border">
 
 
 
-			<h2 class="w3-myfont w3-center">ข้อมูลส่วนตัว</h2>
-			<div class="col-75">
+					<h2 class="w3-myfont w3-center">ข้อมูลส่วนตัว</h2>
 
-				 <div class="col-25 w3-center">
-					<b>Member_ID</b>
+					<div class="col-75" >
+							 <div class="col-25 w3-center">
+								<b>Username</b>
+							</div>
+							<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+								<p><?php echo $meResult['Username']; ?></p>
+							</div>
+					</div>
+		<br></br>
+				<div class="col-75" >
+						 <div class="col-25 w3-center">
+							<b >Firstname</b>
+						</div>
+						<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+							<p><?php echo $meResult['Firstname']; ?></p>
+						</div>
 				</div>
-				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
-					<p><?php echo $meResult['Member_ID']; ?></p>
+				<br></br>
+				<div class="col-75" >
+						 <div class="col-25 w3-center">
+							<b>Lastname</b>
+						</div>
+						<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+							<p><?php echo $meResult['Lastname']; ?></p>
+						</div>
 				</div>
-		</div>
-			<div class="col-75">
-
-				 <div class="col-25 w3-center">
-					<b >Username</b>
+				<br></br>
+				<div class="col-75" >
+						 <div class="col-25 w3-center">
+							<b >Address</b>
+						</div>
+						<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+							<p><?php echo $meResult['Address']; ?></p>
+						</div>
 				</div>
-				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
-					<p><?php echo $meResult['Username']; ?></p>
+				<br></br>
+				<div class="col-75" >
+						 <div class="col-25 w3-center">
+							<b >Email</b>
+						</div>
+						<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+							<p><?php echo $meResult['Email']; ?></p>
+						</div>
 				</div>
-		</div>
-
-		<div class="col-75" >
-				 <div class="col-25 w3-center">
-					<b>Firstname</b>
+				<br></br>
+				<div class="col-75" >
+						 <div class="col-25 w3-center">
+							<b>Telephone</b>
+						</div>
+						<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+							<p><?php echo $meResult['Telephone']; ?></p>
+						</div>
 				</div>
-				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
-					<p><?php echo $meResult['Firstname']; ?></p>
-				</div>
-		</div>
-		<div class="col-75" >
-				 <div class="col-25 w3-center">
-					<b >Lastname</b>
-				</div>
-				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
-					<p><?php echo $meResult['Lastname']; ?></p>
-				</div>
-		</div>
-		<div class="col-75" >
-				 <div class="col-25 w3-center">
-					<b>Address</b>
-				</div>
-				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
-					<p><?php echo $meResult['Address']; ?></p>
-				</div>
-		</div>
-		<div class="col-75" >
-				 <div class="col-25 w3-center">
-					<b>Email</b>
-				</div>
-				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
-					<p><?php echo $meResult['Email']; ?></p>
-				</div>
-		</div>
-		<div class="col-75" >
-				 <div class="col-25 w3-center">
-					<b>Telephone</b>
-				</div>
-				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
-					<p><?php echo $meResult['Telephone']; ?></p>
-				</div>
-		</div>
-		<div class="col-75" >
-				 <div class="col-25 w3-center">
+				<br></br>
+				<!--<div class="col-75" >
+						 <div class="col-25 w3-center">
+							<b>Password</b>
+						</div>
+						<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
+									 <div class="col-25 w3-center">
 					<b>Password</b>
 				</div>
 				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
 					<p><?php echo $meResult['Password']; ?></p>
 				</div>
-		</div>
-		<div class="col-75" >
-				 <div class="col-25 w3-center">
-					<b>เเต้มสะสม</b>
-				</div>
-				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
-					<p><?php echo"ยังไม่ได้ตั้งค่า"; ?></p>
-				</div>
-		</div>
+		</div>-->
+
 		<br></br>
 <a href="update_profile.php" class="w3-btn  w3-round-xxlarge w3-red" style="width:200px">แก้ไขข้อมูล</a>
-
+<br></br>
 </div>
 </center>
 <?php }?>

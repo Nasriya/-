@@ -1,13 +1,11 @@
 <?php session_start();?>
 <?php
-
 include('connection.php');
 if (!$_SESSION["UserID"]){  //check session
 
 	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
 
 }else{
-	//$_SESSION['frmAction'] = md5('itoffside.com' . rand(1, 9999));
 ?>
 
 <?php
@@ -119,7 +117,7 @@ echo 'error';
 				</div>
 		</div>
 		<br></br>
-		<div class="col-75" >
+		<!--<div class="col-75" >
 				 <div class="col-25 w3-center">
 					<b>Password</b>
 				</div>
@@ -127,7 +125,7 @@ echo 'error';
 					<p><?php echo $meResult['Password']; ?></p>
 				</div>
 		</div>
-		<br></br>
+		<br></br>-->
 		<div class="col-75" >
 				 <div class="col-25 w3-center">
 					<b>เเต้มสะสม</b>
@@ -135,10 +133,13 @@ echo 'error';
 				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
 					<p><?php echo"ยังไม่ได้ตั้งค่า"; ?></p>
 				</div>
-		</div>
+		</div
 		<br></br>
 <a href="update_profile.php" class="w3-btn  w3-round-xxlarge w3-red" style="width:200px">แก้ไขข้อมูล</a>
 
 </div>
+</div>
+</div>
+
 </center>
 <?php }?>

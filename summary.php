@@ -8,7 +8,7 @@ if (!$_SESSION["UserID"]){  //check session
 	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
 
 }else{
-	//$_SESSION['frmAction'] = md5('itoffside.com' . rand(1, 9999));
+	
 ?>
 
 <?php
@@ -17,7 +17,7 @@ if (!$_SESSION["UserID"]){  //check session
 $meSQL = "SELECT * FROM uploadfile WHERE Member_ID='{$_SESSION['UserID']}' ";
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {
-$meResult = mysqli_fetch_assoc($meQuery);
+$meResult = mysqli_fetch_assoc($meQuery); //มีค่าตัวแปรเฉพาะที่เราเลือก
 } else {
 echo 'error';
 }
@@ -103,6 +103,10 @@ echo 'error';
             <tr>
               <td>เเต้มสะสม :</td>
               <td></td>
+            </tr>
+						<tr>
+              <td>สถานะ :</td>
+              <td><?php echo $meResult['status']; ?></td>
             </tr>
           </table>
         </div>

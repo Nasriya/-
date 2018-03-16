@@ -1,14 +1,13 @@
 <?php
-session_start();
+session_start();//คำสั่งการเปิด session
 
 $_SESSION['message'] = ''; /*เเสดงข้อความ Error*/
-$arrors = array();
-$mysqli = new mysqli('localhost', 'root', '', 'mydb');
-$mysqli->query("set names utf8");
+$mysqli = new mysqli('localhost', 'root', '', 'mydb'); //เชื่อมฐานข้อมูล
+$mysqli->query("set names utf8"); //กำหนดภาษา
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-		$Firstname = $mysqli->real_escape_string($_POST['Firstname']);
+		$Firstname = $mysqli->real_escape_string($_POST['Firstname']); //คำสั่งหลีกเลี่ยงเครื่องหมาย
 		$Lastname = $mysqli->real_escape_string($_POST['Lastname']);
 		$Address = $mysqli->real_escape_string($_POST['Address']);
 		$Email = $mysqli->real_escape_string($_POST['Email']);
@@ -152,8 +151,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 			<div class="w3-row w3-section w3-col">
 			  <div class="w3-col" style="width:50px"></div>
 			    <div class="w3-rest" style="width:300px">
-
-
 					</div>
 			</div>
 

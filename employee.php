@@ -1,24 +1,13 @@
 
-
 <?php session_start();?>
 <?php
 include('connection.php');
 if (!$_SESSION["UserID"]){  //check session
 
-	  Header("Location: form.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
+	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
 
 }else{?>
 
-
-	<?php
-	$meSQL = "SELECT * FROM user,uploadfile  ";
-	$meQuery = mysqli_query($con,$meSQL);
-	if ($meQuery == TRUE) {
-	$meResult = mysqli_fetch_assoc($meQuery);
-	} else {
-	echo 'error';
-	}
-	?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,10 +36,6 @@ if (!$_SESSION["UserID"]){  //check session
 				   <li><a href='check.php'><span>ตรวจสอบ</span></a></li>
 					 <li><a href='admin_profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
 
-
-
-
-
 <button class="w3-button w3-round-xlarge w3-white w3-display-topright" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>
 				</ul>
 			</div>
@@ -63,7 +48,6 @@ if (!$_SESSION["UserID"]){  //check session
 			<?php
 			//1. เชื่อมต่อ database:
 			include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
-
 			//2. query ข้อมูลจากตาราง tb_member:
 			$query = "SELECT user.*,uploadfile.* FROM user,uploadfile
 			WHERE user.Member_ID = uploadfile.Member_ID
@@ -94,13 +78,14 @@ if (!$_SESSION["UserID"]){  //check session
 			  echo "<td align='center'  bgcolor='#e1dedc'><a href='file.php?ID=$row[0]'>" .$row["fileupload"] .  "</td> ";
 			  echo "<td align='center'  bgcolor='#def1f9'><a href='note.php?ID=$row[0]'>รายละเอียด" .  "</td> ";
 				echo "<td align='center'  bgcolor='#def1f9'>" ."</td> ";//ลบ
-				echo "<td align='center' bgcolor='#e1dedc' <td><select name='P_Status'>
-				<option selected>--สถานะ--</option>
-				<option>รอการยืนยัน</option>
-				<option>กำลังดำเนินงาน</option>
-			 <option>รอการชำระ</option>
-			 <option>ชำระเเล้ว</option>
-			 </select>&nbsp;&nbsp;&nbsp;&nbsp;<button class='w3-button w3-small w3-green' style='width:55px'>Save</button><td>";//สถานะ
+				echo "<td align='center' bgcolor='#e1dedc' <td><select name='status'>
+				<option selected>รอการยืนยัน</option>
+				<option name='status'>กำลังดำเนินงาน</option>
+			 <option name='status'>รอการชำระ</option>
+			 <option name='status'>ชำระเเล้ว</option>
+</select>
+
+			&nbsp;&nbsp; <button type='submit'  class='w3-button w3-small w3-green' style='width:55px' name='status' id='status'>Save</button><td>";//สถานะ
 
 			//ลบข้อมูล
 			  echo "<td align='center' bgcolor='#def1f9'><a href='UserDelete.php?ID=$row[0]'><button class='w3-button w3-small w3-red' style='width:60px'>Delete</button></a></td> ";
@@ -112,4 +97,4 @@ if (!$_SESSION["UserID"]){  //check session
 }
 			?>
 			<br></br>
-			<center><button class="w3-button w3-round-xlarge w3-red" style="width:200px">ล้างข้อมูลทั้งหมด</button></center>
+			<center><button type="submit" class="w3-button w3-round-xlarge w3-green" style="width:200px" >ล้างข้อมูลทั้งหมด</button>

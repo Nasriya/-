@@ -43,93 +43,90 @@ if (!$_SESSION["UserID"]){  //check session
 			</div>
 		</div>
 
-				<!-----------------content-box-2-------------------->
-				<section class="content-box box-2">
-					<div class="zerogrid">
-						<div class="row wrap-box"><!--Start Box-->
-							<div class="header">
-								<div class="wrapper">
-									<h2 class="color-blue">บริการของเรา</h2>
+		<!-----------------content-box-2-------------------->
+		<section class="content-box box-2">
+			<div class="zerogrid">
+				<div class="row wrap-box"><!--Start Box-->
+					<div class="header">
+						<div class="wrapper">
+							<h2 class="color-blue">บริการของเรา</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-3">
+							<div class="wrap-col">
+								<div class="portfolio-box">
+									<img src="images/ถ่ายเอกสาร.png" class="img-responsive" alt="">
+									<div class="portfolio-box-caption">
+										<div class="portfolio-box-caption-content">
+											<div class="project-category text-faded">
+												<p>ถ่ายเอกสาร</p>
+												<p>ราคาเริ่มต้นที่ 0.5 ฿</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="portfolio-box">
+									<img src="images/ใบปลิว.png" class="img-responsive" alt="">
+									<div class="portfolio-box-caption">
+										<div class="portfolio-box-caption-content">
+											<div class="project-category text-faded">
+												<p>ใบปลิว</p>
+												<p>ราคาเริ่มต้นที่ 4 ฿</p>
+
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-1-3">
-									<div class="wrap-col">
-										<div class="portfolio-box">
-											<img src="images/test.png" class="img-responsive" alt="">
-											<div class="portfolio-box-caption">
-												<div class="portfolio-box-caption-content">
-													<div class="project-category text-faded">
-														<p>ปริ้นงานขาว-ดำ</p>
-														<p>ราคา XXX บาท</p>
-													</div>
-													<div class="project-name">
-														<a href="single.html"></a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="portfolio-box">
-											<img src="images/test.png" class="img-responsive" alt="">
-											<div class="portfolio-box-caption">
-												<div class="portfolio-box-caption-content">
-													<div class="project-category text-faded">
-														<p>ปริ้นงานสี</p>
-														<p>ราคา XXX บาท</p>
-													</div>
-												</div>
+						</div>
+						<div class="col-1-3">
+							<div class="wrap-col">
+								<div class="portfolio-box">
+									<img src="images/สี-ขาวดำ.png" class="img-responsive" alt="">
+									<div class="portfolio-box-caption">
+										<div class="portfolio-box-caption-content">
+											<div class="project-category text-faded">
+												<p>ปริ้นเอกสาร</p>
+												<p> สี ราคาเริ่มต้นที่ 2  ฿</p>
+												<p> ขาวดำ ราคาเริ่มต้นที่ 0.8  ฿</p>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="col-1-3">
-									<div class="wrap-col">
-										<div class="portfolio-box">
-											<img src="images/test.png" class="img-responsive" alt="">
-											<div class="portfolio-box-caption">
-												<div class="portfolio-box-caption-content">
-													<div class="project-category text-faded">
-														<p>ถ่ายเอกสาร</p>
-														<p>ราคา XXX บาท</p>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="portfolio-box">
-											<img src="images/test.png" class="img-responsive" alt="">
-											<div class="portfolio-box-caption">
-												<div class="portfolio-box-caption-content">
-													<div class="project-category text-faded">
-														<p>จัดรูปเล่ม</p>
-														<p>ราคา XXX บาท</p>
-													</div>
-												</div>
+								<div class="portfolio-box">
+									<img src="images/แผ่นพับ.png" class="img-responsive" alt="">
+									<div class="portfolio-box-caption">
+										<div class="portfolio-box-caption-content">
+											<div class="project-category text-faded">
+												<p>แผ่นพับ</p>
+												<p>ราคาเริ่มต้นที่ 4 ฿</p>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="col-1-3">
-									<div class="wrap-col">
-										<div class="portfolio-box">
-											<img src="images/test.png" class="img-responsive" alt="">
-											<div class="portfolio-box-caption">
-												<div class="portfolio-box-caption-content">
-													<div class="project-category text-faded">
-														<p>เคลือบบัตร</p>
-														<p>ราคา XXX บาท</p>
-													</div>
-												</div>
+							</div>
+						</div>
+						<div class="col-1-3">
+							<div class="wrap-col">
+								<div class="portfolio-box">
+									<img src="images/นามบัตร.jpg" class="img-responsive" alt="">
+									<div class="portfolio-box-caption">
+										<div class="portfolio-box-caption-content">
+											<div class="project-category text-faded">
+												<p>นามบัตร</p>
+												<p>ราคาเริ่มต้นที่ 1.29 ฿</p>
 											</div>
 										</div>
-										<div class="portfolio-box">
-											<img src="images/test.png" class="img-responsive" alt="">
-											<div class="portfolio-box-caption">
-												<div class="portfolio-box-caption-content">
-													<div class="project-category text-faded">
-														<p>จำหน่ายอุปกรณ์</p>
-														<p>ราคา XXX บาท</p>
-													</div>
-												</div>
+									</div>
+								</div>
+								<div class="portfolio-box">
+									<img src="images/เคลือบบัตร.png" class="img-responsive" alt="">
+									<div class="portfolio-box-caption">
+										<div class="portfolio-box-caption-content">
+											<div class="project-category text-faded">
+												<p>เคลือบบัตร</p>
+												<p>ราคาเริ่มต้นที่ 5 ฿</p>
 											</div>
 										</div>
 									</div>
@@ -137,4 +134,60 @@ if (!$_SESSION["UserID"]){  //check session
 							</div>
 						</div>
 					</div>
-				</section>
+
+					<div class="row">
+						<div class="col-1-3">
+							<div class="wrap-col">
+								<div class="portfolio-box">
+									<img src="images/เข้าเล่มแบบห่วงพลาสติก.png" class="img-responsive" alt="">
+									<div class="portfolio-box-caption">
+										<div class="portfolio-box-caption-content">
+											<div class="project-category text-faded">
+												<p>เข้าเล่มแบบห่วงพลาสติก</p>
+												<p>ราคาเริ่มต้นที่ 10 ฿</p>
+											</div>
+											<div class="project-name">
+												<a href="single.html"></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-1-3">
+							<div class="wrap-col">
+								<div class="portfolio-box">
+									<img src="images/เข้าเล่มแบบห่วงเเบบเกลียว.png" class="img-responsive" alt="">
+									<div class="portfolio-box-caption">
+										<div class="portfolio-box-caption-content">
+											<div class="project-category text-faded">
+												<p>เข้าเล่มห่วงแบบเกลียว</p>
+												<p>ราคาเริ่มต้นที่ 18 ฿</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-1-3">
+							<div class="wrap-col">
+								<div class="portfolio-box">
+									<img src="images/เข้าเล่มแบบไสกาว.png" class="img-responsive" alt="">
+									<div class="portfolio-box-caption">
+										<div class="portfolio-box-caption-content">
+											<div class="project-category text-faded">
+												<p>เข้าเล่มแบบสันกาว</p>
+												<p>ราคาเริ่มต้นที่ 70 ฿</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>

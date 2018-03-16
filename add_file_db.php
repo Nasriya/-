@@ -5,9 +5,7 @@ session_start();
 //1. เชื่อมต่อ database:
 include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้านี้
 
-
-
-isset($fileupload);//รับค่าไฟล์จากฟอร์ม
+isset($fileupload);//รับค่าไฟล์จากฟอร์ม isset หลีกเลี่ยง Error Undefined index
 $ProductType = $_POST['TP']; //เก็บค่าประเภทของสินค้า
 $ProductDetail = $_POST['PD']; //เก็บค่าขนาดของสินค้า
 $Quanitity = $_POST['Quanitity']; //เก็บค่าจำนวนของสินค้า
@@ -18,9 +16,10 @@ $UserID = $_SESSION["UserID"];
 
 
 
+
 //เพิ่มไฟล์
 $upload=$_FILES['fileupload'];
-if($upload <> '') {   //not select file
+if($upload <> '') {
 //โฟลเดอร์ที่จะ upload file เข้าไป
 $path="fileupload/";
 
@@ -28,8 +27,8 @@ $path="fileupload/";
 	$remove_these = array(' ','`','"','\'','\\','/','_');
 	$newname = str_replace($remove_these, '', $_FILES['fileupload']['name']);
 
-	//ตั้งชื่อไฟล์ใหม่โดยเอาเวลาไว้หน้าชื่อไฟล์เดิม
-		
+		//ตั้งชื่อ
+	$newname = $UserID.'-'.$newname;
 	$path_copy=$path.$newname;
 	$path_link="fileupload/".$newname;
 

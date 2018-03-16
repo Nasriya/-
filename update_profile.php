@@ -106,14 +106,14 @@ echo 'error';
 		<input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="Telephone" value="<?php echo $meResult['Telephone']; ?>"  /></br></center>
 	</div>
 </div>
-<div class="row">
+<!--<div class="row">
 <div class="col-25 w3-center">
 	<h4>Password</h4>
 </div>
 <div class="col-75" >
 	<input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="password" value="<?php echo $meResult['Password']; ?>"  /></br></center>
 </div>
-</div>
+</div>-->
 <div class="row">
 <div class="col-25 w3-center">
 	<h4 >เเต้มสะสม</h4>
@@ -131,7 +131,7 @@ echo 'error';
 
 <br></br>
 <center>
-	<a href="save.php" class="w3-btn w3-green " style="width:10%"  name ="Edit">บันทึก</a>
+	<a href="" class="w3-btn w3-green " style="width:10%"  name ="Edit">บันทึก</a>
 	<a class="w3-btn w3-red" style="width:10%" onClick='window.history.back()' >ยกเลิก</a>
 
 
