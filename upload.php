@@ -26,7 +26,7 @@ if (!$_SESSION["UserID"]){  //check session
 	<link rel="stylesheet" href="css/menu.css">
 	<script src="js/jquery1111.min.js" type="text/javascript"></script>
 	<script src="js/script.js"></script>
-	
+
 </head>
 
 <body class="home-page">
@@ -81,9 +81,16 @@ if (!$_SESSION["UserID"]){  //check session
 
 
   <input type="date" name="DateReceip" value="d-m-y" required>
-	<input type="time" name="TimeReceip"  value="d-m-Y" required>
+	<!--<input type="time" name="TimeReceip"  value="d-m-Y" required>-->
   <!--Start Box-<input type="submit" value="ตกลง"-->
-
+	<select name="TimeReceip" required>
+		<option selected>---เวลารับเอกสาร---</option>
+		<option name="TimeReceip" value="8.30-10.30">8.30-10.30 น.</option>
+		<option name="TimeReceip" value="10.31-12.00">10.31-12.00 น.</option>
+		<option name="TimeReceip" value="13.00-14.30">13.00-14.30 น.</option>
+		<option name="TimeReceip" value="14.31-16.00">14.31-16.00 น. </option>
+		<option name="TimeReceip" value="16.01-18.00">16.01-18.00 น. </option>
+	 </select>
 <br></br>
 <button type="submit" class="w3-button w3-round-xlarge w3-green" style="width:100px" name="button" id="button">ยืนยัน</button>
 

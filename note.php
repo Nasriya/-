@@ -14,7 +14,9 @@ if (!$_SESSION["UserID"]){  //check session
 <?php
 
 
-$meSQL = "SELECT * FROM uploadfile WHERE Member_ID='{$_SESSION['UserID']}' ";
+$meSQL = "SELECT user.*,uploadfile.* FROM user,uploadfile
+WHERE user.Member_ID = uploadfile.Member_ID
+ORDER BY dateup ASC ";
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {
 $meResult = mysqli_fetch_assoc($meQuery);
@@ -27,7 +29,7 @@ echo 'error';
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>สรุปผลการสั่งซื้อ</title>
+	<title>รายละเอียด</title>
 	<meta name="description" content="Free Responsive Html5 Css3 Templates | html5xcss3.com">
 	<meta name="author" content="www.html5xcss3.com">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -69,12 +71,9 @@ echo 'error';
           <table class="w3-table w3-bordered">
             <center>
 
-              <b>สรุปการสั่งซื้อ</b>
+              <b>รายละเอียด</b>
 <br></br>
-            <tr>
-              <td>ไฟล์งาน :</td>
-              <td><a href="#" ><?php echo $meResult['fileupload']; ?></td>
-            </tr>
+
             <tr>
               <td>ประเภทการสั่งพิมพ์ :</td>
               <td><?php echo $meResult['ProductType']; ?></td>
@@ -109,7 +108,7 @@ echo 'error';
 
 <br></br>
 
-    <a href="upload.php" class="w3-btn  w3-round-xxlarge w3-red" style="width:200px">close</a>
+    <a href="employee.php" class="w3-btn  w3-round-xxlarge w3-red" style="width:200px">close</a>
 
 
 </div>

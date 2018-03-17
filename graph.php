@@ -1,3 +1,11 @@
+<?php session_start();?>
+<?php
+
+if (!$_SESSION["UserID"]){  //check session
+
+	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
+
+}else{}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,12 +32,15 @@
 				   <li><img src="images/f.png" width="150" height="150"></li>
 					 <li><a href='check.php'><span>ตรวจสอบ</span></a></li>
 					<li><a href='employee.php'><span>จัดการคิว</span></a></li>
+					<button class="w3-button w3-round-xlarge w3-white w3-display-topright" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>
+
 				</ul>
 			</div>
 		</div>
 	</div>
 <br></br>
 	<h2 class="w3-myfont w3-center">สรุปผลการดำเนินงาน</h2>
+
 
 <br></br>
 <center>

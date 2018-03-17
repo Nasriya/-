@@ -8,13 +8,13 @@ if (!$_SESSION["UserID"]){  //check session
 	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
 
 }else{
-	
+
 ?>
 
 <?php
 
 
-$meSQL = "SELECT * FROM uploadfile WHERE Member_ID='{$_SESSION['UserID']}' ";
+$meSQL = "SELECT * FROM uploadfile WHERE Member_ID='{$_SESSION['UserID']}' ORDER BY dateup desc ";
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {
 $meResult = mysqli_fetch_assoc($meQuery); //มีค่าตัวแปรเฉพาะที่เราเลือก
