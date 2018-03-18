@@ -5,6 +5,7 @@ include('connection.php');
 if (!$_SESSION["UserID"]){  //check session
 
 	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
+	//ลองทดสอบว่าหากเราเเก้ไขโค้ดบนนี้เเล้ว มันจะไปเปลี่ยนเเปลงโค้ดที่เครื่องเราหรือเปล่า
 
 }else{?>
 
