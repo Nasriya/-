@@ -26,7 +26,8 @@ $path="fileupload/";
 //เอาชื่อไฟล์ที่มีอักขระแปลกๆออก
 	$remove_these = array(' ','`','"','\'','\\','/','_');
 	$newname = str_replace($remove_these, '', $_FILES['fileupload']['name']);
-
+	$filetype= strrchr($newname,".");
+	if($filetype ==".PDF"){
 		//ตั้งชื่อ
 	$newname = $UserID.'-'.$newname;
 	$path_copy=$path.$newname;
@@ -44,8 +45,9 @@ move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);
 
 	mysqli_close($con);
 	// javascript แสดงการ upload file
+}
+	if($result ){
 
-	if($result){
 	echo "<script type='text/javascript'>";
 	echo "alert('อัพโหลดไฟล์สำเร็จ');";
 	echo "window.location = 'summary.php'; ";
@@ -53,6 +55,7 @@ move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);
 	}
 	else{
 	echo "<script type='text/javascript'>";
+	echo "ไม่";
 	echo "alert('อัพโหลดไฟล์ไม่สำเร็จ กรุณาลองใหม่อีกครั้ง !');";
 	echo "</script>";
 }

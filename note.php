@@ -8,18 +8,18 @@ if (!$_SESSION["UserID"]){  //check session
 	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
 
 }else{
-	//$_SESSION['frmAction'] = md5('itoffside.com' . rand(1, 9999));
+
 ?>
 
 <?php
-
-
-$meSQL = "SELECT user.*,uploadfile.* FROM user,uploadfile
-WHERE user.Member_ID = uploadfile.Member_ID
-ORDER BY dateup ASC ";
+//มันยังดึงข้อมูลของ ADMIN มาเเสดงทั้งหมดไม่ใช่ข้อมูลของไฟล์ที
+$meSQL = "SELECT * FROM uploadfile
+WHERE Member_ID
+ORDER BY fileID DESC ";
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {
 $meResult = mysqli_fetch_assoc($meQuery);
+$_SESSION["UserID"] = $meResult["fileID"];
 } else {
 echo 'error';
 }
@@ -52,10 +52,9 @@ echo 'error';
 			<div id='cssmenu' >
 				<ul>
 				   <li><img src="images/f.png" width="150" height="150"></li>
-				     <li><a href='index.php'><span>หน้าแรก</span></a></li>
-						<li><a href='service.php'><span>บริการของเรา</span></a></li>
-				   <li><a href='contact.php'><span>ติดต่อเรา</span></a></li>
-					 <li><a href='upload.php'><span>อัพโหลดไฟล์</span></a></li>
+					 <li><a href='check.php'><span>ตรวจสอบ</span></a></li>
+					 <li><a href='admin_profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
+					 <li><a href='graph.php'><span>ข้อมูลการดำเนินงาน</span></a></li>
 
  					<button class="w3-button w3-round-xlarge w3-white w3-display-topright" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>
 				</ul>

@@ -6,8 +6,8 @@ session_start();
 include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้านี้
 $status = $_POST['status'];
 
-$sql = "UPDATE uploadfile
-SET status=''$status'
+$sql = "UPDATE uploadfile SET status='$status' WHERE Member_ID='{$_SESSION['UserID']}'"
+;
 
 
 $result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
