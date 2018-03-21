@@ -6,7 +6,7 @@ if (!$_SESSION["UserID"]){  //check session
 	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
 
 }else{
-	$_SESSION['frmAction'] = md5('itoffside.com' . rand(1, 9999));
+	//$_SESSION['frmAction'] = md5('itoffside.com' . rand(1, 9999));
 ?>
 
 <?php
@@ -131,7 +131,7 @@ echo 'error';
 
 <br></br>
 <center>
-	<a href="" class="w3-btn w3-green " style="width:10%"  name ="Edit">บันทึก</a>
+	<a href="update_profile-action.php" class="w3-btn w3-green " style="width:10%"  name ="Edit">บันทึก</a>
 	<a class="w3-btn w3-red" style="width:10%" onClick='window.history.back()' >ยกเลิก</a>
 
 

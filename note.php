@@ -1,25 +1,17 @@
 <?php session_start();?>
-<?php
 
+
+<?php
 include('connection.php');
+//มันยังดึงข้อมูลของไฟล์อันเเรก มาเเสดงทั้งหมดไม่ใช่ข้อมูลของไฟล์ที
 
-if (!$_SESSION["UserID"]){  //check session
-
-	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
-
-}else{
-
-?>
-
-<?php
-//มันยังดึงข้อมูลของ ADMIN มาเเสดงทั้งหมดไม่ใช่ข้อมูลของไฟล์ที
 $meSQL = "SELECT * FROM uploadfile
-WHERE Member_ID
-ORDER BY fileID DESC ";
+WHERE fileID ";
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {
 $meResult = mysqli_fetch_assoc($meQuery);
-$_SESSION["UserID"] = $meResult["fileID"];
+//$_SESSION["fileID"] = $meResult["fileID"];
+
 } else {
 echo 'error';
 }
@@ -102,6 +94,19 @@ echo 'error';
               <td>เเต้มสะสม :</td>
               <td></td>
             </tr>
+						<tr>
+              <td>สถานะ :	&nbsp;&nbsp;<select name="st" style="width:175px">
+					      <option selected>-รอการยืนยัน-</option>
+					      <option name="st" value="กำลังดำเนินงาน">กำลังดำเนินงาน </option>
+								<option name="st" value="รอการชำระ">รอการชำระ</option>
+					      <option name="st" value="ชำระเเล้ว">ชำระเเล้ว</option>
+					     </select></td>
+              <td>
+
+							 <form method='post' action='action_employee.php'><button type="submit" class="w3-button w3-round-xlarge w3-green" style="width:100px" name="button" id="button">ยืนยัน</button>
+
+						 </td>
+            </tr>
           </table>
         </div>
 
@@ -114,4 +119,3 @@ echo 'error';
 </div>
 </body>
 </html>
-<?php }?>

@@ -106,7 +106,7 @@ echo 'error';
             </tr>
 						<tr>
               <td>สถานะ :</td>
-              <td><?php echo $meResult['status']; ?></td>
+              <td><?php echo $meResult['Status']; ?></td>
             </tr>
           </table>
         </div>

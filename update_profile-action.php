@@ -11,10 +11,13 @@ isset($Address);
 isset($Email);
 isset($Telephone);
 
-	$sql = "UPDATE user SET
-			Firstname='$Firstname'
-
-			WHERE  Member_ID="'$MemberID'";
+	$sql = 	"UPDATE user SET Firstname = '$Firstname' ,Lastname = '$Lastname',
+	 Username = '$Username',
+	  Lastname = '$Lastname'
+	  , Address= '$Address'
+		, Telephone = '$Telephone'
+		, Email = '$Email'
+		  WHERE Member_ID='{$_SESSION['UserID']}' ";
 
 	$query = mysqli_query($con,$sql);
 
