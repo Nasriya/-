@@ -18,10 +18,6 @@ $UserID = $_SESSION["UserID"];
 
 
 
-
-
-
-
 //เพิ่มไฟล์
 $upload=$_FILES['fileupload'];
 

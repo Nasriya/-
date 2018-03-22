@@ -5,7 +5,7 @@ include('connection.php');
 if (!$_SESSION["UserID"]){  //check session
 
 	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
-	//ลองทดสอบว่าหากเราเเก้ไขโค้ดบนนี้เเล้ว มันจะไปเปลี่ยนเเปลงโค้ดที่เครื่องเราหรือเปล่า
+
 
 }else{?>
 
@@ -65,24 +65,26 @@ if (!$_SESSION["UserID"]){  //check session
 			<td bgcolor='#61b4cf'><br>ชื่อสมาชิก</br></td>
 			<td bgcolor='#b8b4b0'><br>ไฟล์งาน</br></td>
 			<td bgcolor='#61b4cf'><br>Note</br></td>
-			<td bgcolor='#61b4cf'><br></br><br></br></td>
-			<td bgcolor='#b8b4b0'><br>ลบ</br></td>
-			<td bgcolor='#61b4cf'><br></br></td>
+			<td bgcolor='#b8b4b0'><br>สถานะ</br></td>
+			<td bgcolor='#b8b4b0'><br></br></td>
+
 
 			<td></br></br></td>
 			<td><br></br></td></tr>";
 
 			while($row = mysqli_fetch_array($result)) {
+				  $_SESSION["fileID"] = $row["fileID"];
 				echo "<tr>";
 			  echo "<td align='center'  bgcolor='#def1f9'>" .$row["Member_ID"] .  "</td> ";
 				echo "<td align='center'  bgcolor='#e1dedc'>" .$row["Telephone"] .  "</td> ";
 			  echo "<td align='center'  bgcolor='#def1f9'>" .$row["Username"] .  "</td> ";
 			  echo "<td align='center'  bgcolor='#e1dedc'><a href='file.php?'UserID=$row[0]fileID=$row[0]>" .$row["fileupload"] .  "</td> ";
 			  echo "<td align='center'  bgcolor='#def1f9'><a href='note.php?UserID=$row[0]'>รายละเอียด" .  "</td> ";
-				echo "<td align='center'  bgcolor='#61b4cf'>" ."</td> ";//ลบ
+				echo "<td align='center'  bgcolor='#e1dedc'>" .$row["Status"] .  "</td> ";
+			//	echo "<td align='center'  bgcolor='#61b4cf'>" ."</td> ";//ลบ
 
 			//ลบข้อมูล
-			  echo "<td align='center' bgcolor='#e1dedc'><a href='UserDelete.php?ID=$row[0]'><button class='w3-button w3-small w3-red' style='width:60px'>Delete</button></a></td> ";
+			 // echo "<td align='center' bgcolor='#def1f9'><a href='UserDelete.php?ID=$row[0]'><button class='w3-button w3-small w3-red' style='width:60px'>Delete</button></a></td> ";
 			  echo "</tr>";
 			}
 			echo "</table>";

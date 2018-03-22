@@ -25,6 +25,7 @@
 
 						 <li><a href='employee.php'><span>จัดการคิว</span></a></li>
 						 <li><a href='admin_profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
+						 <li><a href='graph.php'><span>ข้อมูลการดำเนินงาน</span></a></li>
 				</ul>
 			</div>
 		</div>
@@ -33,16 +34,16 @@
 	<div class="container">
 		<h1>ค้นหา</h1>
 
-		<form class="form">
+	<form method='post' action='search.php'>
 			<input type="text" placeholder="กรุณากรอกเบอร์ลูกค้า">
 <br></br>
 <br></br>
-			<center><a href="point.html"><button class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding"style="width:100px">ยืนยัน</a></button></center>
+			<center><a href="point.html"><button class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding"style="width:100px" name"search">ยืนยัน</a></button></center>
 		</form>
 
 	</div>
 
-	
+
 
 </body>
 </html>

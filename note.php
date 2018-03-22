@@ -5,12 +5,12 @@
 include('connection.php');
 //มันยังดึงข้อมูลของไฟล์อันเเรก มาเเสดงทั้งหมดไม่ใช่ข้อมูลของไฟล์ที
 
-$meSQL = "SELECT * FROM uploadfile
-WHERE fileID ";
+$meSQL = "SELECT user.*,uploadfile.* FROM user,uploadfile
+WHERE user.Member_ID = uploadfile.Member_ID";
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {
 $meResult = mysqli_fetch_assoc($meQuery);
-//$_SESSION["fileID"] = $meResult["fileID"];
+
 
 } else {
 echo 'error';
@@ -66,25 +66,25 @@ echo 'error';
 <br></br>
 
             <tr>
-              <td>ประเภทการสั่งพิมพ์ :</td>
-              <td><?php echo $meResult['ProductType']; ?></td>
+              <td>ประเภทการสั่งพิมพ์ :&nbsp;&nbsp &nbsp;&nbsp  <?php echo $meResult['ProductType']; ?></td>
+              <td></td>
             </tr>
             <tr>
-              <td>ขนาดกระดาษ :</td>
-              <td><?php echo $meResult['ProductDetail']; ?></td>
+              <td>ขนาดกระดาษ :&nbsp;&nbsp &nbsp;&nbsp <?php echo $meResult['ProductDetail']; ?></td>
+              <td></td>
             </tr>
             <tr>
-              <td>จำนวน :</td>
-              <td><?php echo $meResult['Quanitity']; ?></td>
+              <td>จำนวน : &nbsp;&nbsp &nbsp;&nbsp <?php echo $meResult['Quanitity']; ?></td>
+              <td></td>
             </tr>
             <tr>
-              <td>วันที่นัดรับ :</td>
-              <td><?php echo $meResult['DateReceip']; ?></td>
+              <td>วันที่นัดรับ : &nbsp;&nbsp &nbsp;&nbsp <?php echo $meResult['DateReceip']; ?></td>
+              <td></td>
 
             </tr>
             <tr>
-              <td>เวลาที่นัดรับ :</td>
-              <td><?php echo $meResult['TimeReceip']; ?></td>
+              <td>เวลาที่นัดรับ :&nbsp;&nbsp &nbsp;&nbsp <?php echo $meResult['TimeReceip']; ?></td>
+<td></td>
             </tr>
             <tr>
               <td>ราคารวม :</td>
@@ -95,15 +95,13 @@ echo 'error';
               <td></td>
             </tr>
 						<tr>
-              <td>สถานะ :	&nbsp;&nbsp;<select name="st" style="width:175px">
-					      <option selected>-รอการยืนยัน-</option>
-					      <option name="st" value="กำลังดำเนินงาน">กำลังดำเนินงาน </option>
-								<option name="st" value="รอการชำระ">รอการชำระ</option>
-					      <option name="st" value="ชำระเเล้ว">ชำระเเล้ว</option>
-					     </select></td>
-              <td>
+              <td>สถานะ :	&nbsp;&nbsp
+							&nbsp;&nbsp
 
-							 <form method='post' action='action_employee.php'><button type="submit" class="w3-button w3-round-xlarge w3-green" style="width:100px" name="button" id="button">ยืนยัน</button>
+<form method='post' action='1_status.php'><center><button class="w3-button w3-ripple w3-green" style="width:200px" name="st1">กำลังดำเนินงาน</button></form><br>
+<form method='post' action='2_status.php'><button class="w3-button w3-ripple w3-red" style="width:200px" name="st2">รอการชำระ</button></form>
+<form method='post' action='3_status.php'><button class="w3-button w3-ripple w3-yellow" style="width:200px" name="st3">ชำระเเล้ว</button></form>
+
 
 						 </td>
             </tr>

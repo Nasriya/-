@@ -34,6 +34,7 @@ if (!$_SESSION["UserID"]){  //check session
 						<li><a href='service.php'><span>บริการของเรา</span></a></li>
 				   <li><a href='upload.php'><span>อัพโหลดไฟล์</span></a></li>
 					 <li><a href='profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
+					 <li><a href='history.php'><span>ประวัติการสั่งซื้อ</span></a></li>
 
 					 <button class="w3-button w3-round-xlarge w3-white w3-display-topright" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>
 
