@@ -50,6 +50,7 @@ if (!$_SESSION["UserID"]){  //check session
 			<?php
 			//1. เชื่อมต่อ database:
 			include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
+
 			//2. query ข้อมูลจากตาราง tb_member:
 			$query = "SELECT user.*,uploadfile.* FROM user,uploadfile
 			WHERE user.Member_ID = uploadfile.Member_ID
@@ -73,13 +74,13 @@ if (!$_SESSION["UserID"]){  //check session
 			<td><br></br></td></tr>";
 
 			while($row = mysqli_fetch_array($result)) {
-				  $_SESSION["fileID"] = $row["fileID"];
+				  $_SESSION["fileID"] =$_SESSION["UserID"];
 				echo "<tr>";
 			  echo "<td align='center'  bgcolor='#def1f9'>" .$row["Member_ID"] .  "</td> ";
 				echo "<td align='center'  bgcolor='#e1dedc'>" .$row["Telephone"] .  "</td> ";
 			  echo "<td align='center'  bgcolor='#def1f9'>" .$row["Username"] .  "</td> ";
-			  echo "<td align='center'  bgcolor='#e1dedc'><a href='file.php?'UserID=$row[0]fileID=$row[0]>" .$row["fileupload"] .  "</td> ";
-			  echo "<td align='center'  bgcolor='#def1f9'><a href='note.php?UserID=$row[0]'>รายละเอียด" .  "</td> ";
+			  echo "<td align='center'  bgcolor='#e1dedc'><a href='file.php''UserID=$row[0]fileID=$row[0]>" .$row["fileupload"] .  "</td> ";
+			  echo "<td align='center'  bgcolor='#def1f9'><a href='note.php?fileID=$row[0]UserID=$row[0]'>รายละเอียด" .  "</td> ";
 				echo "<td align='center'  bgcolor='#e1dedc'>" .$row["Status"] .  "</td> ";
 			//	echo "<td align='center'  bgcolor='#61b4cf'>" ."</td> ";//ลบ
 
@@ -93,4 +94,4 @@ if (!$_SESSION["UserID"]){  //check session
 }
 			?>
 			<br></br>
-			<center><form action="clear.php"><button  class="w3-button w3-round-xlarge w3-green" style="width:200px" >ล้างข้อมูลทั้งหมด</button>
+		<!--	<center><form action="clear.php"><button  class="w3-button w3-round-xlarge w3-green" style="width:200px" >ล้างข้อมูลทั้งหมด</button>

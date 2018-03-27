@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ไฟล์งาน</title>
+    <title>Document</title>
 </head>
 <body>
 <?php
@@ -19,14 +19,14 @@ if(isset($_GET['fileID']) && $_GET['fileID']!=""){
 
 <div id="pdfplace">
 ไม่ได้ติดตั้งโปรแกรม Adobe Reader หรือบราวเซอร์ไม่รองรับการแสดงผล PDF
-<a href="<?=$file_pdf?>">คลิกที่นี้เพื่อดาวน์โหลดไฟล์ PDF</a>
+<a href="<?=$fileupload?>">คลิกที่นี้เพื่อดาวน์โหลดไฟล์ PDF</a>
 </div>
 
 <script type="text/javascript" src="js/pdfobject.js"></script>
  <script type="text/javascript">
   window.onload = function (){
     var myPDF = new PDFObject({
-        url: "<?=$file_pdf?>",
+        url: "<?=$fileupload?>",
         id: "myPDF",
         width: "650px",
         height: "700px",
@@ -36,7 +36,7 @@ if(isset($_GET['fileID']) && $_GET['fileID']!=""){
             view: "FitH",
             pagemode: "thumbs"
         }
-        }).embed('pdfplace');
+      }).embed('fileupload');
   };
 </script>
 </body>

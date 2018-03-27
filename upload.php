@@ -58,7 +58,7 @@ if (!$_SESSION["UserID"]){  //check session
 		<form action="add_file_db.php" method="post" enctype="multipart/form-data" >
     <b>กรุณาเลือกไฟล์:</b>
     <input type="file" name="fileupload"  id ="fileupload" required >
-
+<font color="red"><p>หมายเหตุ: เฉพาะไฟล์ PDF เท่านั้น </p></font>
 
 
 		<br></br>
@@ -86,18 +86,18 @@ if (!$_SESSION["UserID"]){  //check session
   <!--Start Box-<input type="submit" value="ตกลง"-->
 	<select name="TimeReceip" required>
 		<option selected>---เวลารับเอกสาร---</option>
-		<option name="TimeReceip" value="8.30-10.30">8.30-10.30 น.</option>
-		<option name="TimeReceip" value="10.31-12.00">10.31-12.00 น.</option>
-		<option name="TimeReceip" value="13.00-14.30">13.00-14.30 น.</option>
-		<option name="TimeReceip" value="14.31-16.00">14.31-16.00 น. </option>
-		<option name="TimeReceip" value="16.01-18.00">16.01-18.00 น. </option>
+		<option name="TimeReceip" value="8.30-10.30 น.">8.30-10.30 น.</option>
+		<option name="TimeReceip" value="10.31-12.00 น.">10.31-12.00 น.</option>
+		<option name="TimeReceip" value="13.00-14.30 น.">13.00-14.30 น.</option>
+		<option name="TimeReceip" value="14.31-16.00 น.">14.31-16.00 น. </option>
+		<option name="TimeReceip" value="16.01-18.00 น.">16.01-18.00 น. </option>
 	 </select>
 <br></br>
 <button type="submit" class="w3-button w3-round-xlarge w3-green" style="width:100px" name="button" id="button">ยืนยัน</button>
 
 &nbsp;&nbsp;<button class="w3-button w3-round-xlarge w3-red"style="width:100px" >ยกเลิก</button>
 
-		<!--<p>หมายเหตุ: เฉพาะไฟล์ PDF เท่านั้น </p>-->
+
 		</center>
 
 	</form>

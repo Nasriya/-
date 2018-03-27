@@ -73,27 +73,32 @@ echo 'error';
 <br></br>
             <tr>
               <td>ไฟล์งาน :</td>
+							<td></td>
               <td><a href="#" ><?php echo $meResult['fileupload']; ?></td>
             </tr>
             <tr>
               <td>ประเภทการสั่งพิมพ์ :</td>
+								<td></td>
               <td><?php echo $meResult['ProductType']; ?></td>
             </tr>
             <tr>
               <td>ขนาดกระดาษ :</td>
+								<td></td>
               <td><?php echo $meResult['ProductDetail']; ?></td>
             </tr>
             <tr>
               <td>จำนวน :</td>
+								<td></td>
               <td><?php echo $meResult['Quanitity']; ?></td>
             </tr>
             <tr>
               <td>วันที่นัดรับ :</td>
+								<td></td>
               <td><?php echo $meResult['DateReceip']; ?></td>
-
             </tr>
             <tr>
               <td>เวลาที่นัดรับ :</td>
+								<td></td>
               <td><?php echo $meResult['TimeReceip']; ?></td>
             </tr>
             <tr>
@@ -106,6 +111,7 @@ echo 'error';
             </tr>
 						<tr>
               <td>สถานะ :</td>
+								<td></td>
               <td><?php echo $meResult['Status']; ?></td>
             </tr>
           </table>

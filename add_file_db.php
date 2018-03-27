@@ -16,8 +16,17 @@ $TimeReceip =$_POST['TimeReceip'];//เก็บค่าเวลาที่�
 $date = date("d-m-Y"); //กำหนดวันที่และเวลา
 $UserID = $_SESSION["UserID"];
 
+$file = strtolower($_FILES['fileupload']['name']);
+$sizefile = $_FILES["fileupload"]["size"];
+$type= strrchr($file,".");
 
 
+if(($type==".pdf"))
+{
+	echo "<script type='text/javascript'>";
+		echo "alert('อัพโหลดไฟล์สำเร็จ');";
+		echo "window.location = 'summary.php'; ";
+		echo "</script>";
 //เพิ่มไฟล์
 $upload=$_FILES['fileupload'];
 
@@ -36,7 +45,7 @@ $path="fileupload/";
 
 
 //คัดลอกไฟล์ไปเก็บที่เว็บเซริ์ฟเวอร์
-move_uploaded_file($_FILES['fileupload']['tmp_name']&& $_FILES['fileupload']['type'] ,$path_copy);
+move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);
 	}
 	// เพิ่มไฟล์เข้าไปในตาราง uploadfile
 
@@ -44,23 +53,22 @@ move_uploaded_file($_FILES['fileupload']['tmp_name']&& $_FILES['fileupload']['ty
 		VALUES('$newname','$ProductType','$ProductDetail','$Quanitity','$TimeReceip','$DateReceip','$UserID')";
 
 		$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
-
+//  $_SESSION["fileID"] = $result["fileID"];
 
 	mysqli_close($con);
 	// javascript แสดงการ upload file
 
-	if($result){
-	echo "<script type='text/javascript'>";
-	echo "alert('อัพโหลดไฟล์สำเร็จ');";
-	echo "window.location = 'summary.php'; ";
-	echo "</script>";
+
 	}
 	else{
 
 	echo "<script type='text/javascript'>";
 	echo "alert('อัพโหลดไฟล์ไม่สำเร็จ กรุณาลองใหม่อีกครั้ง !');";
+echo "window.location = 'upload.php'; ";
 	echo "</script>";
 }
+
+
 
 
 ?>

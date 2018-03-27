@@ -3,14 +3,15 @@
 
 <?php
 include('connection.php');
-//มันยังดึงข้อมูลของไฟล์อันเเรก มาเเสดงทั้งหมดไม่ใช่ข้อมูลของไฟล์ที
-
-$meSQL = "SELECT user.*,uploadfile.* FROM user,uploadfile
-WHERE user.Member_ID = uploadfile.Member_ID";
+//เป็นไฟล์ของข้อมูลเเรก
+ $_SESSION["fileID"] =$_SESSION["UserID"];
+$meSQL = "SELECT * FROM uploadfile
+WHERE fileID   ";
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {
 $meResult = mysqli_fetch_assoc($meQuery);
 
+  //$_SESSION["fileID"] = $meResult["Member_ID"];
 
 } else {
 echo 'error';
@@ -30,6 +31,7 @@ echo 'error';
 	<link rel="stylesheet" href="css/lightbox.css">
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/menu.css">
+
 <link rel="stylesheet" href="css/form.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -62,46 +64,60 @@ echo 'error';
           <table class="w3-table w3-bordered">
             <center>
 
-              <b>รายละเอียด</b>
+              <h4><b>รายละเอียด</b></h4>
 <br></br>
-
+<tr>
+  <td><b>ไฟล์งาน :</b></td>
+    <td><a href="#" ><?php echo $meResult['fileupload']; ?></td>
+        <td></td>
+</tr>
             <tr>
-              <td>ประเภทการสั่งพิมพ์ :&nbsp;&nbsp &nbsp;&nbsp  <?php echo $meResult['ProductType']; ?></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>ขนาดกระดาษ :&nbsp;&nbsp &nbsp;&nbsp <?php echo $meResult['ProductDetail']; ?></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>จำนวน : &nbsp;&nbsp &nbsp;&nbsp <?php echo $meResult['Quanitity']; ?></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>วันที่นัดรับ : &nbsp;&nbsp &nbsp;&nbsp <?php echo $meResult['DateReceip']; ?></td>
+              <td><b>ประเภทการสั่งพิมพ์ :</b></td>
+               <td><?php echo $meResult['ProductType']; ?></td>
               <td></td>
 
             </tr>
             <tr>
-              <td>เวลาที่นัดรับ :&nbsp;&nbsp &nbsp;&nbsp <?php echo $meResult['TimeReceip']; ?></td>
-<td></td>
-            </tr>
-            <tr>
-              <td>ราคารวม :</td>
+              <td><b>ขนาดกระดาษ :</b><td> <?php echo $meResult['ProductDetail']; ?></td>
               <td></td>
             </tr>
             <tr>
-              <td>เเต้มสะสม :</td>
+              <td><b>จำนวน : </b><td> <?php echo $meResult['Quanitity']; ?></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><b>วันที่นัดรับ :</b><td> <?php echo $meResult['DateReceip']; ?></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><b>เวลาที่นัดรับ :<b/><td><?php echo $meResult['TimeReceip']; ?></td>
+                <td></td>
+            </tr>
+            <tr>
+              <td><b>ราคารวม :</b></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><b>เเต้มสะสม :</b></td>
+              <td></td>
               <td></td>
             </tr>
 						<tr>
-              <td>สถานะ :	&nbsp;&nbsp
-							&nbsp;&nbsp
+              <td><b>สถานะ :</b>
 
-<form method='post' action='1_status.php'><center><button class="w3-button w3-ripple w3-green" style="width:200px" name="st1">กำลังดำเนินงาน</button></form><br>
+<td>
+  สถานะตอนนี้ คือ
+      <font color="red"><?php echo $meResult['Status']; ?></font>
+      <br></br>
+<form method='post' action='1_status.php'><center><button class="w3-button w3-ripple w3-yellow" style="width:200px" name="st1">กำลังดำเนินงาน</button></form><br>
 <form method='post' action='2_status.php'><button class="w3-button w3-ripple w3-red" style="width:200px" name="st2">รอการชำระ</button></form>
-<form method='post' action='3_status.php'><button class="w3-button w3-ripple w3-yellow" style="width:200px" name="st3">ชำระเเล้ว</button></form>
-
+<form method='post' action='3_status.php'><button class="w3-button w3-ripple w3-green" style="width:200px" name="st3">ชำระเเล้ว</button></form>
+<!--<td><input type="radio" name="st" value="กำลังดำเนินงาน" checked>กำลังดำเนินงาน<br>
+<input type="radio" name="st" value="รอการชำระ" checked>รอการชำระ<br>
+<input type="radio" name="st" value="ชำระเเล้ว" checked>ชำระเเล้ว<br>
+<br>
+<form method='post' action='3_status.php'><button class="w3-button w3-round-xlarge w3-blue" name="st3"  style="width:100px">ยืนยัน</button></td></tr>
 
 						 </td>
             </tr>
