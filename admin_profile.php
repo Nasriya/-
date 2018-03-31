@@ -50,6 +50,9 @@ echo 'error';
 				   <li><img src="images/f.png" width="150" height="150"></li>
 					 <li><a href='employee.php'><span>จัดการคิว</span></a></li>
 				     <li><a href='check.php'><span>ตรวจสอบ</span></a></li>
+						 <li><a href='customer.php'><span>ข้อมูลของลูกค้า</span></a></li>
+						 <li><a href='graph.php'><span>ข้อมูลการดำเนินงาน</span></a></li>
+
 
 
  					<button class="w3-button w3-round-xlarge w3-white w3-display-topright" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>

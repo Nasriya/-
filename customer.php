@@ -33,10 +33,9 @@ if (!$_SESSION["UserID"]){  //check session
 			<div id='cssmenu' >
 				<ul>
 				   <li><img src="images/f.png" width="150" height="150"></li>
-
+          <li><a href='employee.php'><span>จัดการคิว</span></a></li>
 				   <li><a href='check.php'><span>ตรวจสอบ</span></a></li>
 					 <li><a href='admin_profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
-					 <li><a href='customer.php'><span>ข้อมูลของลูกค้า</span></a></li>
 					 <li><a href='graph.php'><span>ข้อมูลการดำเนินงาน</span></a></li>
 
 <button class="w3-button w3-round-xlarge w3-white w3-display-topright" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>
@@ -45,7 +44,7 @@ if (!$_SESSION["UserID"]){  //check session
 		</div>
 	</div>
 <br></br>
-	<h1 class="w3-myfont w3-center">จัดการคิว</h1>
+	<h1 class="w3-myfont w3-center">ข้อมูลของลูกค้า</h1>
 
 			<br></br>
 			<?php
@@ -53,22 +52,21 @@ if (!$_SESSION["UserID"]){  //check session
 			include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 
 			//2. query ข้อมูลจากตาราง tb_member:
-			$query = "SELECT user.*,uploadfile.* FROM user,uploadfile
-			WHERE user.Member_ID = uploadfile.Member_ID
-			ORDER BY dateup ASC ";
+			$query = "SELECT user.* FROM user	ORDER BY Member_ID ASC ";
 			//3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
 			$result = mysqli_query($con, $query);
 			//4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
 			echo "<table align='center' width='900' >";
 			//หัวข้อตาราง
 			echo " <tr align='center'>
-			<td bgcolor='#61b4cf'><br>Member_ID</br></td>
-			<td bgcolor='#b8b4b0'><br>เบอร์โทรศัพท์</br></td>
-			<td bgcolor='#61b4cf'><br>ชื่อสมาชิก</br></td>
-			<td bgcolor='#b8b4b0'><br>ไฟล์งาน</br></td>
-			<td bgcolor='#61b4cf'><br>Note</br></td>
-			<td bgcolor='#b8b4b0'><br>สถานะ</br></td>
-			<td bgcolor='#b8b4b0'><br></br></td>
+			<td bgcolor='#61b4cf'><br>รหัสสมาชิก</br></td>
+			<td bgcolor='#61b4cf'><br>ชื่อ</br></td>
+			<td bgcolor='#61b4cf'><br>นามสกุล</br></td>
+      	<td bgcolor='#61b4cf'><br>Username</br></td>
+			<td bgcolor='#61b4cf'><br>ที่อยู่</br></td>
+			<td bgcolor='#61b4cf'><br>เบอร์โทรศัพท์</br></td>
+			<td bgcolor='#61b4cf'><br>E-mail</br></td>
+			<td bgcolor='#61b4cf'><br></br></td>
 
 
 			<td></br></br></td>
@@ -77,12 +75,14 @@ if (!$_SESSION["UserID"]){  //check session
 			while($row = mysqli_fetch_array($result)) {
 				  //$_SESSION["fileID"] =$_SESSION["UserID"];
 				echo "<tr>";
-			  echo "<td align='center'  bgcolor='#def1f9'>" .$row["Member_ID"] .  "</td> ";
-				echo "<td align='center'  bgcolor='#e1dedc'>" .$row["Telephone"] .  "</td> ";
-			  echo "<td align='center'  bgcolor='#def1f9'>" .$row["Username"] .  "</td> ";
-			  echo "<td align='center'  bgcolor='#e1dedc'><a href='fileupload/pop.pdf' UserID=$row[0]>" .$row["fileupload"] .  "</td> ";
-			  echo "<td align='center'  bgcolor='#def1f9'><a href='note.php?UserID=$row[0]'>รายละเอียด" .  "</td> ";
-				echo "<td align='center'  bgcolor='#e1dedc'>" .$row["Status"] .  "</td> ";
+			  echo "<td align='center'  bgcolor='#ffffff'>" .$row["Member_ID"] .  "</td> ";
+				echo "<td align='center'  bgcolor='#ffffff'>" .$row["Firstname"] .  "</td> ";
+			  echo "<td align='center'  bgcolor='#ffffff'>" .$row["Lastname"] .  "</td> ";
+        	echo "<td align='center'  bgcolor='#ffffff'>" .$row["Username"] .  "</td> ";
+        	echo "<td align='center'  bgcolor='#ffffff'>" .$row["Address"] .  "</td> ";
+			echo "<td align='center'  bgcolor='#ffffff'>" .$row["Telephone"] .  "</td> ";
+			 echo "<td align='center'  bgcolor='#ffffff'>" .$row["Email"] .  "</td> ";
+
 			//	echo "<td align='center'  bgcolor='#61b4cf'>" ."</td> ";//ลบ
 
 			//ลบข้อมูล

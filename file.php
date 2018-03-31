@@ -7,19 +7,19 @@
 <body>
 <?php
 include 'connection.php';
-$file_pdf="";
-if(isset($_GET['fileID']) && $_GET['fileID']!=""){
-    $myb = $_GET['fileID'];
+$fileupload="";
+if(isset($_GET['Member_ID']) && $_GET['Member_ID']!=""){
+    $myb = $_GET['Member_ID'];
     $sql = "SELECT * FROM uploadfile WHERE fileID='".$myb."'";
     $result = mysqli_query($sql);
     $row = mysqli_fetch_array($result);
-    $file_pdf ="fileupload/".$row['fileupload'];
+    $fileupload ="fileupload/".$row['fileupload'];
 }
 ?>
 
 <div id="pdfplace">
 ไม่ได้ติดตั้งโปรแกรม Adobe Reader หรือบราวเซอร์ไม่รองรับการแสดงผล PDF
-<a href="<?=$fileupload?>">คลิกที่นี้เพื่อดาวน์โหลดไฟล์ PDF</a>
+<a href="fileupload/pop.pdf">คลิกที่นี้เพื่อดาวน์โหลดไฟล์ PDF</a>
 </div>
 
 <script type="text/javascript" src="js/pdfobject.js"></script>
@@ -36,8 +36,9 @@ if(isset($_GET['fileID']) && $_GET['fileID']!=""){
             view: "FitH",
             pagemode: "thumbs"
         }
-      }).embed('fileupload');
+      }).embed('pdfplace');
   };
 </script>
+
 </body>
 </html>

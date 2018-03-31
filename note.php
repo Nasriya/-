@@ -6,12 +6,12 @@ include('connection.php');
 //เป็นไฟล์ของข้อมูลเเรก
  $_SESSION["fileID"] =$_SESSION["UserID"];
 $meSQL = "SELECT * FROM uploadfile
-WHERE fileID   ";
+WHERE fileID ";
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {
-$meResult = mysqli_fetch_assoc($meQuery);
-
-  //$_SESSION["fileID"] = $meResult["Member_ID"];
+$meResult = mysqli_fetch_array($meQuery);
+//$fileID = $meResult[$_SESSION['fileID']];
+  $_SESSION["fileID"] = $meResult["fileID"];
 
 } else {
 echo 'error';
@@ -46,9 +46,11 @@ echo 'error';
 			<div id='cssmenu' >
 				<ul>
 				   <li><img src="images/f.png" width="150" height="150"></li>
+           <li><a href='employee.php'><span>จัดการคิว</span></a></li>
 					 <li><a href='check.php'><span>ตรวจสอบ</span></a></li>
+           <li><a href='customer.php'><span>ข้อมูลของลูกค้า</span></a></li>
 					 <li><a href='admin_profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
-					 <li><a href='graph.php'><span>ข้อมูลการดำเนินงาน</span></a></li>
+					 
 
  					<button class="w3-button w3-round-xlarge w3-white w3-display-topright" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>
 				</ul>
@@ -90,7 +92,7 @@ echo 'error';
               <td></td>
             </tr>
             <tr>
-              <td><b>เวลาที่นัดรับ :<b/><td><?php echo $meResult['TimeReceip']; ?></td>
+              <td><b>เวลาที่นัดรับ :<b/><td><?php echo $meResult['TimeReceip']; ?>&nbsp;&nbsp;<?php echo 'น.' ?></td>
                 <td></td>
             </tr>
             <tr>
@@ -110,14 +112,10 @@ echo 'error';
   สถานะตอนนี้ คือ
       <font color="red"><?php echo $meResult['Status']; ?></font>
       <br></br>
-<form method='post' action='1_status.php'><center><button class="w3-button w3-ripple w3-yellow" style="width:200px" name="st1">กำลังดำเนินงาน</button></form><br>
-<form method='post' action='2_status.php'><button class="w3-button w3-ripple w3-red" style="width:200px" name="st2">รอการชำระ</button></form>
-<form method='post' action='3_status.php'><button class="w3-button w3-ripple w3-green" style="width:200px" name="st3">ชำระเเล้ว</button></form>
-<!--<td><input type="radio" name="st" value="กำลังดำเนินงาน" checked>กำลังดำเนินงาน<br>
-<input type="radio" name="st" value="รอการชำระ" checked>รอการชำระ<br>
-<input type="radio" name="st" value="ชำระเเล้ว" checked>ชำระเเล้ว<br>
-<br>
-<form method='post' action='3_status.php'><button class="w3-button w3-round-xlarge w3-blue" name="st3"  style="width:100px">ยืนยัน</button></td></tr>
+      <form method='post' action='1_status.php'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="w3-btn w3-white w3-border w3-border-red w3-round-large" style="width:150px" name="st1">กำลังดำเนินงาน</button></center></form>
+      <form method='post' action='2_status.php'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="w3-btn w3-white w3-border w3-border-yellow w3-round-large" style="width:150px" name="st2">รอการชำระ</button></form>
+      <form method='post' action='3_status.php'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="w3-btn w3-white w3-border w3-border-green w3-round-large" style="width:150px" name="st3">ชำระเเล้ว</button></form></form>
+</td></tr>
 
 						 </td>
             </tr>
@@ -131,5 +129,6 @@ echo 'error';
 
 </div>
 </div>
+
 </body>
 </html>
