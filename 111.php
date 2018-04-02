@@ -29,9 +29,7 @@
 //ถ้ามีการส่งค่าข้อมูล
 include('connection.php');
 
-$search = $_POST['search'];
-if(isset($search) ) {
-echo "ผลลัพธ์การค้นหา [ <font color='red'>$search </font> ]<br />";
+//$search = $_POST['search'];
 ?>
 <br></br>
 <table align="center" width="100%" border="1">
@@ -48,8 +46,9 @@ echo "ผลลัพธ์การค้นหา [ <font color='red'>$search 
 
 
 
-$sql = "SELECT user.*,uploadfile.* FROM user,uploadfile	WHERE user.Member_ID = uploadfile.Member_ID AND Telephone LIKE '%$search%' ";
-
+$sql = "SELECT user.*,uploadfile.* FROM user,uploadfile
+WHERE user.Member_ID = uploadfile.Member_ID
+ORDER BY dateup ASC ";
 $view = mysqli_query($con,$sql);
 while ($data = mysqli_fetch_array($view) ) {
 ?>
@@ -62,11 +61,8 @@ while ($data = mysqli_fetch_array($view) ) {
 <td><?php echo "$data[Status]"; ?></td>
 </tr>
 <?php
-} //End while loop
+} 
 
-} else {
-echo "กรุณากรอกคำค้นของคุณ";
-}
 ?>
 <center>
 	</div><a href="check.php" class="w3-btn w3-display-bottommiddle w3-round-xxlarge w3-red" style="width:200px">ย้อนกลับ</a></center>

@@ -49,7 +49,7 @@ echo 'error';
 				<ul>
 				   <li><img src="images/f.png" width="150" height="150"></li>
 					 <li><a href='employee.php'><span>จัดการคิว</span></a></li>
-				     <li><a href='check.php'><span>ตรวจสอบ</span></a></li>
+				     <li><a href='check.php'><span>ค้นหา</span></a></li>
 						 <li><a href='customer.php'><span>ข้อมูลของลูกค้า</span></a></li>
 						 <li><a href='graph.php'><span>ข้อมูลการดำเนินงาน</span></a></li>
 

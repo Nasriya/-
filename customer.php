@@ -34,7 +34,7 @@ if (!$_SESSION["UserID"]){  //check session
 				<ul>
 				   <li><img src="images/f.png" width="150" height="150"></li>
           <li><a href='employee.php'><span>จัดการคิว</span></a></li>
-				   <li><a href='check.php'><span>ตรวจสอบ</span></a></li>
+				   <li><a href='check.php'><span>ค้นหา</span></a></li>
 					 <li><a href='admin_profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
 					 <li><a href='graph.php'><span>ข้อมูลการดำเนินงาน</span></a></li>
 
