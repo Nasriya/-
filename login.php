@@ -17,8 +17,6 @@ session_start();
                       $row = mysqli_fetch_array($result); //คืนค่าข้อมูลในฐานข้อมูลที่อยู่ในลักษณะเป็นแถว
 
                       $_SESSION["UserID"] = $row["Member_ID"];//สำคัญ
-
-                    // $_SESSION["User"] = $row["Firstname"]." ".$row["Lastname"];
                       $_SESSION["Userlevel"] = $row["Userlevel"]; //กำหนดว่าเป็น Aหรือ M
 
                       if($_SESSION["Userlevel"]=="A"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
@@ -30,7 +28,7 @@ session_start();
                         echo "</script>";
                       }
 
-                      if ($_SESSION["Userlevel"]=="M"){  //ถ้าเป็น member ให้กระโดดไปหน้า user_page.php
+                      if ($_SESSION["Userlevel"]=="M"){  //ถ้าเป็น member ให้กระโดดไปหน้า upload.php
                         echo "<script>";
                             echo "alert(\"ยินดีต้อนรับ คุณ $Username\");";
                             echo "window.location = 'upload.php';"; //ไปหน้าเเรกของสมาชิก
@@ -38,6 +36,15 @@ session_start();
 
 
                       }
+                      if ($_SESSION["Userlevel"]=="O"){  //ถ้าเป็น Owner ให้กระโดดไปหน้า graph.php
+                        echo "<script>";
+                            echo "alert(\"ยินดีต้อนรับ เจ้าของร้าน  $Username\");";
+                            echo "window.location = 'graph.php';"; //ไปหน้าเเรกของสมาชิก
+                        echo "</script>";
+
+
+                      }
+
 
                   }else{
                     echo "<script>";

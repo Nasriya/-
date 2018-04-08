@@ -1,71 +1,34 @@
 <html>
-<head>
-<title>ทดลองกราฟ</title>
-<script type="text/javascript" src="fusioncharts-suite-xt/js/fusioncharts.js"></script>
-<script type="text/javascript" src="fusioncharts-suite-xt/js/themes/fusioncharts.theme.fint.js"></script>
-<script type="text/javascript">
-FusionCharts.ready(function(){
-    var revenueChart = new FusionCharts({
-        "type": "column2d",
-        "renderAt": "chartContainer",
-        "width": "1600",
-        "height": "800",
-        "dataFormat": "json",
-        "dataSource":  {
-          "chart": {
-            "caption": "Total Price Software",
-            "subCaption": "D  E  C  C",
-            "xAxisName": "Software Name",
-            "yAxisName": "Bath",
-            "theme": "fint"
-         },
-         "data": [
-            <?php
-include('connection.php');
-$strSQL = "SELECT * FROM uploadfile ORDER BY dateup desc";
-$objQuery = mysqli_query($strSQL) or die ("Error Query [".$strSQL."]");
-?>
-<?php
-while($objResult = mysqli_fetch_array($objQuery))
-{
-?>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1.1", {packages:["bar"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['รายชื่อ', 'Score1', 'Score2' ],
+          ['นาย A', 650, 400 ],
+          ['นาย B', 750, 460 ],
+          ['นาย C', 120, 350 ],
+          ['นาย D', 64, 540 ]
+        ]);
 
-{"label": "<?=$objResult["Decc_Sname"]?>" , "value": "<?=$objResult["Decc_Totalprice"]?>"},
+        var options = {
+          legend: { position: 'none' },
+           width: 650,
+           height: 350,
+          chart: {
+            title: 'กราฟสรุปผลแบบทดสอบ',
+            subtitle: 'กราฟแท่งแสดงผลคะแนนแต่ละคน',
+          }
+        };
 
-
-<?php
-}
-?>
-
-          ]
+        var chart = new google.charts.Bar(document.getElementById('deawxchart'));
+        chart.draw(data, options);
       }
-
-  });
-revenueChart.render();
-
-})
-</script>
-
-</head>
-<?php
-$objConnect = mysql_connect("localhost","root","") or die("Error Connect to Database");
-$objDB = mysql_select_db("decc");
-mysql_query("SET NAMES utf8", $objConnect);
-$strSQL = "SELECT * FROM tblsoftwareprice ORDER BY Decc_SoftwareID desc";
-$objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
-?>
-<?php
-while($objResult = mysql_fetch_array($objQuery))
-{
-?>
-
-{"label": "<?=$objResult["Decc_Sname"]?>" , "value": "<?=$objResult["Decc_Totalprice"]?>"},
-
-
-<?php
-}
-?>
-<body>
-  <div id="chartContainer" style="height: 700px; width: 80%;">FusionCharts XT will load here!</div>
-</body>
+    </script>
+  </head>
+  <body>
+    <div id="deawxchart" style="width: 900px; height: 500px;"></div>
+  </body>
 </html>

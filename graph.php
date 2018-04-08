@@ -1,11 +1,20 @@
 <?php session_start();?>
 <?php
 
-if (!$_SESSION["UserID"]){  //check session
+if($_SESSION['UserID'] == "")
+	{
+		echo "Please Login!";
+		exit();
+	}
 
-	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
-
-}else{}?>
+	if($_SESSION['Userlevel'] != "O") //Owner
+	{
+		echo "<script>";
+				echo "alert(\" เฉพาะเจ้าของร้านเท่านั้น !\");";
+				echo "window.history.back()";
+		echo "</script>";
+		exit();
+	}	?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

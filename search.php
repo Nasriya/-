@@ -35,8 +35,8 @@ echo "ผลลัพธ์การค้นหา [ <font color='red'>$search 
 ?>
 <br></br>
 <table align="center" width="100%" border="1">
-<tr bgcolor="#FFFFFF">
-<td>รหัสสมาชิก</td>
+<tr bgcolor="#66CCCC">
+<td><center>รหัสสมาชิก</center></td>
 <td>เบอร์โทรศัพท์</td>
 <td>Username</td>
 <td>ไฟล์งาน</td>
@@ -53,8 +53,8 @@ $sql = "SELECT user.*,uploadfile.* FROM user,uploadfile	WHERE user.Member_ID = u
 $view = mysqli_query($con,$sql);
 while ($data = mysqli_fetch_array($view) ) {
 ?>
-<tr>
-<td><?php echo "$data[Member_ID]"; ?></td>
+<tr bgcolor="#F0F8FF">
+<td><center><?php echo "$data[Member_ID]"; ?></center></td>
 <td><?php echo "$data[Telephone]"; ?></td>
 <td><?php echo "$data[Username]"; ?></td>
 <td><a href="fileupload/<?=$data["fileupload"]?>" target="_blank"><?php echo $data["fileupload"];?></a></td>

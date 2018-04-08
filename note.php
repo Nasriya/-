@@ -10,8 +10,8 @@ WHERE fileID ";
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {
 $meResult = mysqli_fetch_array($meQuery);
-//$fileID = $meResult[$_SESSION['fileID']];
-  $_SESSION["fileID"] = $meResult["fileID"];
+
+
 
 } else {
 echo 'error';
@@ -50,7 +50,7 @@ echo 'error';
 					 <li><a href='check.php'><span>ตรวจสอบ</span></a></li>
            <li><a href='customer.php'><span>ข้อมูลของลูกค้า</span></a></li>
 					 <li><a href='admin_profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
-					 
+
 
  					<button class="w3-button w3-round-xlarge w3-white w3-display-topright" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>
 				</ul>
@@ -70,7 +70,7 @@ echo 'error';
 <br></br>
 <tr>
   <td><b>ไฟล์งาน :</b></td>
-    <td><a href="#" ><?php echo $meResult['fileupload']; ?></td>
+    <td><a href="fileupload/<?=$meResult["fileupload"]?>" target="_blank"><?php echo $meResult['fileupload']; ?></td>
         <td></td>
 </tr>
             <tr>

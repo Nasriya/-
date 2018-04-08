@@ -19,6 +19,10 @@
 			<div id='cssmenu' >
 				<ul>
 				   <li><img src="images/f.png" width="150" height="150"></li>
+					 <li><a href='check.php'><span>ค้นหา</span></a></li>
+					 <li><a href='customer.php'><span>ข้อมูลของลูกค้า</span></a></li>
+					 <li><a href='admin_profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
+					 <li><a href='graph.php'><span>ข้อมูลการดำเนินงาน</span></a></li>
 
 <button class="w3-button w3-round-xlarge w3-white w3-display-topright" style="width:150px"><a href='logout.php'>ออกจากระบบ</a></button>
 				</ul>
@@ -33,7 +37,7 @@ include('connection.php');
 ?>
 <br></br>
 <table align="center" width="100%" border="1">
-<tr bgcolor="#FFFFFF">
+<tr bgcolor="#66CCCC">
 <td>รหัสสมาชิก</td>
 <td>เบอร์โทรศัพท์</td>
 <td>Username</td>
@@ -52,8 +56,8 @@ ORDER BY dateup ASC ";
 $view = mysqli_query($con,$sql);
 while ($data = mysqli_fetch_array($view) ) {
 ?>
-<tr>
-<td><?php echo "$data[Member_ID]"; ?></td>
+<tr bgcolor="#F0F8FF">
+<td><center><?php echo "$data[Member_ID]"; ?></center></td>
 <td><?php echo "$data[Telephone]"; ?></td>
 <td><?php echo "$data[Username]"; ?></td>
 <td><a href="fileupload/<?=$data["fileupload"]?>" target="_blank"><?php echo $data["fileupload"];?></a></td>
