@@ -74,7 +74,7 @@ echo 'error';
             <tr>
               <td>ไฟล์งาน :</td>
 							<td></td>
-              <td><a href="#" ><?php echo $meResult['fileupload']; ?></td>
+              <td><a href="fileupload/<?=$meResult["fileupload"]?>" target="_blank"><?php echo $meResult['fileupload']; ?></td>
             </tr>
             <tr>
               <td>ประเภทการสั่งพิมพ์ :</td>

@@ -30,6 +30,7 @@ if($_SESSION['UserID'] == "")
 	<link rel="stylesheet" href="css/lightbox.css">
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script src="js/jquery1111.min.js" type="text/javascript"></script>
 	<script src="js/script.js"></script>
 </head>
@@ -39,7 +40,7 @@ if($_SESSION['UserID'] == "")
 			<div id='cssmenu' >
 				<ul>
 				   <li><img src="images/f.png" width="150" height="150"></li>
-					 <li><a href='check.php'><span>ตรวจสอบ</span></a></li>
+					 <li><a href='check.php'><span>ค้นหา</span></a></li>
 					<li><a href='employee.php'><span>จัดการคิว</span></a></li>
 					<li><a href='admin_profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
 					<li><a href='customer.php'><span>ข้อมูลของลูกค้า</span></a></li>
@@ -51,68 +52,23 @@ if($_SESSION['UserID'] == "")
 		</div>
 	</div>
 <br></br>
-	<h2 class="w3-myfont w3-center">สรุปผลการดำเนินงาน</h2>
+
+	<center><h2 class="w3-myfont w3-center">สรุปผลการดำเนินงาน</h2></cenetr>
 
 
 <br></br>
-<center>
-		<select name="M_graph">
-      <option value="" selected>---เดือน---</option>
-      <option value="January">มกราคม</option>
-      <option value="February">กุมภาพันธ์</option>
-			<option value="March">มีนาคม</option>
-			<option value="April">เมษายน</option>
-			<option value="May">พฤษภาคม</option>
-			<option value="June">มิถุนายน</option>
-			<option value="July">กรกฎาคม</option>
-			<option value="August">สิงหาคม</option>
-			<option value="September">กันยายน</option>
-			<option value="October">ตุลาคม</option>
-			<option value="November">พฤศจิกายน</option>
-			<option value="December">ธันวาคม</option>
-     </select>
+	<div class="w3-container">
 
-		 <select name="Y_graph">
-       <option value="" selected>---ปี---</option>
-       <option value="2560">2560</option>
-       <option value="2561">2561</option>
- 			<option value="2562">2562</option>
- 			<option value="2563">2563</option>
- 			<option value="2564">2564</option>
-      </select>
-<button class="w3-button w3-round-xlarge w3-blue" style="width:100px">เเสดงกราฟ</button>
-			<br></br>
-			<div class="w3-container">
-			  <table class="w3-table w3-striped">
-			    <tr>
-			      <th>ลำดับ</th>
-			      <th>รายได้</th>
-			      <th>รายจ่าย</th>
-						<th>Points</th>
+	  <div class="w3-dropdown-hover">
+	    <button class="w3-button w3-blue">เเสดงกราฟ</button>
+	    <div class="w3-dropdown-content w3-bar-block ">
+	      <a href="g_day.php" class="w3-bar-item w3-button">รายวัน</a>
+	      <a href="g_month.php" class="w3-bar-item w3-button">รายเดือน</a>
+	      <a href="g_years.php" class="w3-bar-item w3-button">รายปี</a>
+	    </div>
+	  </div>
+	</div>
 
-			    </tr>
-			    <tr>
-			      <td>xxx</td>
-			      <td>xxx</td>
-			      <td>xxx</td>
-						 <td>xxx</td>
-			    </tr>
-			    <tr>
-			      <td>xxx</td>
-			      <td>xxx</td>
-			      <td>xxx</td>
-						 <td>xxx</td>
-			    </tr>
-			    <tr>
-			      <td>xxx</td>
-			      <td>xxx</td>
-			      <td>xxx</td>
-						 <td>xxx</td>
-			    </tr>
-			  </table>
-			</div>
-			<br></br>
-			<button class="w3-button w3-round-xlarge w3-blue" style="width:100px">เเสดงกราฟ</button>&nbsp;&nbsp;<button class="w3-button w3-round-xlarge w3-red"style="width:100px" >ยกเลิก</button>
-<br></br>
+
 </body>
 </html>

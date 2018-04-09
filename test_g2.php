@@ -7,9 +7,9 @@
 include('connection.php');
 
 $query = "
-SELECT SUM(totals) AS totol, DATE_FORMAT(datesave, '%D') AS datesave
+SELECT SUM(totals) AS totol, DATE_FORMAT(datesave, '%Y') AS datesave
 FROM prdsales
-GROUP BY DATE_FORMAT(datesave, '%D%')
+GROUP BY DATE_FORMAT(datesave, '%Y%')
 ";
 $result = mysqli_query($con, $query);
 $resultchart = mysqli_query($con, $query);
