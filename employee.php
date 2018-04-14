@@ -33,12 +33,13 @@
 //ถ้ามีการส่งค่าข้อมูล
 include('connection.php');
 
-//$search = $_POST['search'];
+
 ?>
 <br></br>
+<div style="overflow-x:auto;">
 <table align="center" width="100%" border="1">
 <tr bgcolor="#66CCCC">
-<td>รหัสสมาชิก</td>
+<td><center>รหัสสมาชิก</center></td>
 <td>เบอร์โทรศัพท์</td>
 <td>Username</td>
 <td>ไฟล์งาน</td>
@@ -46,9 +47,6 @@ include('connection.php');
 <td>สถานะ</td>
 </tr>
 <?php
-
-
-
 
 $sql = "SELECT user.*,uploadfile.* FROM user,uploadfile
 WHERE user.Member_ID = uploadfile.Member_ID
@@ -63,12 +61,14 @@ while ($data = mysqli_fetch_array($view) ) {
 <td><a href="fileupload/<?=$data["fileupload"]?>" target="_blank"><?php echo $data["fileupload"];?></a></td>
 <td><?php echo "<a href='note.php?UserID=$data[0]'>รายละเอียด"?></td>
 <td><?php echo "$data[Status]"; ?></td>
-</tr>
+
+
 <?php
 }
 
 ?>
-<center>
-	</div><a href="check.php" class="w3-btn w3-display-bottommiddle w3-round-xxlarge w3-red" style="width:200px">ย้อนกลับ</a></center>
+
 </div>
+</div>
+</tr>
 </html>

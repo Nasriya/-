@@ -22,7 +22,6 @@
 			<div id='cssmenu' >
 				<ul>
 				   <li><img src="images/f.png" width="150" height="40"></li>
-
 						 <li><a href='employee.php'><span>จัดการคิว</span></a></li>
 						 <li><a href='admin_profile.php'><span>ข้อมูลส่วนตัว</span></a></li>
 						 <li><a href='customer.php'><span>ข้อมูลของลูกค้า</span></a></li>

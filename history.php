@@ -51,50 +51,48 @@ if (!$_SESSION["UserID"]){  //check session
 
 			<br></br>
 			<?php
-			//1. เชื่อมต่อ database:
-			include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
-			//2. query ข้อมูลจากตาราง tb_member:
-			$query = "SELECT * FROM uploadfile
-			WHERE Member_ID='{$_SESSION['UserID']}'
-			ORDER BY dateup ASC ";
-			//3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
-			$result = mysqli_query($con, $query);
-			//4 . แสดงข้อมูลที่ query ออกมา โดยใช้ตารางในการจัดข้อมูล:
-			echo "<table align='center' width='900' >";
-			//หัวข้อตาราง
-			echo " <tr align='center'>
-			<td bgcolor='#61b4cf'><br>ไฟล์งาน</br></td>
-			<td bgcolor='#b8b4b0'><br>ประเภทการสั่งพิมพ์</br></td>
-			<td bgcolor='#61b4cf'><br>ขนาดกระดาษ</br></td>
-			<td bgcolor='#b8b4b0'><br>จำนวน</br></td>
-			<td bgcolor='#61b4cf'><br>วันที่นัดรับ</br></td>
-      <td bgcolor='#b8b4b0'><br>เวลาที่นัดรับ</br></td>
-      <td bgcolor='#61b4cf'><br>สถานะ</br></td>
-			<td bgcolor='#61b4cf'><br></br><br></br></td>
-
-			<td bgcolor='#61b4cf'><br></br></td>
-
-			<td></br></br></td>
-			<td><br></br></td></tr>";
-
-			while($row = mysqli_fetch_array($result)) {
-				echo "<tr>";
-			  echo "<td align='center'  bgcolor='#def1f9'>" .$row["fileupload"] .  "</td> ";
-				echo "<td align='center'  bgcolor='#e1dedc'>" .$row["ProductType"] .  "</td> ";
-        echo "<td align='center'  bgcolor='#def1f9'>" .$row["ProductDetail"] .  "</td> ";
-			  echo "<td align='center'  bgcolor='#e1dedc'>" .$row["Quanitity"] .  "</td> ";
-			  echo "<td align='center'  bgcolor='#def1f9'>" .$row["DateReceip"] .  "</td> ";
-			  echo "<td align='center'  bgcolor='#e1dedc'>".$row["TimeReceip"] .  "</td> ";
-        echo "<td align='center'  bgcolor='#def1f9'>".$row["Status"] .  "</td> ";
-				echo "<td align='center'  bgcolor='#61b4cf'>" ."</td> ";//ลบ
+		//ถ้ามีการส่งค่าข้อมูล
+		include('connection.php');
 
 
-			  echo "</tr>";
-			}
-			echo "</table>";
-			//5. close connection
-			mysqli_close($con);
-}
-			?>
-			<br></br>
-			<center><form action="upload.php"><button  class="w3-button w3-round-xlarge w3-green" style="width:200px" > ย้อนกลับ</button>
+		?>
+		<br></br>
+		<div style="overflow-x:auto;">
+		<table align="center" width="100%" border="1">
+		<tr bgcolor="#66CCCC">
+		<td><center>ไฟล์งาน</td></center>
+		<td><center>ประเภทการสั่งพิมพ์</td></center>
+		<td><center>ขนาดกระดาษ</td></center></center></center></center>
+		<td><center>จำนวน</td></center></center></center>
+		<td><center>วันที่นัดรับ</td></center></center>
+		<td><center>เวลาที่นัดรับ</td></center>
+		<td><center>สถานะ</td></center>
+		</tr>
+		<?php
+
+		$sql = "SELECT * FROM uploadfile
+		WHERE Member_ID='{$_SESSION['UserID']}'
+		ORDER BY dateup ASC ";
+		$view = mysqli_query($con,$sql);
+		while ($data = mysqli_fetch_array($view) ) {
+		?>
+		<tr bgcolor="#F0F8FF">
+		<td><center><a href="fileupload/<?=$data["fileupload"]?>" target="_blank"><?php echo $data["fileupload"];?></a></center></td>
+		<td><center><?php echo "$data[ProductType]"; ?></center></td>
+		<td><center><?php echo "$data[ProductDetail]"; ?></center></td>
+		<td><center><?php echo "$data[Quanitity]"; ?></center></td>
+		<td><center><?php echo "$data[DateReceip]"; ?></center></td>
+		<td><center><?php echo "$data[TimeReceip]"; ?></center></td>
+		<td><center><?php echo "$data[Status]"; ?></td></center>
+
+
+		<?php
+		}
+	}
+
+		?>
+
+		</div>
+		</div>
+		</tr>
+		</html>

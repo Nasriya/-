@@ -135,7 +135,6 @@ echo 'error';
 		</div>-->
 
 		<br></br>
-<a href="update_profile.php" class="w3-btn  w3-round-xxlarge w3-red" style="width:200px">แก้ไขข้อมูล</a>
 <br></br>
 </div>
 </center>

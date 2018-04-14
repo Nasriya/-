@@ -34,6 +34,7 @@ if(isset($search) ) {
 echo "ผลลัพธ์การค้นหา [ <font color='red'>$search </font> ]<br />";
 ?>
 <br></br>
+<div style="overflow-x:auto;">
 <table align="center" width="100%" border="1">
 <tr bgcolor="#66CCCC">
 <td><center>รหัสสมาชิก</center></td>
@@ -44,9 +45,6 @@ echo "ผลลัพธ์การค้นหา [ <font color='red'>$search 
 <td>สถานะ</td>
 </tr>
 <?php
-
-
-
 
 $sql = "SELECT user.*,uploadfile.* FROM user,uploadfile	WHERE user.Member_ID = uploadfile.Member_ID AND Telephone LIKE '%$search%' ";
 
