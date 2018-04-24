@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/menu.css">
     <script src="js/jquery1111.min.js" type="text/javascript"></script>
     <script src="js/script.js"></script>
-    <title>รายงานในแบบกราฟ by pop นี่เเหละ 55</title>
+    <title>รายงานในแบบกราฟรายวัน</title>
 </head>
 <body class="home-page">
 	<div class="wrap-body">
@@ -122,6 +122,6 @@ var myChart = new Chart(ctx, {
 });
 </script>
 </p>
-<a href="graph.php" class="w3-btn w3-display-bottommiddle w3-round-xxlarge w3-red" style="width:200px">ย้อนกลับ</a></center>
+<center><a href="graph.php" class="w3-btn w3-display-bottom middle w3-round-xxlarge w3-red" style="width:200px">ย้อนกลับ</a></center>
 
 </html>

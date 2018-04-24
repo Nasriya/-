@@ -45,7 +45,7 @@ if (!$_SESSION["UserID"]){  //check session
 	</div>
 <br></br>
 	<h1 class="w3-myfont w3-center">ข้อมูลของลูกค้า</h1>
-
+<div style="overflow-x:auto;">
 			<br></br>
 			<?php
 			//1. เชื่อมต่อ database:
@@ -94,5 +94,6 @@ if (!$_SESSION["UserID"]){  //check session
 			mysqli_close($con);
 }
 			?>
+		</div>
 			<br></br>
 		<!--	<center><form action="clear.php"><button  class="w3-button w3-round-xlarge w3-green" style="width:200px" >ล้างข้อมูลทั้งหมด</button>

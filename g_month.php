@@ -58,15 +58,15 @@ $totol = implode(",", $totol);
 <table width="200" border="1" cellpadding="0"  cellspacing="0" align="center">
 
   <tr>
-    <th width="10%" bgcolor ="LightBlue">เดือน</th>
-    <th width="10%" bgcolor ="LightBlue">จำนวนไฟล์</th>
+    <th width="10%" bgcolor ="LightBlue"><center>เดือน</th></center>
+    <th width="10%" bgcolor ="LightBlue"><center>จำนวนไฟล์</th></center>
   </tr>
 
 
   <?php while($row = mysqli_fetch_array($result)) { ?>
     <tr>
-      <td align="center" bgcolor ="LightCyan"><?php echo $row['dateup'];?></td>
-      <td align="center" bgcolor ="LightCyan"><?php echo $row['totol'];?></td>
+      <td align="center" bgcolor ="LightCyan"><center><?php echo $row['dateup'];?></center></td>
+      <td align="center" bgcolor ="LightCyan"><center><?php echo $row['totol'];?></center></td>
     </tr>
     <?php } ?>
 
@@ -123,6 +123,6 @@ var myChart = new Chart(ctx, {
 });
 </script>
 </p>
-<a href="graph.php" class="w3-btn w3-display-bottommiddle w3-round-xxlarge w3-red" style="width:200px">ย้อนกลับ</a></center>
+<center><a href="graph.php" class="w3-btn w3-display-bottom middle w3-round-xxlarge w3-red" style="width:200px">ย้อนกลับ</a></center>
 
 </html>

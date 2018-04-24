@@ -15,9 +15,7 @@ $DateReceip =$_POST['DateReceip'];//เก็บค่าวันที่ท�
 $TimeReceip =$_POST['TimeReceip'];//เก็บค่าเวลาที่ลูกค้านัดรับสินค้า
 $date = date("D/M/Y"); //กำหนดวันที่และเวลา
 $UserID = $_SESSION["UserID"];
-
 $file = strtolower($_FILES['fileupload']['name']);
-
 $type= strrchr($file,".");
 
 
