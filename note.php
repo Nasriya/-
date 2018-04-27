@@ -4,14 +4,13 @@
 <?php
 include('connection.php');
 //เป็นไฟล์ของข้อมูลเเรก
- $_SESSION["fileID"] =$_SESSION["UserID"];
-$meSQL = "SELECT * FROM uploadfile
-WHERE fileID ";
+// $_SESSION["fileID"] =$_SESSION["UserID"];
+//$_SERVER["REQUEST_URI"]
+$t = $_GET['fileID'];
+$meSQL = "SELECT * FROM uploadfile  WHERE fileupload LIKE '$t%' ORDER BY dateup ASC" ; //ยังมีปัญหาเมื่อเรียกไฟล์ที่สองมาเเสดง
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {
 $meResult = mysqli_fetch_array($meQuery);
-//$fileID = $meResult[$_SESSION['fileID']];
-  $_SESSION["fileID"] = $meResult["fileID"];
 
 } else {
 echo 'error';
@@ -67,26 +66,39 @@ echo 'error';
   <div class="w3-col m6 w3-sand  w3-center">
 	<table class="w3-table w3-bordered">
 			<h4>รายละเอียด</h4>
-<tr>
-			<td><p><b>ไฟล์งาน :</b> </td>
-				<td><a href="fileupload/<?=$meResult["fileupload"]?>" target="_blank"><?php echo $meResult['fileupload']; ?></p></td><td></td></tr>
+      <tr>
+        <td><b>ไฟล์งาน :</b></td>
+        <td><a href="fileupload/<?=$meResult["fileupload"]?>" target="_blank"><?php echo $meResult["fileupload"];?></a></td>
+              <td></td>
+      </tr>
 
-				<td><p><b>ประเภทการสั่งพิมพ์ :</b>&nbsp;&nbsp;&nbsp; </td>
-					<td><?php echo $meResult['ProductType']; ?></p></td><td></td></tr>
-					<td><p><b>ขนาดกระดาษ :</b> </td>
-						<td><?php echo $meResult['ProductDetail']; ?></p></td><td></td></tr>
+      <tr>
+            <td><b>ประเภทการสั่งพิมพ์ :</b></td>
+               <td><?php echo $meResult['ProductType']; ?></td>
+              <td></td>
+            </tr>
 
-						<td><p><b>จำนวน :</b>&nbsp;&nbsp;&nbsp; </td>
-							<td><?php echo $meResult['Quanitity']; ?></p></td><td></td></tr>
-							<td><p><b>วันที่นัดรับ :</b> </td>
-								<td><?php echo $meResult['DateReceip']; ?></p></td><td></td></tr>
+            <tr>
+                <td><b>ขนาดกระดาษ :</b><td> <?php echo $meResult['ProductDetail']; ?></td>
+                <td></td>
+              </tr>
 
-								<td><p><b>เวลาที่นัดรับ :</b>&nbsp;&nbsp;&nbsp; </td>
-									<td><?php echo $meResult['TimeReceip']; ?></p></td><td></td></tr>
-									<td><p><b>สถานะ :</b>&nbsp;&nbsp;&nbsp; </td>
-										<td><?php echo $meResult['TimeReceip']; ?></p></td><td></td></tr>
+              <tr>
+                 <td><b>จำนวน : </b><td> <?php echo $meResult['Quanitity']; ?></td>
+                 <td></td>
+               </tr>
+               <tr>
+               <td><b>วันที่นัดรับ :</b><td> <?php echo $meResult['DateReceip']; ?></td>
+               <td></td>
+             </tr>
+
+             <tr>
+            <td><b>เวลาที่นัดรับ :<b/><td><?php echo $meResult['TimeReceip']; ?>&nbsp;น.</td>
+              <td></td>
+          </tr>
+
 										<td>
-										  สถานะตอนนี้ คือ
+										  <b>สถานะตอนนี้ คือ</b>
 										      <td><font color="red"><?php echo $meResult['Status']; ?></td><td></td></font></td>
 
 
@@ -98,7 +110,7 @@ echo 'error';
   </div>
 </div>
 <tr>
-<td>เปลี่ยนแปลงสถานะเป็น ..<td>
+<td><b>เปลี่ยนแปลงสถานะเป็น ...</b><td>
 	<form method='post' action='1_status.php'><button class="w3-btn w3-white w3-border w3-border-red w3-round-large" style="width:150px" name="st1">กำลังดำเนินงาน</button></center></form>
 <form method='post' action='2_status.php'><button class="w3-btn w3-white w3-border w3-border-yellow w3-round-large" style="width:150px" name="st2">รอการชำระ</button></form>
 <form method='post' action='3_status.php'><button class="w3-btn w3-white w3-border w3-border-green w3-round-large" style="width:150px" name="st3">ชำระเเล้ว</button></form></form><br></br></td>

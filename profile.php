@@ -118,23 +118,8 @@ echo 'error';
 				</div>
 		</div>
 		<br></br>
-		<!--<div class="col-75" >
-				 <div class="col-25 w3-center">
-					<b>Password</b>
-				</div>
-				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
-					<p><?php echo $meResult['Password']; ?></p>
-				</div>
-		</div>
-		<br></br>-->
-		<div class="col-75" >
-				 <div class="col-25 w3-center">
-					<b>เเต้มสะสม</b>
-				</div>
-				<div class="w3-round-xlarge w3-border w3-pale-green" style="width:40%" >
-					<p><?php echo"ยังไม่ได้ตั้งค่า"; ?></p>
-				</div>
-		</div>
+		
+
 		<br></br>
 
 </div>
