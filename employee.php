@@ -59,7 +59,7 @@ while ($data = mysqli_fetch_array($view) ) {
 <td><?php echo "$data[Telephone]"; ?></td>
 <td><?php echo "$data[Username]"; ?></td>
 <td><a href="fileupload/<?=$data["fileupload"]?>" target="_blank"><?php echo $data["fileupload"];?></a></td>
-<td><?php echo "<a href='note.php?fileID=$data[0]'>รายละเอียด"?></td>
+<td><?php echo "<a href='note.php?fileupload=$data[fileupload]'>รายละเอียด"?></td>
 <td><?php echo "$data[Status]"; ?></td>
 
 

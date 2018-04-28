@@ -19,7 +19,7 @@ echo $_SERVER["REQUEST_URI"]."<br>"; // URL
 echo "<hr>";
 echo $_GET["fileID"]."<br>"; // Get txtName
  echo $meResult["fileupload"];// Get txtSiteName
- echo $meResult["ProductType"];
+ 
 echo "<hr>";
 
 foreach($_GET as $key => $val) // Get All Key & Value

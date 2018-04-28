@@ -6,8 +6,8 @@ include('connection.php');
 //เป็นไฟล์ของข้อมูลเเรก
 // $_SESSION["fileID"] =$_SESSION["UserID"];
 //$_SERVER["REQUEST_URI"]
-$t = $_GET['fileID'];
-$meSQL = "SELECT * FROM uploadfile  WHERE fileupload LIKE '$t%' ORDER BY dateup ASC" ; //ยังมีปัญหาเมื่อเรียกไฟล์ที่สองมาเเสดง
+$file = $_GET['fileupload'];
+$meSQL = "SELECT DISTINCT  * FROM uploadfile  WHERE fileupload LIKE '$file%' ORDER BY dateup ASC  " ; //ยังมีปัญหาเมื่อเรียกไฟล์ที่สองมาเเสดง
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {
 $meResult = mysqli_fetch_array($meQuery);
@@ -73,18 +73,18 @@ echo 'error';
       </tr>
 
       <tr>
-            <td><b>ประเภทการสั่งพิมพ์ :</b></td>
+            <td><b>ประเภทการพิมพ์ :</b></td>
                <td><?php echo $meResult['ProductType']; ?></td>
               <td></td>
             </tr>
 
             <tr>
-                <td><b>ขนาดกระดาษ :</b><td> <?php echo $meResult['ProductDetail']; ?></td>
+                <td><b>ขนาดกระดาษ :</b><td><?php echo $meResult['ProductDetail']; ?></td>
                 <td></td>
               </tr>
 
               <tr>
-                 <td><b>จำนวน : </b><td> <?php echo $meResult['Quanitity']; ?></td>
+                 <td><b>จำนวน : </b><td><?php echo $meResult['Quanitity']; ?></td>
                  <td></td>
                </tr>
                <tr>
@@ -110,11 +110,14 @@ echo 'error';
   </div>
 </div>
 <tr>
-<td><b>เปลี่ยนแปลงสถานะเป็น ...</b><td>
-	<form method='post' action='1_status.php'><button class="w3-btn w3-white w3-border w3-border-red w3-round-large" style="width:150px" name="st1">กำลังดำเนินงาน</button></center></form>
-<form method='post' action='2_status.php'><button class="w3-btn w3-white w3-border w3-border-yellow w3-round-large" style="width:150px" name="st2">รอการชำระ</button></form>
-<form method='post' action='3_status.php'><button class="w3-btn w3-white w3-border w3-border-green w3-round-large" style="width:150px" name="st3">ชำระเเล้ว</button></form></form><br></br></td>
-</tr>
+<td><b>เปลี่ยนแปลงสถานะเป็น ...</b></td>
+
+<td>
+<br><form method='post'><button class="w3-btn w3-white w3-border w3-border-red w3-round-large" style="width:120px" name="st1"><?php echo "<a href='1_status.php?fileupload=$meResult[1]'>"?>กำลังดำเนินงาน</button>
+<br><button class="w3-btn w3-white w3-border w3-border-yellow w3-round-large" style="width:120px" name="st2"><?php echo "<a href='2_status.php?fileupload=$meResult[1]'>"?>รอการชำระ</button>
+<br><button class="w3-btn w3-white w3-border w3-border-green w3-round-large" style="width:120px" name="st3"><?php echo "<a href='3_status.php?fileupload=$meResult[1]'>"?>ชำระเเล้ว</button></form></form><td></td></br>
+
+</td></tr>
 </table>
 <br></br>
 
