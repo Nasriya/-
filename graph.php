@@ -10,7 +10,7 @@ if($_SESSION['UserID'] == "")
 	if($_SESSION['Userlevel'] != "O") //Owner
 	{
 		echo "<script>";
-				echo "alert(\" เฉพาะเจ้าของร้านเท่านั้น !\");";
+				echo "alert(\" ข้อมูลเฉพาะเจ้าของร้านเท่านั้น !\");";
 				echo "window.history.back()";
 		echo "</script>";
 		exit();

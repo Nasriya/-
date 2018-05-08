@@ -40,12 +40,12 @@ include('connection.php');
 <table align="center" width="100%" border="1">
 <tr bgcolor="#66CCCC">
 <td><center>รหัสสมาชิก</center></td>
-<td>เบอร์โทรศัพท์</td>
-<td>Username</td>
-<td>ไฟล์งาน</td>
-<td>Note</td>
-<td>สถานะ</td>
-<td></td>
+<td><center>เบอร์โทรศัพท์</center></td>
+<td><center>Username</center></td>
+<td><center>ไฟล์งาน</center></td>
+<td><center>Note</center></td>
+<td><center>สถานะ</center></td>
+
 </tr>
 <?php
 
@@ -57,19 +57,21 @@ while ($data = mysqli_fetch_array($view) ) {
 ?>
 <tr bgcolor="#F0F8FF">
 <td><center><?php echo "$data[Member_ID]"; ?></center></td>
-<td><?php echo "$data[Telephone]"; ?></td>
-<td><?php echo "$data[Username]"; ?></td>
-<td><a href="fileupload/<?=$data["fileupload"]?>" target="_blank"><?php echo $data["fileupload"];?></a></td>
-<td><?php echo "<a href='note.php?fileupload=$data[fileupload]'>รายละเอียด"?></td>
-<td><?php echo "$data[Status]"; ?></td>
-	<td><center><a href="fileupload/<?=$data["fileupload"]?>" target="_blank"><img src="images/p.png" width="35" height="35" onclick="myFunction()"></td></center>
+<td><center><?php echo "$data[Telephone]"; ?></center></td>
+<td><center><?php echo "<a href='data_cus.php?Username=$data[Username]'>"?><?php echo "$data[Username]"; ?></td></center></td>
+<td><center><a href="fileupload/<?=$data["fileupload"]?>" target="_blank"><?php echo $data["fileupload"];?></center></a></td>
+<td><center><?php echo "<a href='note.php?fileupload=$data[fileupload]'>รายละเอียด"?></center></td>
+<td><center><?php echo "$data[Status]"; ?></center></td>
+	<!--<td><center><a href="fileupload/<?=$data["fileupload"]?>" target="_blank"><img src="images/p.png" width="35" height="35" onclick="myFunction()" ></td></center>
 
 		<script>
 		function myFunction() {
-		    window.print();
 
-		}
-		</script>
+		window.print();
+
+
+}
+</script>-->
 <?php
 }
 

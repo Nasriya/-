@@ -1,0 +1,7 @@
+<style type="text/css">
+@media print
+{
+#non-printable { display: none; }
+#printable { display: block; }
+}
+</style>

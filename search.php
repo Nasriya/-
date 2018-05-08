@@ -60,11 +60,13 @@ while ($data = mysqli_fetch_array($view) ) {
 <td><?php echo "$data[Status]"; ?></td>
 </tr>
 <?php
-} //End while loop
+}//End while loop
 
 } else {
 echo "กรุณากรอกคำค้นของคุณ";
+
 }
+
 ?>
 <center>
 	</div><a href="check.php" class="w3-btn w3-display-bottommiddle w3-round-xxlarge w3-red" style="width:200px">ย้อนกลับ</a></center>

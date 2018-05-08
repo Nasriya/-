@@ -5,7 +5,7 @@ include('connection.php');
 if (!$_SESSION["UserID"]){  //check session
 
 	  Header("Location: form_login.php"); //ไม่พบผู้ใช้กระโดดกลับไปหน้า login form
-	//ลองทดสอบว่าหากเราเเก้ไขโค้ดบนนี้เเล้ว มันจะไปเปลี่ยนเเปลงโค้ดที่เครื่องเราหรือเปล่า
+
 
 }else{?>
 
@@ -90,7 +90,7 @@ if (!$_SESSION["UserID"]){  //check session
 		<td><center><?php echo "$data[Status]"; ?></td></center>
 		<td><center><?php echo "<a href='delete.php?fileupload=$data[1]'>";?><img src="images/bin.png" width="35" height="35" OnClick="return chkdel();"></td></center>
 			<script language="JavaScript">
-			function chkdel(){if(confirm('  กรุณายืนยันการลบอีกครั้ง !!!  ')){
+			function chkdel(){if(confirm('  กรุณายืนยันการลบอีกครั้ง !  ')){
 				return true;
 			}else{
 				return false;
