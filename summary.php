@@ -79,6 +79,11 @@ echo 'error';
 
 					<td></td>
 	</tr>
+	<tr>
+				<td><b>รูปแบบการสั่งพิมพ์ :</b></td>
+					 <td><?php echo $meResult['Format']; ?></td>
+					<td></td>
+				</tr>
 
 	<tr>
 				<td><b>ประเภทการสั่งพิมพ์ :</b></td>

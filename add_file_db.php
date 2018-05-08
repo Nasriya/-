@@ -10,6 +10,7 @@ include('connection.php');  //ไฟล์เชื่อมต่อกับ d
 isset($fileupload);//รับค่าไฟล์จากฟอร์ม
 $ProductType = $_POST['TP']; //เก็บค่าประเภทของสินค้า
 $ProductDetail = $_POST['PD']; //เก็บค่าขนาดของสินค้า
+$Format = $_POST['FM'];
 $Quanitity = $_POST['Quanitity']; //เก็บค่าจำนวนของสินค้า
 $DateReceip =$_POST['DateReceip'];//เก็บค่าวันที่ที่ลูกค้านัดรับสินค้า
 $TimeReceip =$_POST['TimeReceip'];//เก็บค่าเวลาที่ลูกค้านัดรับสินค้า
@@ -47,8 +48,8 @@ move_uploaded_file($_FILES['fileupload']['tmp_name'],$path_copy);
 	}
 	// เพิ่มไฟล์เข้าไปในตาราง uploadfile
 
-		$sql = "INSERT INTO uploadfile (fileupload,ProductType,ProductDetail,Quanitity,TimeReceip,DateReceip,Member_ID)
-		VALUES('$newname','$ProductType','$ProductDetail','$Quanitity','$TimeReceip','$DateReceip','$UserID')";
+		$sql = "INSERT INTO uploadfile (fileupload,ProductType,ProductDetail,Quanitity,TimeReceip,DateReceip,Format,Member_ID)
+		VALUES('$newname','$ProductType','$ProductDetail','$Quanitity','$TimeReceip','$DateReceip','$Format','$UserID')";
 
 		$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
 //  $_SESSION["fileID"] = $result["fileID"];

@@ -118,10 +118,10 @@ echo 'error';
 				</div>
 		</div>
 		<br></br>
-		
+
 
 		<br></br>
-
+<form method='post' action ='update_profile.php'><button class="w3-button w3-red w3-round" style="width:20%">Edit</button>
 </div>
 </div>
 </div>

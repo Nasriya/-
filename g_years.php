@@ -124,6 +124,12 @@ var myChart = new Chart(ctx, {
 });
 </script>
 </p>
-<center><a href="graph.php" class="w3-btn w3-display-bottom middle w3-round-xxlarge w3-red" style="width:200px">ย้อนกลับ</a></center>
-</div>
+<center><a href="#" class="w3-btn w3-display-bottom middle w3-round-xxlarge w3-blue" style="width:100px" onclick="myFunction()">พิมพ์</a>&nbsp;&nbsp;
+<a href="graph.php" class="w3-btn w3-display-bottom middle w3-round-xxlarge w3-red" style="width:100px">ย้อนกลับ</a></center></div>
+<script>
+function myFunction() {
+    window.print();
+
+}
+</script>
 </html>

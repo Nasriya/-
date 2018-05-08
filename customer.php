@@ -13,7 +13,7 @@ if (!$_SESSION["UserID"]){  //check session
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>จัดการคิว</title>
+	<title>ข้อมูลลูกค้า</title>
 	<meta name="description" content="Free Responsive Html5 Css3 Templates | html5xcss3.com">
 	<meta name="author" content="www.html5xcss3.com">
 	<meta name="viewport" content="width=device-width, initial-scale=1">

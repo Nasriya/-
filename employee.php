@@ -45,6 +45,7 @@ include('connection.php');
 <td>ไฟล์งาน</td>
 <td>Note</td>
 <td>สถานะ</td>
+<td></td>
 </tr>
 <?php
 
@@ -61,8 +62,14 @@ while ($data = mysqli_fetch_array($view) ) {
 <td><a href="fileupload/<?=$data["fileupload"]?>" target="_blank"><?php echo $data["fileupload"];?></a></td>
 <td><?php echo "<a href='note.php?fileupload=$data[fileupload]'>รายละเอียด"?></td>
 <td><?php echo "$data[Status]"; ?></td>
+	<td><center><a href="fileupload/<?=$data["fileupload"]?>" target="_blank"><img src="images/p.png" width="35" height="35" onclick="myFunction()"></td></center>
 
+		<script>
+		function myFunction() {
+		    window.print();
 
+		}
+		</script>
 <?php
 }
 

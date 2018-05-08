@@ -3,11 +3,9 @@
 
 <?php
 include('connection.php');
-//เป็นไฟล์ของข้อมูลเเรก
-// $_SESSION["fileID"] =$_SESSION["UserID"];
-//$_SERVER["REQUEST_URI"]
+
 $file = $_GET['fileupload'];
-$meSQL = "SELECT DISTINCT  * FROM uploadfile  WHERE fileupload LIKE '$file%' ORDER BY dateup ASC  " ; //ยังมีปัญหาเมื่อเรียกไฟล์ที่สองมาเเสดง
+$meSQL = "SELECT DISTINCT  * FROM uploadfile  WHERE fileupload LIKE '$file%' ORDER BY dateup ASC  " ; 
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {
 $meResult = mysqli_fetch_array($meQuery);
@@ -71,6 +69,11 @@ echo 'error';
         <td><a href="fileupload/<?=$meResult["fileupload"]?>" target="_blank"><?php echo $meResult["fileupload"];?></a></td>
               <td></td>
       </tr>
+			<tr>
+						<td><b>รูปแบบการพิมพ์ :</b></td>
+							 <td><?php echo $meResult['Format']; ?></td>
+							<td></td>
+						</tr>
 
       <tr>
             <td><b>ประเภทการพิมพ์ :</b></td>

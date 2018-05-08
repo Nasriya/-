@@ -51,7 +51,7 @@ if (!$_SESSION["UserID"]){  //check session
 	</div>
 	<br></br>
 
-	
+
 
 	<h2 class="w3-myfont w3-center">อัพโหลดไฟล์</h2>
 	<center>
@@ -59,25 +59,27 @@ if (!$_SESSION["UserID"]){  //check session
     <b>กรุณาเลือกไฟล์:</b>
     <input type="file" name="fileupload"  id ="fileupload" required >
 <font color="red"><p>หมายเหตุ: เฉพาะไฟล์ PDF เท่านั้น </p></font>
-
-
+<b>ขนาดกระดาษ</b>
+<select name="PD" required>
+	<option selected >---ขนาดกระดาษ---</option>
+	<option name="PD" value="A2">A2</option>
+	<option name="PD" value="A3">A3 </option>
+	<option name="PD" value="A4">A4</option>
+	<option name="PD" value="A5">A5 </option>
+</select>
 		<br></br>
-		<b>พิมพ์:</b>&nbsp;&nbsp;&nbsp;&nbsp;
-		<input type="radio" name="TP" value="สี" required >สี &nbsp;&nbsp;
-		<input type="radio" name="TP" value="ขาวดำ" required>ขาว-ดำ
-
+		<b>รูปแบบการพิมพ์:</b>&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="FM" value="หน้าเดียว" >หน้าเดียว &nbsp;&nbsp;
+		<input type="radio" name="FM" value="หน้าหลัง" >หน้าหลัง
 		<br></br>
+		<b>ประเภทการพิมพ์:</b>&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="TP" value="สี"  >สี &nbsp;&nbsp;
+		<input type="radio" name="TP" value="ขาวดำ" >ขาว-ดำ
+		<br></br>
+
 		<b>จำนวน:</b>
 		<input type="number"  name="Quanitity" min="1" required>
-		<br></br>
-		<select name="PD" required>
-      <option selected>---ขนาดกระดาษ---</option>
-      <option name="PD" value="A2">A2</option>
-      <option name="PD" value="A3">A3 </option>
-			<option name="PD" value="A4">A4</option>
-      <option name="PD" value="A5">A5 </option>
-     </select>
-		<br></br>
+
 		<b><p>กรุณาเลือกวันเเละเวลาที่นัดรับเอกสาร</p></b>
 
 

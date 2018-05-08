@@ -51,7 +51,7 @@ if (!$_SESSION["UserID"]){  //check session
 
 			<br></br>
 			<?php
-		//ถ้ามีการส่งค่าข้อมูล
+
 		include('connection.php');
 
 
@@ -61,12 +61,15 @@ if (!$_SESSION["UserID"]){  //check session
 		<table align="center" width="100%" border="1">
 		<tr bgcolor="#66CCCC">
 		<td><center>ไฟล์งาน</td></center>
+		<td><center>รูปแบบการสั่งพิมพ์</td></center>
 		<td><center>ประเภทการสั่งพิมพ์</td></center>
 		<td><center>ขนาดกระดาษ</td></center></center></center></center>
 		<td><center>จำนวน</td></center></center></center>
 		<td><center>วันที่นัดรับ</td></center></center>
 		<td><center>เวลาที่นัดรับ</td></center>
 		<td><center>สถานะ</td></center>
+			<td><center></td></center>
+
 		</tr>
 		<?php
 
@@ -78,13 +81,22 @@ if (!$_SESSION["UserID"]){  //check session
 		?>
 		<tr bgcolor="#F0F8FF">
 		<td><center><a href="fileupload/<?=$data["fileupload"]?>" target="_blank"><?php echo $data["fileupload"];?></a></center></td>
+		<td><center><?php echo "$data[Format]"; ?></center></td>
 		<td><center><?php echo "$data[ProductType]"; ?></center></td>
 		<td><center><?php echo "$data[ProductDetail]"; ?></center></td>
 		<td><center><?php echo "$data[Quanitity]"; ?></center></td>
 		<td><center><?php echo "$data[DateReceip]"; ?></center></td>
 		<td><center><?php echo "$data[TimeReceip]"; ?></center></td>
 		<td><center><?php echo "$data[Status]"; ?></td></center>
-
+		<td><center><?php echo "<a href='delete.php?fileupload=$data[1]'>";?><img src="images/bin.png" width="35" height="35" OnClick="return chkdel();"></td></center>
+			<script language="JavaScript">
+			function chkdel(){if(confirm('  กรุณายืนยันการลบอีกครั้ง !!!  ')){
+				return true;
+			}else{
+				return false;
+			}
+			}
+			</script -->
 
 		<?php
 		}

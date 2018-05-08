@@ -31,9 +31,9 @@
 <?php
 include('connection.php');
 
-$query = "SELECT COUNT(fileupload) AS totol, DATE_FORMAT(dateup, '%D') AS dateup
+$query = "SELECT COUNT(fileupload) AS totol, DATE_FORMAT(ProductType, '%D%') AS dateup
 FROM uploadfile
-GROUP BY DATE_FORMAT(dateup, '%D%')
+GROUP BY DATE_FORMAT(ProductType, '%D%')
 ";
 $result = mysqli_query($con, $query);
 $resultchart = mysqli_query($con, $query);
@@ -122,15 +122,7 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
-
 </p>
-<center><a href="graph.php" class="w3-btn w3-display-bottom middle w3-round-xxlarge w3-blue" style="width:100px" onclick="myFunction()">พิมพ์</a>&nbsp;&nbsp;
-<a href="graph.php" class="w3-btn w3-display-bottom middle w3-round-xxlarge w3-red" style="width:100px">ย้อนกลับ</a></center>
+<center><a href="graph.php" class="w3-btn w3-display-bottom middle w3-round-xxlarge w3-red" style="width:200px">ย้อนกลับ</a></center>
 </div>
-<script>
-function myFunction() {
-    window.print();
-
-}
-</script>
 </html>
