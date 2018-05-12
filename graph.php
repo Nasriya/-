@@ -71,9 +71,9 @@ if($_SESSION['UserID'] == "")
 	<?php
 	include('connection.php');
 
-	$query = "SELECT COUNT(fileupload) AS totol, DATE_FORMAT(dateup, '%D') AS dateup
-	FROM uploadfile
-	GROUP BY DATE_FORMAT(dateup, '%D%')";
+	$query = "SELECT COUNT(fileupload),SUM(Price) AS totol, DATE_FORMAT(dateup, '%D') AS dateup
+  ,uploadfile.Price FROM uploadfile
+  GROUP BY DATE_FORMAT(dateup, '%D%')";
 	$result = mysqli_query($con, $query);
 	$resultchart = mysqli_query($con, $query);
 
@@ -96,16 +96,21 @@ if($_SESSION['UserID'] == "")
 	<br></br>
 		<div class="w3-myfont w3-center">
 	<table>
-	 <center> <tr><!--แสดงข้อมูลเป็นตาราง-->
-	    <th width="10%" bgcolor ="LightBlue" ><center>วันที่</th></center>
-	    <th  width="10%" bgcolor ="LightBlue"><center>จำนวนไฟล์</th></center>
+	 <center> <tr>
+		 <th width="10%" bgcolor ="LightBlue" ><center>วัน</th></center>
+		 <th width="10%" bgcolor ="LightBlue"><center>ราคารวม</th></center>
+		 <th width="10%" bgcolor ="LightBlue"><center>จำนวนไฟล์</th></center>
+
+
 	  </tr></center>
 
 
 	  <?php while($row = mysqli_fetch_array($result)) { ?>
 	    <tr>
-	      <td  bgcolor ="LightCyan"><center><?php echo $row['dateup'];?></center></td>
-	      <td  bgcolor ="LightCyan"><center><?php echo $row['totol'];?></center></td>
+				<td align="center" bgcolor ="LightCyan"><center><?php echo $row['dateup'];?></center></td>
+				<td align="center" bgcolor ="LightCyan"><center><?php echo $row['totol'];?></center></td>
+				<td align="center" bgcolor ="LightCyan"><center><?php echo $row['Price'];?></center></td>
+
 	    </tr>
 	    <?php } ?>
 

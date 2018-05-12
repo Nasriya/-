@@ -69,11 +69,7 @@
   </div>
 
 </div>
-<?$sql = 'SELECT SUM(Price) FROM uploadfile';
-  $result = mysqli_query($con, $query);
-$rows = mysqli_fetch_array($result);
 
-echo $sum = $rows["SUM(Price)"];?>
 <hr>
 
 <div id="printable">
