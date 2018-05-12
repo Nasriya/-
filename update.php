@@ -12,22 +12,13 @@
  session_start();
   		include("connection.php");
 
-      $Firstname			= $_POST["Firstname"];
-  		$Lastname 			= $_POST["Lastname"];
-  		$Username 			= $_POST["Username"];
-  		$Telephone			= $_POST["Telephone"];
-  		$Email	       	= $_POST["Email"];
-  		$Address			  = $_POST["Address"];
-  		$id  			      = $_SESSION["UserID"];
+      $Price		= $_POST["Price"];
+      $file = $_GET['fileupload'];
 
 
-  		$sql = "UPDATE user SET Firstname = '$Firstname' ,
-      Lastname = '$Lastname',
-      Username = '$Username',
-      Telephone = '$Telephone' ,
-      Email = '$Email',
-      Address = '$Address'
-      WHERE Member_ID = $id ";
+  		$sql = "UPDATE user SET Price = '$Price' ,
+
+      WHERE fileupload LIKE '$file%' ORDER BY dateup ASC ";
 
     $query = mysqli_query($con,$sql);
     //

@@ -133,6 +133,7 @@ echo 'error';
 					<p><?php echo $meResult['Password']; ?></p>
 				</div>
 		</div>-->
+		<form method='post' action ='update_profile.php'><button class="w3-button w3-red w3-round" style="width:20%">Edit</button>
 
 		<br></br>
 <br></br>

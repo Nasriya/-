@@ -34,8 +34,10 @@ if(isset($search) ) {
 echo "ผลลัพธ์การค้นหา [ <font color='red'>$search </font> ]<br />";
 ?>
 <br></br>
-<div style="overflow-x:auto;">
-<table align="center" width="100%" border="1">
+<div class="w3-responsive">
+
+<table align="center" width="100%" border="1" class="w3-table-all">
+
 <tr bgcolor="#66CCCC">
 <td><center>รหัสสมาชิก</center></td>
 <td>เบอร์โทรศัพท์</td>
@@ -56,7 +58,7 @@ while ($data = mysqli_fetch_array($view) ) {
 <td><?php echo "$data[Telephone]"; ?></td>
 <td><?php echo "$data[Username]"; ?></td>
 <td><a href="fileupload/<?=$data["fileupload"]?>" target="_blank"><?php echo $data["fileupload"];?></a></td>
-<td><?php echo "<a href='note.php?UserID=$data[0]'>รายละเอียด"?></td>
+<td><?php echo "<a href='note.php?fileupload=$data[fileupload]'>รายละเอียด"?></td>
 <td><?php echo "$data[Status]"; ?></td>
 </tr>
 <?php
@@ -68,6 +70,7 @@ echo "กรุณากรอกคำค้นของคุณ";
 }
 
 ?>
+</div>
 <center>
 	</div><a href="check.php" class="w3-btn w3-display-bottommiddle w3-round-xxlarge w3-red" style="width:200px">ย้อนกลับ</a></center>
 </div>

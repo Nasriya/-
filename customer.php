@@ -46,6 +46,9 @@ if (!$_SESSION["UserID"]){  //check session
 <br></br>
 	<h1 class="w3-myfont w3-center">ข้อมูลของลูกค้า</h1>
 <div style="overflow-x:auto;">
+	<div class="w3-responsive">
+
+	<table align="center" width="100%" border="1" class="w3-table-all">
 			<br></br>
 			<?php
 			//1. เชื่อมต่อ database:

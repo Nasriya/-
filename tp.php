@@ -15,7 +15,7 @@
     <script src="js/jquery1111.min.js" type="text/javascript"></script>
     <script src="js/script.js"></script>
       <link rel="stylesheet" href="css/pop.css">
-<title>รายงานในแบบกราฟรายเดือน</title>
+<title>รายงานในแบบกราฟรายวัน</title>
 </head>
 <style type="text/css">
 @media print
@@ -69,18 +69,14 @@
   </div>
 
 </div>
-<?$sql = 'SELECT SUM(Price) FROM uploadfile';
-  $result = mysqli_query($con, $query);
-$rows = mysqli_fetch_array($result);
 
-echo $sum = $rows["SUM(Price)"];?>
 <hr>
 
 <div id="printable">
 	<div class="w3-myfont w3-center">
     <center><img src="images/f.png" width="170" height="170"></center>
  <center><p><h1 class="w3-myfont w3-center">พี่อี๊ดปริ้นเตอร์</h1></center>
-  <h4 class="w3-myfont w3-center"><center>สรุปรายงานการดำเนินงานรายเดือน</center></h4>
+  <h4 class="w3-myfont w3-center"><center>สรุปรายงานการดำเนินงานรายวัน</center></h4>
 <br>
 
 <center> <b>ที่อยู่ :</b> คณะวิทยาการจัดการ มหาวิทยาลัยสงขลานครินทร์
@@ -91,7 +87,7 @@ echo $sum = $rows["SUM(Price)"];?>
   <table width="200" border="1" cellpadding="0"  cellspacing="0" align="center">
 
     <tr>
-      <th width="10%" bgcolor ="LightBlue" ><center>เดือน</th></center>
+      <th width="10%" bgcolor ="LightBlue" ><center>วัน</th></center>
       <th width="10%" bgcolor ="LightBlue"><center>ราคารวม</th></center>
       <th width="10%" bgcolor ="LightBlue"><center>จำนวนไฟล์</th></center>
 
@@ -129,7 +125,7 @@ echo $sum = $rows["SUM(Price)"];?>
 
           ],
           datasets: [{
-              label: 'รายงานภาพรวม แยกตามรายเดือน (บาท)',
+              label: 'รายงานภาพรวม แยกตามรายวัน (บาท)',
               data: [<?php echo $totol;?>
               ],
               backgroundColor: [

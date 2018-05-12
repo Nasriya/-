@@ -63,8 +63,9 @@ if (!$_SESSION["UserID"]){  //check session
 		<td><center>ไฟล์งาน</td></center>
 		<td><center>รูปแบบการสั่งพิมพ์</td></center>
 		<td><center>ประเภทการสั่งพิมพ์</td></center>
-		<td><center>ขนาดกระดาษ</td></center></center></center></center>
+		<td><center>ขนาดกระดาษ</td></center></center>
 		<td><center>จำนวน</td></center></center></center>
+		<td><center>ราคา</td></center></center>
 		<td><center>วันที่นัดรับ</td></center></center>
 		<td><center>เวลาที่นัดรับ</td></center>
 		<td><center>สถานะ</td></center>
@@ -85,6 +86,7 @@ if (!$_SESSION["UserID"]){  //check session
 		<td><center><?php echo "$data[ProductType]"; ?></center></td>
 		<td><center><?php echo "$data[ProductDetail]"; ?></center></td>
 		<td><center><?php echo "$data[Quanitity]"; ?></center></td>
+		<td><center><?php echo "$data[Price]"; ?>&nbsp;&nbsp;บาท</td></center>
 		<td><center><?php echo "$data[DateReceip]"; ?></center></td>
 		<td><center><?php echo "$data[TimeReceip]"; ?></center></td>
 		<td><center><?php echo "$data[Status]"; ?></td></center>

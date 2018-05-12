@@ -60,11 +60,11 @@ if($_SESSION['UserID'] == "")
 	<div class="w3-container">
 
 	  <div class="w3-dropdown-hover">
-	    <button class="w3-button w3-blue">เเสดงกราฟ</button>
+	    <button class="w3-button w3-blue w3-myfont w3-center">เเสดงกราฟ</button>
 	    <div class="w3-dropdown-content w3-bar-block ">
-	      <a href="g_day.php" class="w3-bar-item w3-button">รายวัน</a>
-	      <a href="g_month.php" class="w3-bar-item w3-button">รายเดือน</a>
-	      <a href="g_years.php" class="w3-bar-item w3-button">รายปี</a>
+	      <a href="g_day.php" class="w3-bar-item w3-button w3-myfont ">รายวัน</a>
+	      <a href="g_month.php" class="w3-bar-item w3-button w3-myfont">รายเดือน</a>
+	      <a href="g_years.php" class="w3-bar-item w3-button w3-myfont">รายปี</a>
 	    </div>
 	  </div>
 	</div>
@@ -94,9 +94,10 @@ if($_SESSION['UserID'] == "")
 </br>
 	<h3 class="w3-myfont w3-center">รายงานรายวัน</h3>
 	<br></br>
+		<div class="w3-myfont w3-center">
 	<table>
-	 <center> <tr>
-	    <th width="10%" bgcolor ="LightBlue"><center>วันที่</th></center>
+	 <center> <tr><!--แสดงข้อมูลเป็นตาราง-->
+	    <th width="10%" bgcolor ="LightBlue" ><center>วันที่</th></center>
 	    <th  width="10%" bgcolor ="LightBlue"><center>จำนวนไฟล์</th></center>
 	  </tr></center>
 

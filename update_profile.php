@@ -54,7 +54,7 @@ echo 'error';
 			</div>
 		</div>
 
-      		<form class="w3-container" name="update_profile-action"  method="POST" >
+      	<form method='post' action ='update_profile-action.php'>
 						<div class="container">
 							<h2 class="w3-myfont w3-center">แก้ไขข้อมูลส่วนตัว</h2>
 							<br></br>
@@ -82,6 +82,7 @@ echo 'error';
 					<input class="w3-input w3-hover-pale-red" type="text" style="width:50%"  name="Lastname" value="<?php echo $meResult['Lastname']; ?>"  /></br></center>
 				</div>
 			</div>
+			
 			<div class="row">
 			<div class="col-25 w3-center">
 				<h4 >Address</h4>
@@ -117,16 +118,17 @@ echo 'error';
 
 
 
-</form>
+
 
 
 
 <br></br>
 <center>
-	<form method='post' action ='1.php'><button class="w3-button w3-green w3-round" style="width:20%">Save</button>
+<button class="w3-button w3-green w3-round" style="width:20%" name="submit">Save</button>
 
 
 	<a class="w3-btn w3-red w3-round"style="width:20%" onClick='window.history.back()' >Cancle</a>
+	</form>
 
 
 

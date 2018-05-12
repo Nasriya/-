@@ -3,7 +3,7 @@
 
   <html>
   <head>
-  <title>อัพเดตข้อมูล</title>
+  <title>แก้ไขข้อมูลส่วนตัว</title>
   </head>
   <body>
   <?php
@@ -34,7 +34,7 @@
   	if($query) {
       echo "<script>";
           echo "alert(\"แก้ไขข้อมูลส่วนตัวเรียบร้อยเเล้ว\");";
-            echo "window.location = 'profile.php';"; //ไปหน้าเเรกของสมาชิก
+            echo "window.location = 'admin_profile.php';"; //ไปหน้าเเรกของสมาชิก
       echo "</script>";
   	}
 

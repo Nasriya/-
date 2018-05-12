@@ -55,15 +55,17 @@ echo 'error';
 
 <div class="w3-container">
 
-
+<div class="w3-myfont w3-center">
 <div class="w3-row w3-container">
   <p></p>
   <div class="w3-col m3  w3-center">
     <p></p>
   </div>
+
   <div class="w3-col m6 w3-light-blue  w3-center">
-	<table class="w3-table w3-bordered">
-			<h4>ข้อมูลลูกค้า</h4>
+		<div class="w3-responsive">
+		<table align="center" width="100%" border="1" class="w3-table-all">
+			<h3 class="w3-myfont w3-center">ข้อมูลลูกค้า</h3>
       <tr>
             <td><b>รหัสสมาชิก:</b></td>
                <td><?php echo $meResult['Member_ID']; ?></td>

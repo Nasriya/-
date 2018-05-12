@@ -36,8 +36,9 @@ include('connection.php');
 
 ?>
 <br></br>
-<div style="overflow-x:auto;">
-<table align="center" width="100%" border="1">
+<div class="w3-responsive">
+
+<table align="center" width="100%" border="1" class="w3-table-all">
 <tr bgcolor="#66CCCC">
 <td><center>รหัสสมาชิก</center></td>
 <td><center>เบอร์โทรศัพท์</center></td>

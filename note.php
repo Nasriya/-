@@ -5,7 +5,7 @@
 include('connection.php');
 
 $file = $_GET['fileupload'];
-$meSQL = "SELECT DISTINCT  * FROM uploadfile  WHERE fileupload LIKE '$file%' ORDER BY dateup ASC  " ; 
+$meSQL = "SELECT DISTINCT  * FROM uploadfile  WHERE fileupload LIKE '$file%' ORDER BY dateup ASC  " ;
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {
 $meResult = mysqli_fetch_array($meQuery);
@@ -29,7 +29,7 @@ echo 'error';
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/menu.css">
 
-<link rel="stylesheet" href="css/form.css">
+<link rel="stylesheet" href="css/.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="js/jquery1111.min.js" type="text/javascript"></script>
@@ -61,9 +61,13 @@ echo 'error';
   <div class="w3-col m3  w3-center">
     <p></p>
   </div>
+
+
   <div class="w3-col m6 w3-sand  w3-center">
+			<div class="w3-myfont w3-center">
 	<table class="w3-table w3-bordered">
-			<h4>รายละเอียด</h4>
+
+		<h3 class="w3-myfont w3-center">รายละเอียด</h3>
       <tr>
         <td><b>ไฟล์งาน :</b></td>
         <td><a href="fileupload/<?=$meResult["fileupload"]?>" target="_blank"><?php echo $meResult["fileupload"];?></a></td>
@@ -96,15 +100,19 @@ echo 'error';
              </tr>
 
              <tr>
-            <td><b>เวลาที่นัดรับ :<b/><td><?php echo $meResult['TimeReceip']; ?>&nbsp;น.</td>
+            <td><b>เวลาที่นัดรับ :<b/><td><?php echo $meResult['TimeReceip']; ?>&nbsp;</td>
               <td></td>
           </tr>
+					<tr>
+				 <td><b>ราคา :<b/></td><td>
+					 <form method='post' action ='P_update.php?fileupload=<?php echo $meResult['fileID']; ?>'>
+					 <input class="w3-input w3-hover-pale-red" type="text" style="width:50%" name="Price" placeholder="<?php echo $meResult['Price']; ?>"  /></br></center><td><button class="w3-btn w3-white w3-border w3-border-red w3-round-large w3-tiny" style="width:100px" >อัพเดทราคา</td>
 
+					 <td></td>
+			 </tr>
 										<td>
 										  <b>สถานะตอนนี้ คือ</b>
 										      <td><font color="red"><?php echo $meResult['Status']; ?></td><td></td></font></td>
-
-
 
 
   </div>
@@ -116,9 +124,9 @@ echo 'error';
 <td><b>เปลี่ยนแปลงสถานะเป็น ...</b></td>
 
 <td>
-<br><form method='post'><button class="w3-btn w3-white w3-border w3-border-red w3-round-large" style="width:120px" name="st1"><?php echo "<a href='1_status.php?fileupload=$meResult[1]'>"?>กำลังดำเนินงาน</button>
+<br>	<button class="w3-btn w3-white w3-border w3-border-red w3-round-large" style="width:120px" name="st1"><?php echo "<a href='1_status.php?fileupload=$meResult[1]'>"?>กำลังดำเนินงาน</button>
 <br><button class="w3-btn w3-white w3-border w3-border-yellow w3-round-large" style="width:120px" name="st2"><?php echo "<a href='2_status.php?fileupload=$meResult[1]'>"?>รอการชำระ</button>
-<br><button class="w3-btn w3-white w3-border w3-border-green w3-round-large" style="width:120px" name="st3"><?php echo "<a href='3_status.php?fileupload=$meResult[1]'>"?>ชำระเเล้ว</button></form></form><td></td></br>
+<br><button class="w3-btn w3-white w3-border w3-border-green w3-round-large" style="width:120px" name="st3"><?php echo "<a href='3_status.php?fileupload=$meResult[1]'>"?>ชำระเเล้ว</button></form><td></td></br>
 
 </td></tr>
 </table>

@@ -70,8 +70,9 @@ echo 'error';
     <p></p>
   </div>
   <div class="w3-col m6 w3-sand  w3-center">
+			<div class="w3-myfont w3-center">
 	<table class="w3-table w3-bordered">
-			<h4>สรุปผลการสั่งซื้อ</h4>
+			<h3 class="w3-myfont w3-center">สรุปผลการสั่งซื้อ</h3>
 <tr>
 	<tr>
 		<td><b>ไฟล์งาน :</b></td>
@@ -109,6 +110,10 @@ echo 'error';
 				<td><b>เวลาที่นัดรับ :<b/><td><?php echo $meResult['TimeReceip']; ?>&nbsp;น.</td>
 					<td></td>
 			</tr>
+			<tr>
+		 <td><b>ราคา :<b/><td><?php echo $meResult['Price']; ?>&nbsp;</td>
+			 <td></td>
+	 </tr>
 
 								<td>
 									<b>สถานะตอนนี้ คือ</b>

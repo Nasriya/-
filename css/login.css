@@ -42,7 +42,7 @@ body :-ms-input-placeholder {
   background: linear-gradient(to bottom right, #024e68 0%, #61b4cf 100%);
   position: absolute
   left: 0;
-  width: 100%;
+  width: auto;
   height: 570px;
   margin-top: 30px;
   overflow: hidden;

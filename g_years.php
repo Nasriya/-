@@ -73,19 +73,21 @@
 <hr>
 
 <div id="printable">
-  <font face = "MS Sans Serif">
-  <h1><center>สรุปรายงานการดำเนินงานรายวัน</center></h1>
+	<div class="w3-myfont w3-center">
+    <center><img src="images/f.png" width="170" height="170"></center>
+ <center><p><h1 class="w3-myfont w3-center">พี่อี๊ดปริ้นเตอร์</h1></center>
+  <h4 class="w3-myfont w3-center"><center>สรุปรายงานการดำเนินงานรายปี</center></h4>
 <br>
-<center>  <p><h5>พี่อี๊ดปริ้นเตอร์</h5>
-  <b>ที่อยู่ :</b> คณะวิทยาการจัดการ มหาวิทยาลัยสงขลานครินทร์
-  <br> ต.คอหงส์ อ.หาดใหญ่ จ. สงขลา 90112
-  <br> <b>เบอร์โทรศัพท์ :</b> 0623588855</p></center>
 
-  <div style="overflow-x:auto;">
+<center> <b>ที่อยู่ :</b> คณะวิทยาการจัดการ มหาวิทยาลัยสงขลานครินทร์
+  <br> ต.คอหงส์ อ.หาดใหญ่ จ. สงขลา 90112
+  <br> <b>เบอร์โทรศัพท์ :</b> 0623588855</p>
+
+
   <table width="200" border="1" cellpadding="0"  cellspacing="0" align="center">
 
     <tr>
-      <th width="10%" bgcolor ="LightBlue"><center>ปี</th></center>
+      <th width="10%" bgcolor ="LightBlue" ><center>ปี</th></center>
       <th width="10%" bgcolor ="LightBlue"><center>จำนวนไฟล์</th></center>
     </tr>
 
@@ -104,9 +106,9 @@
   <hr>
   <p align="center">
 
-   <!--devbanban.com-->
 
-  <canvas id="myChart" width="1700px" height="300px"></canvas>
+<div class="w3-myfont w3-center">
+  <canvas id="myChart" width="1700px" height="500px"></canvas>
   <script>
   var ctx = document.getElementById("myChart").getContext('2d');
   var myChart = new Chart(ctx, {
@@ -116,7 +118,7 @@
 
           ],
           datasets: [{
-              label: 'รายงานภาพรวม แยกตามรายปี (ไฟล์)',
+              label: 'รายงานภาพรวม แยกตามรายวัน (ไฟล์)',
               data: [<?php echo $totol;?>
               ],
               backgroundColor: [
