@@ -85,7 +85,7 @@
 
 
   <table width="200" border="1" cellpadding="0"  cellspacing="0" align="center">
-
+<!-- แสดงตาราง -->
     <tr>
       <th width="10%" bgcolor ="LightBlue" ><center>วัน</th></center>
       <th width="10%" bgcolor ="LightBlue"><center>ราคารวม</th></center>

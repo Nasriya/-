@@ -4,9 +4,10 @@ session_start();
 error_reporting(0);
 //1. เชื่อมต่อ database:
 include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้านี้
-$Status = $_POST['st2'];
-$file = $_GET['fileupload'];
-//มันสามารถเชื่อมฐานข้อมูลได้  เเต่ยังไม่เก็บค่า
+$Price =$_POST["Price"]; //รับราคาจาก note.php
+$file = $_GET['fileupload']; //รับชื่อไฟล์จาก note.php
+//อัพเดทสถานะเป็นรอการชำระ
+
 $sql = "UPDATE uploadfile SET Status = 'รอการชำระ' WHERE  fileupload LIKE '$file%' ";
 
 

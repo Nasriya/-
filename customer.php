@@ -54,7 +54,7 @@ if (!$_SESSION["UserID"]){  //check session
 			//1. เชื่อมต่อ database:
 			include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้าน้ี
 
-			//2. query ข้อมูลจากตาราง tb_member:
+			//2. query ข้อมูลจากตาราง user:
 			$query = "SELECT user.* FROM user	ORDER BY Member_ID ASC ";
 			//3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result .
 			$result = mysqli_query($con, $query);
@@ -76,7 +76,7 @@ if (!$_SESSION["UserID"]){  //check session
 			<td><br></br></td></tr>";
 
 			while($row = mysqli_fetch_array($result)) {
-				  //$_SESSION["fileID"] =$_SESSION["UserID"];
+
 				echo "<tr>";
 			  echo "<td align='center'  bgcolor='#ffffff'>" .$row["Member_ID"] .  "</td> ";
 				echo "<td align='center'  bgcolor='#ffffff'>" .$row["Firstname"] .  "</td> ";
@@ -86,10 +86,6 @@ if (!$_SESSION["UserID"]){  //check session
 			echo "<td align='center'  bgcolor='#ffffff'>" .$row["Telephone"] .  "</td> ";
 			 echo "<td align='center'  bgcolor='#ffffff'>" .$row["Email"] .  "</td> ";
 
-			//	echo "<td align='center'  bgcolor='#61b4cf'>" ."</td> ";//ลบ
-
-			//ลบข้อมูล
-			 // echo "<td align='center' bgcolor='#def1f9'><a href='UserDelete.php?ID=$row[0]'><button class='w3-button w3-small w3-red' style='width:60px'>Delete</button></a></td> ";
 			  echo "</tr>";
 			}
 			echo "</table>";

@@ -4,7 +4,7 @@
 <?php
 include('connection.php');
 
-$user = $_GET['Username'];
+$user = $_GET['Username']; //รับค่ามจากหน้า employee.php
 $meSQL = "SELECT DISTINCT  * FROM user WHERE username LIKE '$user%'  " ;
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {

@@ -6,7 +6,7 @@ error_reporting(0);
 include('connection.php');  //ไฟล์เชื่อมต่อกับ database ที่เราได้สร้างไว้ก่อนหน้านี้
 
 $file = $_GET['fileupload'];
-//มันสามารถเชื่อมฐานข้อมูลได้  เเต่ยังไม่เก็บค่า
+
 $sql = "DELETE FROM uploadfile ";
 $sql .="WHERE  fileupload LIKE '$file%' ";
 $objQuery = mysqli_query($con,$sql);

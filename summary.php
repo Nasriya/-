@@ -17,7 +17,7 @@ if (!$_SESSION["UserID"]){  //check session
 $meSQL = "SELECT * FROM uploadfile WHERE Member_ID='{$_SESSION['UserID']}' ORDER BY dateup desc ";
 $meQuery = mysqli_query($con,$meSQL);
 if ($meQuery == TRUE) {
-$meResult = mysqli_fetch_assoc($meQuery); //มีค่าตัวแปรเฉพาะที่เราเลือก
+$meResult = mysqli_fetch_assoc($meQuery); 
 } else {
 echo 'error';
 }

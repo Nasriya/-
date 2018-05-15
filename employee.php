@@ -49,7 +49,7 @@ include('connection.php');
 
 </tr>
 <?php
-
+//ดึงข้อมูลมาจากตาราง 2 ตาราง
 $sql = "SELECT user.*,uploadfile.* FROM user,uploadfile
 WHERE user.Member_ID = uploadfile.Member_ID
 ORDER BY dateup ASC ";
@@ -64,15 +64,7 @@ while ($data = mysqli_fetch_array($view) ) {
 <td><center><?php echo "<a href='note.php?fileupload=$data[fileupload]'>รายละเอียด"?></center></td>
 <td><center><?php echo "$data[Status]"; ?></center></td>
 	<!--<td><center><a href="fileupload/<?=$data["fileupload"]?>" target="_blank"><img src="images/p.png" width="35" height="35" onclick="myFunction()" ></td></center>
-
-		<script>
-		function myFunction() {
-
-		window.print();
-
-
-}
-</script>-->
+-->
 <?php
 }
 

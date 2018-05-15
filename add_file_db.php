@@ -19,7 +19,7 @@ $UserID = $_SESSION["UserID"];
 $file = strtolower($_FILES['fileupload']['name']);
 $type= strrchr($file,".");
 
-
+//จำกัดประเภทไฟล์เป็น PDF เท่านั้น
 if(($type==".pdf"))
 {
 	echo "<script type='text/javascript'>";

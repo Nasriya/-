@@ -73,7 +73,7 @@ if (!$_SESSION["UserID"]){  //check session
 
 		</tr>
 		<?php
-
+//ดึงข้อมูลมาจากตาราง uploadfile และ ดึงข้อมูลเฉพาะผู้ใช้ที่กำลังล็อกอิน
 		$sql = "SELECT * FROM uploadfile
 		WHERE Member_ID='{$_SESSION['UserID']}'
 		ORDER BY dateup ASC ";
