@@ -80,7 +80,7 @@ if (!$_SESSION["UserID"]){  //check session
 									<div class="portfolio-box-caption">
 										<div class="portfolio-box-caption-content">
 											<div class="project-name">
-												<a href="contact.html">ติดต่อเรา</a>
+												<a href="contact.php">ติดต่อเรา</a>
 											</div>
 										</div>
 									</div>
@@ -94,7 +94,7 @@ if (!$_SESSION["UserID"]){  //check session
 									<div class="portfolio-box-caption">
 										<div class="portfolio-box-caption-content">
 											<div class="project-name">
-												<a href="Login.html">เข้าสู่ระบบ</a>
+												เข้าสู่ระบบ</a>
 											</div>
 										</div>
 									</div>
